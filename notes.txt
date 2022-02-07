@@ -1,0 +1,256 @@
+------------------------------------------------------------------------
+1. 
+	Mål tid fra ping starter fra H1 til respons på H2
+------------------------------------------------------------------------
+
+ase@ubuntu:~$ ping -c 1 10.0.0.2
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.942 ms
+
+--- 10.0.0.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.942/0.942/0.942/0.000 ms
+
+------------------------------------------------------------------------
+2.
+	10 på hinanden efterfølgende pings
+------------------------------------------------------------------------
+
+ase@ubuntu:~$ ping -c 10 10.0.0.2
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.569 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=1.02 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=2.40 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=1.05 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=1.15 ms
+64 bytes from 10.0.0.2: icmp_seq=6 ttl=64 time=1.00 ms
+64 bytes from 10.0.0.2: icmp_seq=7 ttl=64 time=1.47 ms
+64 bytes from 10.0.0.2: icmp_seq=8 ttl=64 time=0.729 ms
+64 bytes from 10.0.0.2: icmp_seq=9 ttl=64 time=11.9 ms
+64 bytes from 10.0.0.2: icmp_seq=10 ttl=64 time=1.13 ms
+
+--- 10.0.0.2 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9048ms
+rtt min/avg/max/mdev = 0.569/2.247/11.947/3.267 ms
+
+-----------------------------------------------------------------------
+3. 
+	remote ping til google fra H1 via eth0
+-----------------------------------------------------------------------
+	
+PING google.com (142.251.36.46) 56(84) bytes of data.
+
+--- google.com ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+
+-----------------------------------------------------------------------
+4.
+	10 på hinanden remote ping til google fra H1 via eth0
+-----------------------------------------------------------------------
+	
+PING google.com (142.251.36.46) 56(84) bytes of data.
+64 bytes from ams17s12-in-f14.1e100.net (142.251.36.46): icmp_seq=1 ttl=128 time=30.7 ms
+64 bytes from ams17s12-in-f14.1e100.net (142.251.36.46): icmp_seq=2 ttl=128 time=31.7 ms
+64 bytes from ams17s12-in-f14.1e100.net (142.251.36.46): icmp_seq=3 ttl=128 time=31.9 ms
+64 bytes from ams17s12-in-f14.1e100.net (142.251.36.46): icmp_seq=4 ttl=128 time=31.8 ms
+64 bytes from ams17s12-in-f14.1e100.net (142.251.36.46): icmp_seq=5 ttl=128 time=32.6 ms
+64 bytes from ams17s12-in-f14.1e100.net (142.251.36.46): icmp_seq=6 ttl=128 time=31.8 ms
+64 bytes from ams17s12-in-f14.1e100.net (142.251.36.46): icmp_seq=7 ttl=128 time=31.9 ms
+64 bytes from ams17s12-in-f14.1e100.net (142.251.36.46): icmp_seq=8 ttl=128 time=32.7 ms
+64 bytes from ams17s12-in-f14.1e100.net (142.251.36.46): icmp_seq=9 ttl=128 time=31.6 ms
+64 bytes from ams17s12-in-f14.1e100.net (142.251.36.46): icmp_seq=10 ttl=128 time=31.9 ms
+
+--- google.com ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9020ms
+rtt min/avg/max/mdev = 30.652/31.839/32.666/0.524 ms
+
+-----------------------------------------------------------------------
+5.
+	brug wireshark til måle tidsforsinkelse til au.dk vha wireshark
+-----------------------------------------------------------------------	
+Først identificeres H1's IP
+ase@ubuntu:~$ hostname -I
+192.168.21.128 10.0.0.1 
+
+Den tilhørende IP fra domain navnet au.dk
+ase@ubuntu:~$ host au.dk
+au.dk has address 10.83.252.23
+au.dk mail is handled by 10 au-dk.mail.protection.outlook.com.
+
+ase@ubuntu:~$ hostname -I
+192.168.21.128 10.0.0.1
+
+ 
+No.     Time           Source                Destination           Protocol Length Info
+      1 0.000000000    192.168.21.128        192.168.21.2          DNS      80     Standard query 0x1e89 A www.au.dk OPT
+
+Frame 1: 80 bytes on wire (640 bits), 80 bytes captured (640 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 192.168.21.2
+User Datagram Protocol, Src Port: 51529, Dst Port: 53
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+      2 0.000264389    192.168.21.128        192.168.21.2          DNS      80     Standard query 0xb586 AAAA www.au.dk OPT
+
+Frame 2: 80 bytes on wire (640 bits), 80 bytes captured (640 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 192.168.21.2
+User Datagram Protocol, Src Port: 55817, Dst Port: 53
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+      3 0.006295458    192.168.21.2          192.168.21.128        DNS      96     Standard query response 0x1e89 A www.au.dk A 10.83.252.23 OPT
+
+Frame 3: 96 bytes on wire (768 bits), 96 bytes captured (768 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 51529
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+      4 0.006447562    192.168.21.2          192.168.21.128        DNS      146    Standard query response 0xb586 AAAA www.au.dk SOA uniinfobloxintern01.uni.au.dk OPT
+
+Frame 4: 146 bytes on wire (1168 bits), 146 bytes captured (1168 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 55817
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+      5 0.007056115    192.168.21.128        10.83.252.23          TCP      74     38160 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=762089710 TSecr=0 WS=128
+
+Frame 5: 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.83.252.23
+Transmission Control Protocol, Src Port: 38160, Dst Port: 443, Seq: 0, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      6 0.011795883    10.83.252.23          192.168.21.128        TCP      60     443 → 38160 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+
+Frame 6: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.83.252.23, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 38160, Seq: 0, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      7 0.011835150    192.168.21.128        10.83.252.23          TCP      54     38160 → 443 [ACK] Seq=1 Ack=1 Win=64240 Len=0
+
+Frame 7: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.83.252.23
+Transmission Control Protocol, Src Port: 38160, Dst Port: 443, Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+      8 0.014576184    192.168.21.128        10.83.252.23          TLSv1.3  571    Client Hello
+
+Frame 8: 571 bytes on wire (4568 bits), 571 bytes captured (4568 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.83.252.23
+Transmission Control Protocol, Src Port: 38160, Dst Port: 443, Seq: 1, Ack: 1, Len: 517
+Transport Layer Security
+
+På linje 1 til og med 4 ses forespørgsel til DNS server efter IP til au.dk
+Efterfølgende kommer SYN linje 5, med SYN, ACK på linje 6 og til sidste et ACK på linje 7 og handshake for TCP er fuldendt. 
+Delay måles fra SYN til SYN, ACK er modtaget dvs. fra Time 0.007056115 til Time 0.011795883 
+hvilket giver en difference på 0.004739768 sekunder eller 0.47 ms
+
+-----------------------------------------------------------------------
+6. 
+	ping en australsk hjemmeside og undersøg tidsforsinkelsen
+-----------------------------------------------------------------------
+Først tjekkes den australske sides IP
+ase@ubuntu:~$ host australia.gov.au
+australia.gov.au has address 18.66.2.49
+australia.gov.au has address 18.66.2.74
+australia.gov.au has address 18.66.2.80
+australia.gov.au has address 18.66.2.85
+
+Data capture fra wireshark:
+
+No.     Time           Source                Destination           Protocol Length Info
+      8 1.016379079    192.168.21.2          192.168.21.128        DNS      197    Standard query response 0x2c8b A www.australia.gov.au CNAME cdn.prod65.dta.adobecqms.net A 18.64.103.14 A 18.64.103.43 A 18.64.103.66 A 18.64.103.78 OPT
+
+Frame 8: 197 bytes on wire (1576 bits), 197 bytes captured (1576 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 52618
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+      9 1.019267623    192.168.21.128        18.64.103.78          TCP      74     46730 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=2219112070 TSecr=0 WS=128
+
+Frame 9: 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 18.64.103.78
+Transmission Control Protocol, Src Port: 46730, Dst Port: 443, Seq: 0, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     10 1.024336381    192.168.21.128        3.121.138.13          TCP      54     [TCP Dup ACK 2#1] 60558 → 443 [ACK] Seq=1 Ack=1 Win=62780 Len=0
+
+Frame 10: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 3.121.138.13
+Transmission Control Protocol, Src Port: 60558, Dst Port: 443, Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     11 1.024523284    192.168.21.128        3.121.138.13          TCP      54     [TCP Dup ACK 1#1] 60560 → 443 [ACK] Seq=1 Ack=1 Win=62780 Len=0
+
+Frame 11: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 3.121.138.13
+Transmission Control Protocol, Src Port: 60560, Dst Port: 443, Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     12 1.024651231    3.121.138.13          192.168.21.128        TCP      60     [TCP ACKed unseen segment] 443 → 60558 [ACK] Seq=1 Ack=2 Win=64240 Len=0
+
+Frame 12: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 3.121.138.13, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 60558, Seq: 1, Ack: 2, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     13 1.024782384    3.121.138.13          192.168.21.128        TCP      60     [TCP ACKed unseen segment] 443 → 60560 [ACK] Seq=1 Ack=2 Win=64240 Len=0
+
+Frame 13: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 3.121.138.13, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 60560, Seq: 1, Ack: 2, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     14 1.056073313    18.64.103.78          192.168.21.128        TCP      60     443 → 46730 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+
+Frame 14: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 18.64.103.78, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 46730, Seq: 0, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     15 1.056133392    192.168.21.128        18.64.103.78          TCP      54     46730 → 443 [ACK] Seq=1 Ack=1 Win=64240 Len=0
+
+Frame 15: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 18.64.103.78
+Transmission Control Protocol, Src Port: 46730, Dst Port: 443, Seq: 1, Ack: 1, Len: 0
+
+SYN sendes fra H1 på linje 9 til Time 1.019267623 
+SYN, ACK sende fra australia.gov.au på linje 14 til Time 1.056073313
+Dette giver en difference på 0.03680569 sekunder.
+
+-----------------------------------------------------------------------
+7.
+	er der forskell på delayet for et ping til DK vs AU.
+
+-----------------------------------------------------------------------
+Ja der er en betydelig forskel i tidsforsinkelsen.
+
+	delay DK = 4,73 ms
+	delay AU = 36,8 ms
+
+-----------------------------------------------------------------------
+
+
+
+
+
