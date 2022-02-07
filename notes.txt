@@ -1,3 +1,5 @@
+Exercise 3 
+
 ------------------------------------------------------------------------
 1. 
 	Mål tid fra ping starter fra H1 til respons på H2
