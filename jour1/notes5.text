@@ -1,0 +1,57 @@
+Exercise 5
+
+Normal NSLookup
+-----------------------------------------
+
+ase@ubuntu:~/Desktop$ nslookup google.dk
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	google.dk
+Address: 142.250.179.163
+Name:	google.dk
+Address: 2a00:1450:400e:802::2003
+
+Interactive mode eksempel:
+----------------------------------------
+
+ase@ubuntu:~/Desktop$ nslookup
+> set type=mx
+> google.dk
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+google.dk	mail exchanger = 0 smtp.google.com.
+
+Authoritative answers can be found from:
+> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
