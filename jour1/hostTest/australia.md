@@ -1,5 +1,5 @@
-## Running host test on www.australia.gov.au
-### No flags
+### Running host test on www.australia.gov.au
+#### No flags
 host www.australia.gov.au
 ```
 www.australia.gov.au is an alias for cdn.prod65.dta.adobecqms.net.
@@ -8,14 +8,14 @@ cdn.prod65.dta.adobecqms.net has address 18.64.103.43
 cdn.prod65.dta.adobecqms.net has address 18.64.103.14
 cdn.prod65.dta.adobecqms.net has address 18.64.103.78
 ```
-### -a flag
+#### -a flag
 host -a www.australia.gov.au
 ```
 Trying "www.australia.gov.au"
 Host www.australia.gov.au not found: 4(NOTIMP)
 Received 38 bytes from 127.0.0.53#53 in 24 ms
 ```
-### -4 flags
+#### -4 flags
 host -4 www.australia.gov.au
 ```
 www.australia.gov.au is an alias for cdn.prod65.dta.adobecqms.net.
@@ -24,13 +24,13 @@ cdn.prod65.dta.adobecqms.net has address 18.64.103.43
 cdn.prod65.dta.adobecqms.net has address 18.64.103.14
 cdn.prod65.dta.adobecqms.net has address 18.64.103.78
 ```
-### -6 flags
+#### -6 flags
 host -6 www.australia.gov.au
 ```
 ;; connection timed out; no servers could be reached
 
 ```
-### -d flags
+#### -d flags
 host -d www.australia.gov.au
 ```
 Trying "www.australia.gov.au"

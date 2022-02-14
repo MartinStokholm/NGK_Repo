@@ -1,5 +1,5 @@
-## Running host test on www.tv2.dk
-### No flags
+### Running host test on www.tv2.dk
+#### No flags
 host www.tv2.dk
 ```
 www.tv2.dk is an alias for aws-https-redirect-prod.tv2net.dk.
@@ -7,14 +7,14 @@ aws-https-redirect-prod.tv2net.dk has address 3.123.214.150
 aws-https-redirect-prod.tv2net.dk has address 3.123.214.120
 aws-https-redirect-prod.tv2net.dk has address 3.123.202.164
 ```
-### -a flag
+#### -a flag
 host -a www.tv2.dk
 ```
 Trying "www.tv2.dk"
 Host www.tv2.dk not found: 4(NOTIMP)
 Received 28 bytes from 127.0.0.53#53 in 24 ms
 ```
-### -4 flags
+#### -4 flags
 host -4 www.tv2.dk
 ```
 www.tv2.dk is an alias for aws-https-redirect-prod.tv2net.dk.
@@ -22,13 +22,13 @@ aws-https-redirect-prod.tv2net.dk has address 3.123.214.150
 aws-https-redirect-prod.tv2net.dk has address 3.123.214.120
 aws-https-redirect-prod.tv2net.dk has address 3.123.202.164
 ```
-### -6 flags
+#### -6 flags
 host -6 www.tv2.dk
 ```
 ;; connection timed out; no servers could be reached
 
 ```
-### -d flags
+#### -d flags
 host -d www.tv2.dk
 ```
 Trying "www.tv2.dk"
