@@ -1,4 +1,4 @@
-# THis is a markdown document.
+# This is a markdown document.
 Open it with any text editor, and its fairly readeble. 
 This is its main strength, over other markup languages, like latex. 
 
