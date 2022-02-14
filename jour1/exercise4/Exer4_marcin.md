@@ -1,4 +1,4 @@
-# Hello
+# Hello world
 
 * We connect to http://i4prj.ase.au.dk/I4IKN using Mozilla Firefox
 * To check which IP address we communicate with we can
