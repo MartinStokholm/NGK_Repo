@@ -6,6 +6,10 @@
     * check the first HTTP request after TCP handshakes
     * filter http.host in Wireshark and check the packets 
 
-![](Screendumps/sample_http_content.png)
+[comment]: <Unused (Screendumps/sample_http_content.png)> 
 
 ![](Screendumps/DNS_query.png)
+
+To check http header request, we check the http GET/ packet
+
+![](Screendumps/WS_HTTPrequestHeader.png)

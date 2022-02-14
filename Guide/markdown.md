@@ -1,4 +1,4 @@
-# THis is a markdown document.
+# This is a markdown document.
 Open it with any text editor, and its fairly readeble. 
 This is its main strength, over other markup languages, like latex. 
 
@@ -40,6 +40,17 @@ int main () {
 ![](screenshot.png)
 Or alternatively from an other folders 
 ![](figs/screenshot.png)
+
+## Comments
+To comment something out use syntax '[//]: <>', eg.
+
+[//]: <This text has been commented out>
+
+Or '[comment]: <>'
+
+[comment]: <You can't see this text either>
+
+Comments must be separated from the text you want to display with an empty line.
 
 ## Lists
 
