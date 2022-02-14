@@ -1,0 +1,3462 @@
+No.     Time           Source                Destination           Protocol Length Info
+      1 0.000000000    192.168.21.128        192.168.21.2          DNS      101    Standard query 0x8c4b A incoming.telemetry.mozilla.org OPT
+
+Frame 1: 101 bytes on wire (808 bits), 101 bytes captured (808 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 192.168.21.2
+User Datagram Protocol, Src Port: 49551, Dst Port: 53
+    Source Port: 49551
+    Destination Port: 53
+    Length: 67
+    Checksum: 0xac27 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+      2 0.001924255    192.168.21.128        192.168.21.2          DNS      101    Standard query 0x1616 AAAA incoming.telemetry.mozilla.org OPT
+
+Frame 2: 101 bytes on wire (808 bits), 101 bytes captured (808 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 192.168.21.2
+User Datagram Protocol, Src Port: 42937, Dst Port: 53
+    Source Port: 42937
+    Destination Port: 53
+    Length: 67
+    Checksum: 0xac27 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 1]
+    [Timestamps]
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+      3 0.023575654    192.168.21.2          192.168.21.128        DNS      233    Standard query response 0x8c4b A incoming.telemetry.mozilla.org CNAME telemetry-incoming.r53-2.services.mozilla.com CNAME prod.ingestion-edge.prod.dataops.mozgcp.net A 34.120.208.123 OPT
+
+Frame 3: 233 bytes on wire (1864 bits), 233 bytes captured (1864 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 49551
+    Source Port: 53
+    Destination Port: 49551
+    Length: 199
+    Checksum: 0x2ab5 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 0]
+    [Timestamps]
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+      4 0.023575808    192.168.21.2          192.168.21.128        DNS      307    Standard query response 0x1616 AAAA incoming.telemetry.mozilla.org CNAME telemetry-incoming.r53-2.services.mozilla.com CNAME prod.ingestion-edge.prod.dataops.mozgcp.net SOA ns-cloud-b1.googledomains.com OPT
+
+Frame 4: 307 bytes on wire (2456 bits), 307 bytes captured (2456 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 42937
+    Source Port: 53
+    Destination Port: 42937
+    Length: 273
+    Checksum: 0x0482 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 1]
+    [Timestamps]
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+      5 0.024075391    192.168.21.128        192.168.21.2          DNS      114    Standard query 0xe00d AAAA prod.ingestion-edge.prod.dataops.mozgcp.net OPT
+
+Frame 5: 114 bytes on wire (912 bits), 114 bytes captured (912 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 192.168.21.2
+User Datagram Protocol, Src Port: 33009, Dst Port: 53
+    Source Port: 33009
+    Destination Port: 53
+    Length: 80
+    Checksum: 0xac34 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 2]
+    [Timestamps]
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+      6 0.024774422    192.168.21.128        34.120.208.123        TCP      74     32872 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=3548506638 TSecr=0 WS=128
+
+Frame 6: 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 0, Len: 0
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 0    (relative sequence number)
+    Sequence number (raw): 295111981
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 0
+    Acknowledgment number (raw): 0
+    1010 .... = Header Length: 40 bytes (10)
+    Flags: 0x002 (SYN)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    Checksum: 0xc94a [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (20 bytes), Maximum segment size, SACK permitted, Timestamps, No-Operation (NOP), Window scale
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+      7 0.051282999    192.168.21.2          192.168.21.128        DNS      207    Standard query response 0xe00d AAAA prod.ingestion-edge.prod.dataops.mozgcp.net SOA ns-cloud-b1.googledomains.com OPT
+
+Frame 7: 207 bytes on wire (1656 bits), 207 bytes captured (1656 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 33009
+    Source Port: 53
+    Destination Port: 33009
+    Length: 173
+    Checksum: 0xc345 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 2]
+    [Timestamps]
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+      8 0.056952208    34.120.208.123        192.168.21.128        TCP      60     443 → 32872 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+
+Frame 8: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 0, Ack: 1, Len: 0
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 0    (relative sequence number)
+    Sequence number (raw): 888495060
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Acknowledgment number (raw): 295111982
+    0110 .... = Header Length: 24 bytes (6)
+    Flags: 0x012 (SYN, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    Checksum: 0xa257 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (4 bytes), Maximum segment size
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 6]
+        [The RTT to ACK the segment was: 0.032177786 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+      9 0.056986275    192.168.21.128        34.120.208.123        TCP      54     32872 → 443 [ACK] Seq=1 Ack=1 Win=64240 Len=0
+
+Frame 9: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 1, Ack: 1, Len: 0
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 295111982
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Acknowledgment number (raw): 888495061
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xc936 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 8]
+        [The RTT to ACK the segment was: 0.000034067 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     10 0.058785385    192.168.21.128        34.120.208.123        TLSv1.3  571    Client Hello
+
+Frame 10: 571 bytes on wire (4568 bits), 571 bytes captured (4568 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 1, Ack: 1, Len: 517
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 517]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 295111982
+    [Next sequence number: 518    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Acknowledgment number (raw): 888495061
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xcb3b [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 517]
+        [Bytes sent since last PSH flag: 517]
+    [Timestamps]
+    TCP payload (517 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     11 0.058986234    34.120.208.123        192.168.21.128        TCP      60     443 → 32872 [ACK] Seq=1 Ack=518 Win=64240 Len=0
+
+Frame 11: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 1, Ack: 518, Len: 0
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 888495061
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 518    (relative ack number)
+    Acknowledgment number (raw): 295112499
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xb80f [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 10]
+        [The RTT to ACK the segment was: 0.000200849 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     12 0.089995883    34.120.208.123        192.168.21.128        TLSv1.3  3484   Server Hello, Change Cipher Spec, Application Data
+
+Frame 12: 3484 bytes on wire (27872 bits), 3484 bytes captured (27872 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 1, Ack: 518, Len: 3430
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 3430]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 888495061
+    [Next sequence number: 3431    (relative sequence number)]
+    Acknowledgment number: 518    (relative ack number)
+    Acknowledgment number (raw): 295112499
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xd69c [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 3430]
+        [Bytes sent since last PSH flag: 3430]
+    [Timestamps]
+    TCP payload (3430 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     13 0.090022852    192.168.21.128        34.120.208.123        TCP      54     32872 → 443 [ACK] Seq=518 Ack=3431 Win=61320 Len=0
+
+Frame 13: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 518, Ack: 3431, Len: 0
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 518    (relative sequence number)
+    Sequence number (raw): 295112499
+    [Next sequence number: 518    (relative sequence number)]
+    Acknowledgment number: 3431    (relative ack number)
+    Acknowledgment number (raw): 888498491
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 61320
+    [Calculated window size: 61320]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xc936 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 12]
+        [The RTT to ACK the segment was: 0.000026969 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     14 0.095102680    192.168.21.128        34.120.208.123        TLSv1.3  118    Change Cipher Spec, Application Data
+
+Frame 14: 118 bytes on wire (944 bits), 118 bytes captured (944 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 518, Ack: 3431, Len: 64
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 64]
+    Sequence number: 518    (relative sequence number)
+    Sequence number (raw): 295112499
+    [Next sequence number: 582    (relative sequence number)]
+    Acknowledgment number: 3431    (relative ack number)
+    Acknowledgment number (raw): 888498491
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xc976 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 64]
+        [Bytes sent since last PSH flag: 64]
+    [Timestamps]
+    TCP payload (64 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     15 0.095255385    34.120.208.123        192.168.21.128        TCP      60     443 → 32872 [ACK] Seq=3431 Ack=582 Win=64240 Len=0
+
+Frame 15: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 3431, Ack: 582, Len: 0
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 3431    (relative sequence number)
+    Sequence number (raw): 888498491
+    [Next sequence number: 3431    (relative sequence number)]
+    Acknowledgment number: 582    (relative ack number)
+    Acknowledgment number (raw): 295112563
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xaa69 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 14]
+        [The RTT to ACK the segment was: 0.000152705 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     16 0.114384685    192.168.21.128        34.120.208.123        TLSv1.3  224    Application Data
+
+Frame 16: 224 bytes on wire (1792 bits), 224 bytes captured (1792 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 582, Ack: 3431, Len: 170
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 170]
+    Sequence number: 582    (relative sequence number)
+    Sequence number (raw): 295112563
+    [Next sequence number: 752    (relative sequence number)]
+    Acknowledgment number: 3431    (relative ack number)
+    Acknowledgment number (raw): 888498491
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xc9e0 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 170]
+        [Bytes sent since last PSH flag: 170]
+    [Timestamps]
+    TCP payload (170 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     17 0.114458057    192.168.21.128        34.120.208.123        TLSv1.3  417    Application Data
+
+Frame 17: 417 bytes on wire (3336 bits), 417 bytes captured (3336 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 752, Ack: 3431, Len: 363
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 363]
+    Sequence number: 752    (relative sequence number)
+    Sequence number (raw): 295112733
+    [Next sequence number: 1115    (relative sequence number)]
+    Acknowledgment number: 3431    (relative ack number)
+    Acknowledgment number (raw): 888498491
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xcaa1 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 533]
+        [Bytes sent since last PSH flag: 363]
+    [Timestamps]
+    TCP payload (363 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     18 0.114525368    192.168.21.128        34.120.208.123        TLSv1.3  476    Application Data
+
+Frame 18: 476 bytes on wire (3808 bits), 476 bytes captured (3808 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 1115, Ack: 3431, Len: 422
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 422]
+    Sequence number: 1115    (relative sequence number)
+    Sequence number (raw): 295113096
+    [Next sequence number: 1537    (relative sequence number)]
+    Acknowledgment number: 3431    (relative ack number)
+    Acknowledgment number (raw): 888498491
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xcadc [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 955]
+        [Bytes sent since last PSH flag: 422]
+    [Timestamps]
+    TCP payload (422 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     19 0.114579319    34.120.208.123        192.168.21.128        TCP      60     443 → 32872 [ACK] Seq=3431 Ack=752 Win=64240 Len=0
+
+Frame 19: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 3431, Ack: 752, Len: 0
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 3431    (relative sequence number)
+    Sequence number (raw): 888498491
+    [Next sequence number: 3431    (relative sequence number)]
+    Acknowledgment number: 752    (relative ack number)
+    Acknowledgment number (raw): 295112733
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xa9bf [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 16]
+        [The RTT to ACK the segment was: 0.000194634 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     20 0.114579401    34.120.208.123        192.168.21.128        TCP      60     443 → 32872 [ACK] Seq=3431 Ack=1115 Win=64240 Len=0
+
+Frame 20: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 3431, Ack: 1115, Len: 0
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 3431    (relative sequence number)
+    Sequence number (raw): 888498491
+    [Next sequence number: 3431    (relative sequence number)]
+    Acknowledgment number: 1115    (relative ack number)
+    Acknowledgment number (raw): 295113096
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xa854 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 17]
+        [The RTT to ACK the segment was: 0.000121344 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     21 0.114636963    34.120.208.123        192.168.21.128        TCP      60     443 → 32872 [ACK] Seq=3431 Ack=1537 Win=64240 Len=0
+
+Frame 21: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 3431, Ack: 1537, Len: 0
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 3431    (relative sequence number)
+    Sequence number (raw): 888498491
+    [Next sequence number: 3431    (relative sequence number)]
+    Acknowledgment number: 1537    (relative ack number)
+    Acknowledgment number (raw): 295113518
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xa6ae [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 18]
+        [The RTT to ACK the segment was: 0.000111595 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     22 0.116459833    192.168.21.128        192.168.21.2          DNS      86     Standard query 0x0c53 A i4prj.ase.au.dk OPT
+
+Frame 22: 86 bytes on wire (688 bits), 86 bytes captured (688 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 192.168.21.2
+User Datagram Protocol, Src Port: 54614, Dst Port: 53
+    Source Port: 54614
+    Destination Port: 53
+    Length: 52
+    Checksum: 0xac18 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 3]
+    [Timestamps]
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+     23 0.137952286    192.168.21.2          192.168.21.128        DNS      102    Standard query response 0x0c53 A i4prj.ase.au.dk A 10.29.0.30 OPT
+
+Frame 23: 102 bytes on wire (816 bits), 102 bytes captured (816 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 54614
+    Source Port: 53
+    Destination Port: 54614
+    Length: 68
+    Checksum: 0x8c5f [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 3]
+    [Timestamps]
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+     24 0.149399971    34.120.208.123        192.168.21.128        TLSv1.3  634    Application Data, Application Data
+
+Frame 24: 634 bytes on wire (5072 bits), 634 bytes captured (5072 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 3431, Ack: 1537, Len: 580
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 580]
+    Sequence number: 3431    (relative sequence number)
+    Sequence number (raw): 888498491
+    [Next sequence number: 4011    (relative sequence number)]
+    Acknowledgment number: 1537    (relative ack number)
+    Acknowledgment number (raw): 295113518
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x93df [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 580]
+        [Bytes sent since last PSH flag: 580]
+    [Timestamps]
+    TCP payload (580 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     25 0.149414322    192.168.21.128        34.120.208.123        TCP      54     32872 → 443 [ACK] Seq=1537 Ack=4011 Win=62780 Len=0
+
+Frame 25: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 1537, Ack: 4011, Len: 0
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 1537    (relative sequence number)
+    Sequence number (raw): 295113518
+    [Next sequence number: 1537    (relative sequence number)]
+    Acknowledgment number: 4011    (relative ack number)
+    Acknowledgment number (raw): 888499071
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xc936 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 24]
+        [The RTT to ACK the segment was: 0.000014351 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     26 0.149845248    192.168.21.128        34.120.208.123        TLSv1.3  85     Application Data
+
+Frame 26: 85 bytes on wire (680 bits), 85 bytes captured (680 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 1537, Ack: 4011, Len: 31
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 31]
+    Sequence number: 1537    (relative sequence number)
+    Sequence number (raw): 295113518
+    [Next sequence number: 1568    (relative sequence number)]
+    Acknowledgment number: 4011    (relative ack number)
+    Acknowledgment number (raw): 888499071
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xc955 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 31]
+        [Bytes sent since last PSH flag: 31]
+    [Timestamps]
+    TCP payload (31 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     27 0.149948318    34.120.208.123        192.168.21.128        TCP      60     443 → 32872 [ACK] Seq=4011 Ack=1568 Win=64240 Len=0
+
+Frame 27: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 4011, Ack: 1568, Len: 0
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 4011    (relative sequence number)
+    Sequence number (raw): 888499071
+    [Next sequence number: 4011    (relative sequence number)]
+    Acknowledgment number: 1568    (relative ack number)
+    Acknowledgment number (raw): 295113549
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xa44b [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 26]
+        [The RTT to ACK the segment was: 0.000103070 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     28 0.179448274    34.120.208.123        192.168.21.128        TLSv1.3  85     Application Data
+
+Frame 28: 85 bytes on wire (680 bits), 85 bytes captured (680 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 4011, Ack: 1568, Len: 31
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 31]
+    Sequence number: 4011    (relative sequence number)
+    Sequence number (raw): 888499071
+    [Next sequence number: 4042    (relative sequence number)]
+    Acknowledgment number: 1568    (relative ack number)
+    Acknowledgment number (raw): 295113549
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x489b [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 31]
+        [Bytes sent since last PSH flag: 31]
+    [Timestamps]
+    TCP payload (31 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     29 0.179478040    192.168.21.128        34.120.208.123        TCP      54     32872 → 443 [ACK] Seq=1568 Ack=4042 Win=62780 Len=0
+
+Frame 29: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 1568, Ack: 4042, Len: 0
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 1568    (relative sequence number)
+    Sequence number (raw): 295113549
+    [Next sequence number: 1568    (relative sequence number)]
+    Acknowledgment number: 4042    (relative ack number)
+    Acknowledgment number (raw): 888499102
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xc936 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 28]
+        [The RTT to ACK the segment was: 0.000029766 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     30 0.388606708    34.120.208.123        192.168.21.128        TLSv1.3  505    Application Data
+
+Frame 30: 505 bytes on wire (4040 bits), 505 bytes captured (4040 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 4042, Ack: 1568, Len: 451
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 451]
+    Sequence number: 4042    (relative sequence number)
+    Sequence number (raw): 888499102
+    [Next sequence number: 4493    (relative sequence number)]
+    Acknowledgment number: 1568    (relative ack number)
+    Acknowledgment number (raw): 295113549
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x8ae9 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 451]
+        [Bytes sent since last PSH flag: 451]
+    [Timestamps]
+    TCP payload (451 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     31 0.388628945    192.168.21.128        34.120.208.123        TCP      54     32872 → 443 [ACK] Seq=1568 Ack=4493 Win=62780 Len=0
+
+Frame 31: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 1568, Ack: 4493, Len: 0
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 1568    (relative sequence number)
+    Sequence number (raw): 295113549
+    [Next sequence number: 1568    (relative sequence number)]
+    Acknowledgment number: 4493    (relative ack number)
+    Acknowledgment number (raw): 888499553
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xc936 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 30]
+        [The RTT to ACK the segment was: 0.000022237 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     32 0.388944530    192.168.21.128        34.120.208.123        TLSv1.3  93     Application Data
+
+Frame 32: 93 bytes on wire (744 bits), 93 bytes captured (744 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 1568, Ack: 4493, Len: 39
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 39]
+    Sequence number: 1568    (relative sequence number)
+    Sequence number (raw): 295113549
+    [Next sequence number: 1607    (relative sequence number)]
+    Acknowledgment number: 4493    (relative ack number)
+    Acknowledgment number (raw): 888499553
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xc95d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 39]
+        [Bytes sent since last PSH flag: 39]
+    [Timestamps]
+    TCP payload (39 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     33 0.389138112    34.120.208.123        192.168.21.128        TCP      60     443 → 32872 [ACK] Seq=4493 Ack=1607 Win=64240 Len=0
+
+Frame 33: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 4493, Ack: 1607, Len: 0
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 4493    (relative sequence number)
+    Sequence number (raw): 888499553
+    [Next sequence number: 4493    (relative sequence number)]
+    Acknowledgment number: 1607    (relative ack number)
+    Acknowledgment number (raw): 295113588
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xa242 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 32]
+        [The RTT to ACK the segment was: 0.000193582 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     34 1.599696258    192.168.21.128        192.168.21.2          DNS      86     Standard query 0x66ec AAAA i4prj.ase.au.dk OPT
+
+Frame 34: 86 bytes on wire (688 bits), 86 bytes captured (688 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 192.168.21.2
+User Datagram Protocol, Src Port: 55923, Dst Port: 53
+    Source Port: 55923
+    Destination Port: 53
+    Length: 52
+    Checksum: 0xac18 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 4]
+    [Timestamps]
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+     35 1.601085862    192.168.21.128        10.29.0.30            TCP      74     54286 → 80 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=2618840063 TSecr=0 WS=128
+
+Frame 35: 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 0, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 0    (relative sequence number)
+    Sequence number (raw): 2165734552
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 0
+    Acknowledgment number (raw): 0
+    1010 .... = Header Length: 40 bytes (10)
+    Flags: 0x002 (SYN)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    Checksum: 0xe091 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (20 bytes), Maximum segment size, SACK permitted, Timestamps, No-Operation (NOP), Window scale
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     36 1.617872305    192.168.21.2          192.168.21.128        DNS      152    Standard query response 0x66ec AAAA i4prj.ase.au.dk SOA uniinfobloxintern02.uni.au.dk OPT
+
+Frame 36: 152 bytes on wire (1216 bits), 152 bytes captured (1216 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 55923
+    Source Port: 53
+    Destination Port: 55923
+    Length: 118
+    Checksum: 0xde5b [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 4]
+    [Timestamps]
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+     37 1.618969311    10.29.0.30            192.168.21.128        TCP      60     80 → 54286 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+
+Frame 37: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 0, Ack: 1, Len: 0
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 0    (relative sequence number)
+    Sequence number (raw): 1882402642
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Acknowledgment number (raw): 2165734553
+    0110 .... = Header Length: 24 bytes (6)
+    Flags: 0x012 (SYN, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    Checksum: 0x4b2e [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (4 bytes), Maximum segment size
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 35]
+        [The RTT to ACK the segment was: 0.017883449 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     38 1.618995604    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=1 Ack=1 Win=64240 Len=0
+
+Frame 38: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 1, Ack: 1, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 2165734553
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Acknowledgment number (raw): 1882402643
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 37]
+        [The RTT to ACK the segment was: 0.000026293 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     39 1.619140899    192.168.21.128        10.29.0.30            HTTP     404    GET /I4IKN HTTP/1.1 
+
+Frame 39: 404 bytes on wire (3232 bits), 404 bytes captured (3232 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 1, Ack: 1, Len: 350
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 350]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 2165734553
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Acknowledgment number (raw): 1882402643
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe1db [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 350]
+        [Bytes sent since last PSH flag: 350]
+    [Timestamps]
+    TCP payload (350 bytes)
+Hypertext Transfer Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     40 1.620203838    10.29.0.30            192.168.21.128        TCP      60     80 → 54286 [ACK] Seq=1 Ack=351 Win=64240 Len=0
+
+Frame 40: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 1, Ack: 351, Len: 0
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 1882402643
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x618d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 39]
+        [The RTT to ACK the segment was: 0.001062939 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     41 1.641673533    10.29.0.30            192.168.21.128        TCP      1404   80 → 54286 [PSH, ACK] Seq=1 Ack=351 Win=64240 Len=1350 [TCP segment of a reassembled PDU]
+
+Frame 41: 1404 bytes on wire (11232 bits), 1404 bytes captured (11232 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 1, Ack: 351, Len: 1350
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 1350]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 1882402643
+    [Next sequence number: 1351    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x82ee [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 1350]
+        [Bytes sent since last PSH flag: 1350]
+    [Timestamps]
+    TCP payload (1350 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (1350 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     42 1.641693208    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=1351 Win=63450 Len=0
+
+Frame 42: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 1351, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 1351    (relative ack number)
+    Acknowledgment number (raw): 1882403993
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 63450
+    [Calculated window size: 63450]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 41]
+        [The RTT to ACK the segment was: 0.000019675 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     43 1.674508142    10.29.0.30            192.168.21.128        TCP      16398  80 → 54286 [PSH, ACK] Seq=1351 Ack=351 Win=64240 Len=16344 [TCP segment of a reassembled PDU]
+
+Frame 43: 16398 bytes on wire (131184 bits), 16398 bytes captured (131184 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 1351, Ack: 351, Len: 16344
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 16344]
+    Sequence number: 1351    (relative sequence number)
+    Sequence number (raw): 1882403993
+    [Next sequence number: 17695    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x2056 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 16344]
+        [Bytes sent since last PSH flag: 16344]
+    [Timestamps]
+    TCP payload (16344 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (16344 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     44 1.674542358    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=17695 Win=52560 Len=0
+
+Frame 44: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 17695, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 17695    (relative ack number)
+    Acknowledgment number (raw): 1882420337
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 52560
+    [Calculated window size: 52560]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 43]
+        [The RTT to ACK the segment was: 0.000034216 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     45 1.675650222    10.29.0.30            192.168.21.128        TCP      16398  80 → 54286 [PSH, ACK] Seq=17695 Ack=351 Win=64240 Len=16344 [TCP segment of a reassembled PDU]
+
+Frame 45: 16398 bytes on wire (131184 bits), 16398 bytes captured (131184 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 17695, Ack: 351, Len: 16344
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 16344]
+    Sequence number: 17695    (relative sequence number)
+    Sequence number (raw): 1882420337
+    [Next sequence number: 34039    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x2056 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 16344]
+        [Bytes sent since last PSH flag: 16344]
+    [Timestamps]
+    TCP payload (16344 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (16344 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     46 1.675684232    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=34039 Win=52560 Len=0
+
+Frame 46: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 34039, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 34039    (relative ack number)
+    Acknowledgment number (raw): 1882436681
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 52560
+    [Calculated window size: 52560]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 45]
+        [The RTT to ACK the segment was: 0.000034010 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     47 1.691670698    10.29.0.30            192.168.21.128        TCP      16398  80 → 54286 [PSH, ACK] Seq=34039 Ack=351 Win=64240 Len=16344 [TCP segment of a reassembled PDU]
+
+Frame 47: 16398 bytes on wire (131184 bits), 16398 bytes captured (131184 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 34039, Ack: 351, Len: 16344
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 16344]
+    Sequence number: 34039    (relative sequence number)
+    Sequence number (raw): 1882436681
+    [Next sequence number: 50383    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x2056 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 16344]
+        [Bytes sent since last PSH flag: 16344]
+    [Timestamps]
+    TCP payload (16344 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (16344 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     48 1.691699931    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=50383 Win=52560 Len=0
+
+Frame 48: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 50383, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 50383    (relative ack number)
+    Acknowledgment number (raw): 1882453025
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 52560
+    [Calculated window size: 52560]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 47]
+        [The RTT to ACK the segment was: 0.000029233 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     49 1.692949414    10.29.0.30            192.168.21.128        TCP      19872  80 → 54286 [PSH, ACK] Seq=50383 Ack=351 Win=64240 Len=19818 [TCP segment of a reassembled PDU]
+
+Frame 49: 19872 bytes on wire (158976 bits), 19872 bytes captured (158976 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 50383, Ack: 351, Len: 19818
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 19818]
+    Sequence number: 50383    (relative sequence number)
+    Sequence number (raw): 1882453025
+    [Next sequence number: 70201    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x2de8 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 19818]
+        [Bytes sent since last PSH flag: 19818]
+    [Timestamps]
+    TCP payload (19818 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (19818 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     50 1.692973658    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=70201 Win=39420 Len=0
+
+Frame 50: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 70201, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 70201    (relative ack number)
+    Acknowledgment number (raw): 1882472843
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 39420
+    [Calculated window size: 39420]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 49]
+        [The RTT to ACK the segment was: 0.000024244 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     51 1.693771278    10.29.0.30            192.168.21.128        TCP      10854  80 → 54286 [PSH, ACK] Seq=70201 Ack=351 Win=64240 Len=10800 [TCP segment of a reassembled PDU]
+
+Frame 51: 10854 bytes on wire (86832 bits), 10854 bytes captured (86832 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 70201, Ack: 351, Len: 10800
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 10800]
+    Sequence number: 70201    (relative sequence number)
+    Sequence number (raw): 1882472843
+    [Next sequence number: 81001    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x0aae [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 10800]
+        [Bytes sent since last PSH flag: 10800]
+    [Timestamps]
+    TCP payload (10800 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (10800 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     52 1.693781780    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=81001 Win=65535 Len=0
+
+Frame 52: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 81001, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 81001    (relative ack number)
+    Acknowledgment number (raw): 1882483643
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 51]
+        [The RTT to ACK the segment was: 0.000010502 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     53 1.715807609    10.29.0.30            192.168.21.128        TCP      1404   80 → 54286 [PSH, ACK] Seq=81001 Ack=351 Win=64240 Len=1350 [TCP segment of a reassembled PDU]
+
+Frame 53: 1404 bytes on wire (11232 bits), 1404 bytes captured (11232 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 81001, Ack: 351, Len: 1350
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 1350]
+    Sequence number: 81001    (relative sequence number)
+    Sequence number (raw): 1882483643
+    [Next sequence number: 82351    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x7f4b [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 1350]
+        [Bytes sent since last PSH flag: 1350]
+    [Timestamps]
+    TCP payload (1350 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (1350 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     54 1.715832629    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=82351 Win=65535 Len=0
+
+Frame 54: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 82351, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 82351    (relative ack number)
+    Acknowledgment number (raw): 1882484993
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 53]
+        [The RTT to ACK the segment was: 0.000025020 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     55 1.748299744    10.29.0.30            192.168.21.128        TCP      16398  80 → 54286 [PSH, ACK] Seq=82351 Ack=351 Win=64240 Len=16344 [TCP segment of a reassembled PDU]
+
+Frame 55: 16398 bytes on wire (131184 bits), 16398 bytes captured (131184 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 82351, Ack: 351, Len: 16344
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 16344]
+    Sequence number: 82351    (relative sequence number)
+    Sequence number (raw): 1882484993
+    [Next sequence number: 98695    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x2056 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 16344]
+        [Bytes sent since last PSH flag: 16344]
+    [Timestamps]
+    TCP payload (16344 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (16344 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     56 1.748321613    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=98695 Win=65535 Len=0
+
+Frame 56: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 98695, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 98695    (relative ack number)
+    Acknowledgment number (raw): 1882501337
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 55]
+        [The RTT to ACK the segment was: 0.000021869 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     57 1.749148084    10.29.0.30            192.168.21.128        TCP      16398  80 → 54286 [PSH, ACK] Seq=98695 Ack=351 Win=64240 Len=16344 [TCP segment of a reassembled PDU]
+
+Frame 57: 16398 bytes on wire (131184 bits), 16398 bytes captured (131184 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 98695, Ack: 351, Len: 16344
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 16344]
+    Sequence number: 98695    (relative sequence number)
+    Sequence number (raw): 1882501337
+    [Next sequence number: 115039    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x2056 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 16344]
+        [Bytes sent since last PSH flag: 16344]
+    [Timestamps]
+    TCP payload (16344 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (16344 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     58 1.749160298    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=115039 Win=65535 Len=0
+
+Frame 58: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 115039, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 115039    (relative ack number)
+    Acknowledgment number (raw): 1882517681
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 57]
+        [The RTT to ACK the segment was: 0.000012214 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     59 1.759603512    10.29.0.30            192.168.21.128        TCP      17438  80 → 54286 [PSH, ACK] Seq=115039 Ack=351 Win=64240 Len=17384 [TCP segment of a reassembled PDU]
+
+Frame 59: 17438 bytes on wire (139504 bits), 17438 bytes captured (139504 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 115039, Ack: 351, Len: 17384
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 17384]
+    Sequence number: 115039    (relative sequence number)
+    Sequence number (raw): 1882517681
+    [Next sequence number: 132423    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x2466 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 17384]
+        [Bytes sent since last PSH flag: 17384]
+    [Timestamps]
+    TCP payload (17384 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (17384 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     60 1.759627731    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=132423 Win=65535 Len=0
+
+Frame 60: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 132423, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 132423    (relative ack number)
+    Acknowledgment number (raw): 1882535065
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 59]
+        [The RTT to ACK the segment was: 0.000024219 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     61 1.761941803    10.29.0.30            192.168.21.128        TCP      21654  80 → 54286 [PSH, ACK] Seq=132423 Ack=351 Win=64240 Len=21600 [TCP segment of a reassembled PDU]
+
+Frame 61: 21654 bytes on wire (173232 bits), 21654 bytes captured (173232 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 132423, Ack: 351, Len: 21600
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 21600]
+    Sequence number: 132423    (relative sequence number)
+    Sequence number (raw): 1882535065
+    [Next sequence number: 154023    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x34de [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 21600]
+        [Bytes sent since last PSH flag: 21600]
+    [Timestamps]
+    TCP payload (21600 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (21600 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     62 1.761961645    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=154023 Win=65535 Len=0
+
+Frame 62: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 154023, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 154023    (relative ack number)
+    Acknowledgment number (raw): 1882556665
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 61]
+        [The RTT to ACK the segment was: 0.000019842 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     63 1.762309379    10.29.0.30            192.168.21.128        TCP      17604  80 → 54286 [PSH, ACK] Seq=154023 Ack=351 Win=64240 Len=17550 [TCP segment of a reassembled PDU]
+
+Frame 63: 17604 bytes on wire (140832 bits), 17604 bytes captured (140832 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 154023, Ack: 351, Len: 17550
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 17550]
+    Sequence number: 154023    (relative sequence number)
+    Sequence number (raw): 1882556665
+    [Next sequence number: 171573    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x250c [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 17550]
+        [Bytes sent since last PSH flag: 17550]
+    [Timestamps]
+    TCP payload (17550 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (17550 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     64 1.762321978    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=171573 Win=65535 Len=0
+
+Frame 64: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 171573, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 171573    (relative ack number)
+    Acknowledgment number (raw): 1882574215
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 63]
+        [The RTT to ACK the segment was: 0.000012599 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     65 1.762357558    10.29.0.30            192.168.21.128        TCP      1404   80 → 54286 [PSH, ACK] Seq=171573 Ack=351 Win=64240 Len=1350 [TCP segment of a reassembled PDU]
+
+Frame 65: 1404 bytes on wire (11232 bits), 1404 bytes captured (11232 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 171573, Ack: 351, Len: 1350
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 1350]
+    Sequence number: 171573    (relative sequence number)
+    Sequence number (raw): 1882574215
+    [Next sequence number: 172923    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xeff3 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 1350]
+        [Bytes sent since last PSH flag: 1350]
+    [Timestamps]
+    TCP payload (1350 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (1350 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     66 1.762362479    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=172923 Win=65535 Len=0
+
+Frame 66: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 172923, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 172923    (relative ack number)
+    Acknowledgment number (raw): 1882575565
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 65]
+        [The RTT to ACK the segment was: 0.000004921 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     67 1.762430222    10.29.0.30            192.168.21.128        TCP      1404   80 → 54286 [PSH, ACK] Seq=172923 Ack=351 Win=64240 Len=1350 [TCP segment of a reassembled PDU]
+
+Frame 67: 1404 bytes on wire (11232 bits), 1404 bytes captured (11232 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 172923, Ack: 351, Len: 1350
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 1350]
+    Sequence number: 172923    (relative sequence number)
+    Sequence number (raw): 1882575565
+    [Next sequence number: 174273    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xf820 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 1350]
+        [Bytes sent since last PSH flag: 1350]
+    [Timestamps]
+    TCP payload (1350 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (1350 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     68 1.762437605    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=174273 Win=65535 Len=0
+
+Frame 68: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 174273, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 174273    (relative ack number)
+    Acknowledgment number (raw): 1882576915
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 67]
+        [The RTT to ACK the segment was: 0.000007383 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     69 1.762539931    10.29.0.30            192.168.21.128        TCP      1404   80 → 54286 [PSH, ACK] Seq=174273 Ack=351 Win=64240 Len=1350 [TCP segment of a reassembled PDU]
+
+Frame 69: 1404 bytes on wire (11232 bits), 1404 bytes captured (11232 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 174273, Ack: 351, Len: 1350
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 1350]
+    Sequence number: 174273    (relative sequence number)
+    Sequence number (raw): 1882576915
+    [Next sequence number: 175623    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xb513 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 1350]
+        [Bytes sent since last PSH flag: 1350]
+    [Timestamps]
+    TCP payload (1350 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (1350 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     70 1.762545637    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=175623 Win=65535 Len=0
+
+Frame 70: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 175623, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 175623    (relative ack number)
+    Acknowledgment number (raw): 1882578265
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 69]
+        [The RTT to ACK the segment was: 0.000005706 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     71 1.763212422    10.29.0.30            192.168.21.128        TCP      1404   80 → 54286 [PSH, ACK] Seq=175623 Ack=351 Win=64240 Len=1350 [TCP segment of a reassembled PDU]
+
+Frame 71: 1404 bytes on wire (11232 bits), 1404 bytes captured (11232 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 175623, Ack: 351, Len: 1350
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 1350]
+    Sequence number: 175623    (relative sequence number)
+    Sequence number (raw): 1882578265
+    [Next sequence number: 176973    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x4f13 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 1350]
+        [Bytes sent since last PSH flag: 1350]
+    [Timestamps]
+    TCP payload (1350 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (1350 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     72 1.763231015    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=176973 Win=65535 Len=0
+
+Frame 72: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 176973, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 176973    (relative ack number)
+    Acknowledgment number (raw): 1882579615
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 71]
+        [The RTT to ACK the segment was: 0.000018593 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     73 1.764248400    10.29.0.30            192.168.21.128        TCP      9504   80 → 54286 [PSH, ACK] Seq=176973 Ack=351 Win=64240 Len=9450 [TCP segment of a reassembled PDU]
+
+Frame 73: 9504 bytes on wire (76032 bits), 9504 bytes captured (76032 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 176973, Ack: 351, Len: 9450
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 9450]
+    Sequence number: 176973    (relative sequence number)
+    Sequence number (raw): 1882579615
+    [Next sequence number: 186423    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x0568 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 9450]
+        [Bytes sent since last PSH flag: 9450]
+    [Timestamps]
+    TCP payload (9450 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (9450 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     74 1.764267107    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=186423 Win=65535 Len=0
+
+Frame 74: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 186423, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 186423    (relative ack number)
+    Acknowledgment number (raw): 1882589065
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 73]
+        [The RTT to ACK the segment was: 0.000018707 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     75 1.774308559    10.29.0.30            192.168.21.128        TCP      2754   80 → 54286 [PSH, ACK] Seq=186423 Ack=351 Win=64240 Len=2700 [TCP segment of a reassembled PDU]
+
+Frame 75: 2754 bytes on wire (22032 bits), 2754 bytes captured (22032 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 186423, Ack: 351, Len: 2700
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 2700]
+    Sequence number: 186423    (relative sequence number)
+    Sequence number (raw): 1882589065
+    [Next sequence number: 189123    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xeb09 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 2700]
+        [Bytes sent since last PSH flag: 2700]
+    [Timestamps]
+    TCP payload (2700 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (2700 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     76 1.774326174    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=189123 Win=65535 Len=0
+
+Frame 76: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 189123, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 189123    (relative ack number)
+    Acknowledgment number (raw): 1882591765
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 75]
+        [The RTT to ACK the segment was: 0.000017615 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     77 1.774501349    10.29.0.30            192.168.21.128        TCP      1404   80 → 54286 [PSH, ACK] Seq=189123 Ack=351 Win=64240 Len=1350 [TCP segment of a reassembled PDU]
+
+Frame 77: 1404 bytes on wire (11232 bits), 1404 bytes captured (11232 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 189123, Ack: 351, Len: 1350
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 1350]
+    Sequence number: 189123    (relative sequence number)
+    Sequence number (raw): 1882591765
+    [Next sequence number: 190473    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xf39d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 1350]
+        [Bytes sent since last PSH flag: 1350]
+    [Timestamps]
+    TCP payload (1350 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (1350 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     78 1.774509171    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=190473 Win=65535 Len=0
+
+Frame 78: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 190473, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 190473    (relative ack number)
+    Acknowledgment number (raw): 1882593115
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 77]
+        [The RTT to ACK the segment was: 0.000007822 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     79 1.775389912    10.29.0.30            192.168.21.128        TCP      2754   80 → 54286 [PSH, ACK] Seq=190473 Ack=351 Win=64240 Len=2700 [TCP segment of a reassembled PDU]
+
+Frame 79: 2754 bytes on wire (22032 bits), 2754 bytes captured (22032 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 190473, Ack: 351, Len: 2700
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 2700]
+    Sequence number: 190473    (relative sequence number)
+    Sequence number (raw): 1882593115
+    [Next sequence number: 193173    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xeb09 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 2700]
+        [Bytes sent since last PSH flag: 2700]
+    [Timestamps]
+    TCP payload (2700 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (2700 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     80 1.775421815    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=193173 Win=65535 Len=0
+
+Frame 80: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 193173, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 193173    (relative ack number)
+    Acknowledgment number (raw): 1882595815
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 79]
+        [The RTT to ACK the segment was: 0.000031903 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     81 1.775522569    10.29.0.30            192.168.21.128        TCP      4104   80 → 54286 [PSH, ACK] Seq=193173 Ack=351 Win=64240 Len=4050 [TCP segment of a reassembled PDU]
+
+Frame 81: 4104 bytes on wire (32832 bits), 4104 bytes captured (32832 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 193173, Ack: 351, Len: 4050
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 4050]
+    Sequence number: 193173    (relative sequence number)
+    Sequence number (raw): 1882595815
+    [Next sequence number: 197223    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xf04f [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 4050]
+        [Bytes sent since last PSH flag: 4050]
+    [Timestamps]
+    TCP payload (4050 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (4050 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     82 1.775530415    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=197223 Win=65535 Len=0
+
+Frame 82: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 197223, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 197223    (relative ack number)
+    Acknowledgment number (raw): 1882599865
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 81]
+        [The RTT to ACK the segment was: 0.000007846 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     83 1.786748665    10.29.0.30            192.168.21.128        TCP      16398  80 → 54286 [PSH, ACK] Seq=197223 Ack=351 Win=64240 Len=16344 [TCP segment of a reassembled PDU]
+
+Frame 83: 16398 bytes on wire (131184 bits), 16398 bytes captured (131184 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 197223, Ack: 351, Len: 16344
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 16344]
+    Sequence number: 197223    (relative sequence number)
+    Sequence number (raw): 1882599865
+    [Next sequence number: 213567    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x2056 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 16344]
+        [Bytes sent since last PSH flag: 16344]
+    [Timestamps]
+    TCP payload (16344 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (16344 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     84 1.786769356    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=213567 Win=65535 Len=0
+
+Frame 84: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 213567, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 213567    (relative ack number)
+    Acknowledgment number (raw): 1882616209
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 83]
+        [The RTT to ACK the segment was: 0.000020691 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     85 1.787364300    10.29.0.30            192.168.21.128        TCP      16398  80 → 54286 [PSH, ACK] Seq=213567 Ack=351 Win=64240 Len=16344 [TCP segment of a reassembled PDU]
+
+Frame 85: 16398 bytes on wire (131184 bits), 16398 bytes captured (131184 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 213567, Ack: 351, Len: 16344
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 16344]
+    Sequence number: 213567    (relative sequence number)
+    Sequence number (raw): 1882616209
+    [Next sequence number: 229911    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x2056 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 16344]
+        [Bytes sent since last PSH flag: 16344]
+    [Timestamps]
+    TCP payload (16344 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (16344 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     86 1.787378812    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=229911 Win=65535 Len=0
+
+Frame 86: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 229911, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 229911    (relative ack number)
+    Acknowledgment number (raw): 1882632553
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 85]
+        [The RTT to ACK the segment was: 0.000014512 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     87 1.788362922    10.29.0.30            192.168.21.128        TCP      16398  80 → 54286 [PSH, ACK] Seq=229911 Ack=351 Win=64240 Len=16344 [TCP segment of a reassembled PDU]
+
+Frame 87: 16398 bytes on wire (131184 bits), 16398 bytes captured (131184 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 229911, Ack: 351, Len: 16344
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 16344]
+    Sequence number: 229911    (relative sequence number)
+    Sequence number (raw): 1882632553
+    [Next sequence number: 246255    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x2056 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 16344]
+        [Bytes sent since last PSH flag: 16344]
+    [Timestamps]
+    TCP payload (16344 bytes)
+    [Reassembled PDU in frame: 89]
+    TCP segment data (16344 bytes)
+
+No.     Time           Source                Destination           Protocol Length Info
+     88 1.788394919    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=246255 Win=65535 Len=0
+
+Frame 88: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 246255, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 246255    (relative ack number)
+    Acknowledgment number (raw): 1882648897
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 87]
+        [The RTT to ACK the segment was: 0.000031997 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     89 1.800101657    10.29.0.30            192.168.21.128        HTTP     9352   HTTP/1.1 200 OK  (text/html)
+
+Frame 89: 9352 bytes on wire (74816 bits), 9352 bytes captured (74816 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 10.29.0.30, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 80, Dst Port: 54286, Seq: 246255, Ack: 351, Len: 9298
+    Source Port: 80
+    Destination Port: 54286
+    [Stream index: 1]
+    [TCP Segment Len: 9298]
+    Sequence number: 246255    (relative sequence number)
+    Sequence number (raw): 1882648897
+    [Next sequence number: 255553    (relative sequence number)]
+    Acknowledgment number: 351    (relative ack number)
+    Acknowledgment number (raw): 2165734903
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x04d0 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.017909742 seconds]
+        [Bytes in flight: 9298]
+        [Bytes sent since last PSH flag: 9298]
+    [Timestamps]
+    TCP payload (9298 bytes)
+    TCP segment data (9298 bytes)
+[25 Reassembled TCP Segments (255552 bytes): #41(1350), #43(16344), #45(16344), #47(16344), #49(19818), #51(10800), #53(1350), #55(16344), #57(16344), #59(17384), #61(21600), #63(17550), #65(1350), #67(1350), #69(1350), #71(1350), #73(9450)]
+Hypertext Transfer Protocol
+Line-based text data: text/html (10220 lines)
+
+No.     Time           Source                Destination           Protocol Length Info
+     90 1.800121190    192.168.21.128        10.29.0.30            TCP      54     54286 → 80 [ACK] Seq=351 Ack=255553 Win=65535 Len=0
+
+Frame 90: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 10.29.0.30
+Transmission Control Protocol, Src Port: 54286, Dst Port: 80, Seq: 351, Ack: 255553, Len: 0
+    Source Port: 54286
+    Destination Port: 80
+    [Stream index: 1]
+    [TCP Segment Len: 0]
+    Sequence number: 351    (relative sequence number)
+    Sequence number (raw): 2165734903
+    [Next sequence number: 351    (relative sequence number)]
+    Acknowledgment number: 255553    (relative ack number)
+    Acknowledgment number (raw): 1882658195
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 65535
+    [Calculated window size: 65535]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xe07d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 89]
+        [The RTT to ACK the segment was: 0.000019533 seconds]
+        [iRTT: 0.017909742 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     91 1.816130404    192.168.21.128        192.168.21.2          DNS      86     Standard query 0x362a AAAA i4prj.ase.au.dk OPT
+
+Frame 91: 86 bytes on wire (688 bits), 86 bytes captured (688 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 192.168.21.2
+User Datagram Protocol, Src Port: 34624, Dst Port: 53
+    Source Port: 34624
+    Destination Port: 53
+    Length: 52
+    Checksum: 0xac18 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 5]
+    [Timestamps]
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+     92 1.836238106    192.168.21.2          192.168.21.128        DNS      152    Standard query response 0x362a AAAA i4prj.ase.au.dk SOA uniinfobloxintern01.uni.au.dk OPT
+
+Frame 92: 152 bytes on wire (1216 bits), 152 bytes captured (1216 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 34624
+    Source Port: 53
+    Destination Port: 34624
+    Length: 118
+    Checksum: 0x6351 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 5]
+    [Timestamps]
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+     93 2.090997021    192.168.21.128        18.64.115.83          TCP      74     34700 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=1988350412 TSecr=0 WS=128
+
+Frame 93: 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 18.64.115.83
+Transmission Control Protocol, Src Port: 34700, Dst Port: 443, Seq: 0, Len: 0
+    Source Port: 34700
+    Destination Port: 443
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 0    (relative sequence number)
+    Sequence number (raw): 4113523157
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 0
+    Acknowledgment number (raw): 0
+    1010 .... = Header Length: 40 bytes (10)
+    Flags: 0x002 (SYN)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    Checksum: 0x5bea [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (20 bytes), Maximum segment size, SACK permitted, Timestamps, No-Operation (NOP), Window scale
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     94 2.136535996    18.64.115.83          192.168.21.128        TCP      60     443 → 34700 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1460
+
+Frame 94: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 18.64.115.83, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 34700, Seq: 0, Ack: 1, Len: 0
+    Source Port: 443
+    Destination Port: 34700
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 0    (relative sequence number)
+    Sequence number (raw): 2008047122
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Acknowledgment number (raw): 4113523158
+    0110 .... = Header Length: 24 bytes (6)
+    Flags: 0x012 (SYN, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    Checksum: 0x8b59 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (4 bytes), Maximum segment size
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 93]
+        [The RTT to ACK the segment was: 0.045538975 seconds]
+        [iRTT: 0.045567813 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     95 2.136564834    192.168.21.128        18.64.115.83          TCP      54     34700 → 443 [ACK] Seq=1 Ack=1 Win=64240 Len=0
+
+Frame 95: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 18.64.115.83
+Transmission Control Protocol, Src Port: 34700, Dst Port: 443, Seq: 1, Ack: 1, Len: 0
+    Source Port: 34700
+    Destination Port: 443
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 4113523158
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Acknowledgment number (raw): 2008047123
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x5bd6 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 94]
+        [The RTT to ACK the segment was: 0.000028838 seconds]
+        [iRTT: 0.045567813 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     96 2.138253428    192.168.21.128        18.64.115.83          TLSv1.3  571    Client Hello
+
+Frame 96: 571 bytes on wire (4568 bits), 571 bytes captured (4568 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 18.64.115.83
+Transmission Control Protocol, Src Port: 34700, Dst Port: 443, Seq: 1, Ack: 1, Len: 517
+    Source Port: 34700
+    Destination Port: 443
+    [Stream index: 2]
+    [TCP Segment Len: 517]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 4113523158
+    [Next sequence number: 518    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Acknowledgment number (raw): 2008047123
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x5ddb [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.045567813 seconds]
+        [Bytes in flight: 517]
+        [Bytes sent since last PSH flag: 517]
+    [Timestamps]
+    TCP payload (517 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     97 2.138427700    18.64.115.83          192.168.21.128        TCP      60     443 → 34700 [ACK] Seq=1 Ack=518 Win=64240 Len=0
+
+Frame 97: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 18.64.115.83, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 34700, Seq: 1, Ack: 518, Len: 0
+    Source Port: 443
+    Destination Port: 34700
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 2008047123
+    [Next sequence number: 1    (relative sequence number)]
+    Acknowledgment number: 518    (relative ack number)
+    Acknowledgment number (raw): 4113523675
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xa111 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 96]
+        [The RTT to ACK the segment was: 0.000174272 seconds]
+        [iRTT: 0.045567813 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+     98 2.182908005    18.64.115.83          192.168.21.128        TLSv1.3  2754   Server Hello, Change Cipher Spec, Application Data
+
+Frame 98: 2754 bytes on wire (22032 bits), 2754 bytes captured (22032 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 18.64.115.83, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 34700, Seq: 1, Ack: 518, Len: 2700
+    Source Port: 443
+    Destination Port: 34700
+    [Stream index: 2]
+    [TCP Segment Len: 2700]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 2008047123
+    [Next sequence number: 2701    (relative sequence number)]
+    Acknowledgment number: 518    (relative ack number)
+    Acknowledgment number (raw): 4113523675
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x6662 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.045567813 seconds]
+        [Bytes in flight: 2700]
+        [Bytes sent since last PSH flag: 2700]
+    [Timestamps]
+    TCP payload (2700 bytes)
+    TCP segment data (2535 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+     99 2.182925951    192.168.21.128        18.64.115.83          TCP      54     34700 → 443 [ACK] Seq=518 Ack=2701 Win=62780 Len=0
+
+Frame 99: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 18.64.115.83
+Transmission Control Protocol, Src Port: 34700, Dst Port: 443, Seq: 518, Ack: 2701, Len: 0
+    Source Port: 34700
+    Destination Port: 443
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 518    (relative sequence number)
+    Sequence number (raw): 4113523675
+    [Next sequence number: 518    (relative sequence number)]
+    Acknowledgment number: 2701    (relative ack number)
+    Acknowledgment number (raw): 2008049823
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x5bd6 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 98]
+        [The RTT to ACK the segment was: 0.000017946 seconds]
+        [iRTT: 0.045567813 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+    100 2.184098889    18.64.115.83          192.168.21.128        TLSv1.3  1374   Application Data, Application Data, Application Data
+
+Frame 100: 1374 bytes on wire (10992 bits), 1374 bytes captured (10992 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 18.64.115.83, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 34700, Seq: 2701, Ack: 518, Len: 1320
+    Source Port: 443
+    Destination Port: 34700
+    [Stream index: 2]
+    [TCP Segment Len: 1320]
+    Sequence number: 2701    (relative sequence number)
+    Sequence number (raw): 2008049823
+    [Next sequence number: 4021    (relative sequence number)]
+    Acknowledgment number: 518    (relative ack number)
+    Acknowledgment number (raw): 4113523675
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xd9d5 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.045567813 seconds]
+        [Bytes in flight: 1320]
+        [Bytes sent since last PSH flag: 1320]
+    [Timestamps]
+    TCP payload (1320 bytes)
+    TCP segment data (976 bytes)
+[2 Reassembled TCP Segments (3511 bytes): #98(2535), #100(976)]
+Transport Layer Security
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    101 2.184112200    192.168.21.128        18.64.115.83          TCP      54     34700 → 443 [ACK] Seq=518 Ack=4021 Win=62780 Len=0
+
+Frame 101: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 18.64.115.83
+Transmission Control Protocol, Src Port: 34700, Dst Port: 443, Seq: 518, Ack: 4021, Len: 0
+    Source Port: 34700
+    Destination Port: 443
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 518    (relative sequence number)
+    Sequence number (raw): 4113523675
+    [Next sequence number: 518    (relative sequence number)]
+    Acknowledgment number: 4021    (relative ack number)
+    Acknowledgment number (raw): 2008051143
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x5bd6 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 100]
+        [The RTT to ACK the segment was: 0.000013311 seconds]
+        [iRTT: 0.045567813 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+    102 2.186003315    192.168.21.128        18.64.115.83          TLSv1.3  118    Change Cipher Spec, Application Data
+
+Frame 102: 118 bytes on wire (944 bits), 118 bytes captured (944 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 18.64.115.83
+Transmission Control Protocol, Src Port: 34700, Dst Port: 443, Seq: 518, Ack: 4021, Len: 64
+    Source Port: 34700
+    Destination Port: 443
+    [Stream index: 2]
+    [TCP Segment Len: 64]
+    Sequence number: 518    (relative sequence number)
+    Sequence number (raw): 4113523675
+    [Next sequence number: 582    (relative sequence number)]
+    Acknowledgment number: 4021    (relative ack number)
+    Acknowledgment number (raw): 2008051143
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x5c16 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.045567813 seconds]
+        [Bytes in flight: 64]
+        [Bytes sent since last PSH flag: 64]
+    [Timestamps]
+    TCP payload (64 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    103 2.186176020    18.64.115.83          192.168.21.128        TCP      60     443 → 34700 [ACK] Seq=4021 Ack=582 Win=64240 Len=0
+
+Frame 103: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 18.64.115.83, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 34700, Seq: 4021, Ack: 582, Len: 0
+    Source Port: 443
+    Destination Port: 34700
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 4021    (relative sequence number)
+    Sequence number (raw): 2008051143
+    [Next sequence number: 4021    (relative sequence number)]
+    Acknowledgment number: 582    (relative ack number)
+    Acknowledgment number (raw): 4113523739
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x911d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 102]
+        [The RTT to ACK the segment was: 0.000172705 seconds]
+        [iRTT: 0.045567813 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+    104 2.186468211    192.168.21.128        18.64.115.83          TLSv1.3  601    Application Data
+
+Frame 104: 601 bytes on wire (4808 bits), 601 bytes captured (4808 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 18.64.115.83
+Transmission Control Protocol, Src Port: 34700, Dst Port: 443, Seq: 582, Ack: 4021, Len: 547
+    Source Port: 34700
+    Destination Port: 443
+    [Stream index: 2]
+    [TCP Segment Len: 547]
+    Sequence number: 582    (relative sequence number)
+    Sequence number (raw): 4113523739
+    [Next sequence number: 1129    (relative sequence number)]
+    Acknowledgment number: 4021    (relative ack number)
+    Acknowledgment number (raw): 2008051143
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x5df9 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.045567813 seconds]
+        [Bytes in flight: 547]
+        [Bytes sent since last PSH flag: 547]
+    [Timestamps]
+    TCP payload (547 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    105 2.186613981    18.64.115.83          192.168.21.128        TCP      60     443 → 34700 [ACK] Seq=4021 Ack=1129 Win=64240 Len=0
+
+Frame 105: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 18.64.115.83, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 34700, Seq: 4021, Ack: 1129, Len: 0
+    Source Port: 443
+    Destination Port: 34700
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 4021    (relative sequence number)
+    Sequence number (raw): 2008051143
+    [Next sequence number: 4021    (relative sequence number)]
+    Acknowledgment number: 1129    (relative ack number)
+    Acknowledgment number (raw): 4113524286
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x8efa [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 104]
+        [The RTT to ACK the segment was: 0.000145770 seconds]
+        [iRTT: 0.045567813 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+    106 2.274370451    18.64.115.83          192.168.21.128        TLSv1.3  804    Application Data
+
+Frame 106: 804 bytes on wire (6432 bits), 804 bytes captured (6432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 18.64.115.83, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 34700, Seq: 4021, Ack: 1129, Len: 750
+    Source Port: 443
+    Destination Port: 34700
+    [Stream index: 2]
+    [TCP Segment Len: 750]
+    Sequence number: 4021    (relative sequence number)
+    Sequence number (raw): 2008051143
+    [Next sequence number: 4771    (relative sequence number)]
+    Acknowledgment number: 1129    (relative ack number)
+    Acknowledgment number (raw): 4113524286
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x2eb9 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.045567813 seconds]
+        [Bytes in flight: 750]
+        [Bytes sent since last PSH flag: 750]
+    [Timestamps]
+    TCP payload (750 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    107 2.274385389    192.168.21.128        18.64.115.83          TCP      54     34700 → 443 [ACK] Seq=1129 Ack=4771 Win=62780 Len=0
+
+Frame 107: 54 bytes on wire (432 bits), 54 bytes captured (432 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 18.64.115.83
+Transmission Control Protocol, Src Port: 34700, Dst Port: 443, Seq: 1129, Ack: 4771, Len: 0
+    Source Port: 34700
+    Destination Port: 443
+    [Stream index: 2]
+    [TCP Segment Len: 0]
+    Sequence number: 1129    (relative sequence number)
+    Sequence number (raw): 4113524286
+    [Next sequence number: 1129    (relative sequence number)]
+    Acknowledgment number: 4771    (relative ack number)
+    Acknowledgment number (raw): 2008051893
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x5bd6 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 106]
+        [The RTT to ACK the segment was: 0.000014938 seconds]
+        [iRTT: 0.045567813 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+    108 2.324297130    192.168.21.128        192.168.21.2          DNS      114    Standard query 0x39de AAAA prod.ingestion-edge.prod.dataops.mozgcp.net OPT
+
+Frame 108: 114 bytes on wire (912 bits), 114 bytes captured (912 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 192.168.21.2
+User Datagram Protocol, Src Port: 37654, Dst Port: 53
+    Source Port: 37654
+    Destination Port: 53
+    Length: 80
+    Checksum: 0xac34 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 6]
+    [Timestamps]
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+    109 2.325038728    192.168.21.128        34.120.208.123        TLSv1.3  299    Application Data
+
+Frame 109: 299 bytes on wire (2392 bits), 299 bytes captured (2392 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 1607, Ack: 4493, Len: 245
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 245]
+    Sequence number: 1607    (relative sequence number)
+    Sequence number (raw): 295113588
+    [Next sequence number: 1852    (relative sequence number)]
+    Acknowledgment number: 4493    (relative ack number)
+    Acknowledgment number (raw): 888499553
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xca2b [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 245]
+        [Bytes sent since last PSH flag: 245]
+    [Timestamps]
+    TCP payload (245 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    110 2.325176412    192.168.21.128        34.120.208.123        TLSv1.3  494    Application Data
+
+Frame 110: 494 bytes on wire (3952 bits), 494 bytes captured (3952 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 1852, Ack: 4493, Len: 440
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 440]
+    Sequence number: 1852    (relative sequence number)
+    Sequence number (raw): 295113833
+    [Next sequence number: 2292    (relative sequence number)]
+    Acknowledgment number: 4493    (relative ack number)
+    Acknowledgment number (raw): 888499553
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xcaee [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 685]
+        [Bytes sent since last PSH flag: 440]
+    [Timestamps]
+    TCP payload (440 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    111 2.325244607    34.120.208.123        192.168.21.128        TCP      60     443 → 32872 [ACK] Seq=4493 Ack=1852 Win=64240 Len=0
+
+Frame 111: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 4493, Ack: 1852, Len: 0
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 4493    (relative sequence number)
+    Sequence number (raw): 888499553
+    [Next sequence number: 4493    (relative sequence number)]
+    Acknowledgment number: 1852    (relative ack number)
+    Acknowledgment number (raw): 295113833
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xa14d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 109]
+        [The RTT to ACK the segment was: 0.000205879 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+    112 2.325324019    34.120.208.123        192.168.21.128        TCP      60     443 → 32872 [ACK] Seq=4493 Ack=2292 Win=64240 Len=0
+
+Frame 112: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 4493, Ack: 2292, Len: 0
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 4493    (relative sequence number)
+    Sequence number (raw): 888499553
+    [Next sequence number: 4493    (relative sequence number)]
+    Acknowledgment number: 2292    (relative ack number)
+    Acknowledgment number (raw): 295114273
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x9f95 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 110]
+        [The RTT to ACK the segment was: 0.000147607 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
+
+No.     Time           Source                Destination           Protocol Length Info
+    113 2.348818723    192.168.21.2          192.168.21.128        DNS      207    Standard query response 0x39de AAAA prod.ingestion-edge.prod.dataops.mozgcp.net SOA ns-cloud-b1.googledomains.com OPT
+
+Frame 113: 207 bytes on wire (1656 bits), 207 bytes captured (1656 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 37654
+    Source Port: 53
+    Destination Port: 37654
+    Length: 173
+    Checksum: 0x5750 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 6]
+    [Timestamps]
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+    114 2.435639322    192.168.21.128        192.168.21.2          DNS      78     Standard query 0xdb9e A asp.net OPT
+
+Frame 114: 78 bytes on wire (624 bits), 78 bytes captured (624 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 192.168.21.2
+User Datagram Protocol, Src Port: 56278, Dst Port: 53
+    Source Port: 56278
+    Destination Port: 53
+    Length: 44
+    Checksum: 0xac10 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 7]
+    [Timestamps]
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+    115 2.435805399    192.168.21.128        192.168.21.2          DNS      78     Standard query 0x682b AAAA asp.net OPT
+
+Frame 115: 78 bytes on wire (624 bits), 78 bytes captured (624 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 192.168.21.2
+User Datagram Protocol, Src Port: 54724, Dst Port: 53
+    Source Port: 54724
+    Destination Port: 53
+    Length: 44
+    Checksum: 0xac10 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 8]
+    [Timestamps]
+Domain Name System (query)
+
+No.     Time           Source                Destination           Protocol Length Info
+    116 2.463436197    192.168.21.2          192.168.21.128        DNS      94     Standard query response 0xdb9e A asp.net A 40.118.185.161 OPT
+
+Frame 116: 94 bytes on wire (752 bits), 94 bytes captured (752 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 56278
+    Source Port: 53
+    Destination Port: 56278
+    Length: 60
+    Checksum: 0xf8f0 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 7]
+    [Timestamps]
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+    117 2.506577905    192.168.21.2          192.168.21.128        DNS      164    Standard query response 0x682b AAAA asp.net SOA ns1-04.azure-dns.com OPT
+
+Frame 117: 164 bytes on wire (1312 bits), 164 bytes captured (1312 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 192.168.21.2, Dst: 192.168.21.128
+User Datagram Protocol, Src Port: 53, Dst Port: 54724
+    Source Port: 53
+    Destination Port: 54724
+    Length: 130
+    Checksum: 0x6299 [unverified]
+    [Checksum Status: Unverified]
+    [Stream index: 8]
+    [Timestamps]
+Domain Name System (response)
+
+No.     Time           Source                Destination           Protocol Length Info
+    118 2.581563088    34.120.208.123        192.168.21.128        TLSv1.3  138    Application Data
+
+Frame 118: 138 bytes on wire (1104 bits), 138 bytes captured (1104 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 4493, Ack: 2292, Len: 84
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 84]
+    Sequence number: 4493    (relative sequence number)
+    Sequence number (raw): 888499553
+    [Next sequence number: 4577    (relative sequence number)]
+    Acknowledgment number: 2292    (relative ack number)
+    Acknowledgment number (raw): 295114273
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x12c7 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 84]
+        [Bytes sent since last PSH flag: 84]
+    [Timestamps]
+    TCP payload (84 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    119 2.582596224    192.168.21.128        34.120.208.123        TLSv1.3  93     Application Data
+
+Frame 119: 93 bytes on wire (744 bits), 93 bytes captured (744 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_8e:ef:60 (00:0c:29:8e:ef:60), Dst: VMware_fb:0a:68 (00:50:56:fb:0a:68)
+Internet Protocol Version 4, Src: 192.168.21.128, Dst: 34.120.208.123
+Transmission Control Protocol, Src Port: 32872, Dst Port: 443, Seq: 2292, Ack: 4577, Len: 39
+    Source Port: 32872
+    Destination Port: 443
+    [Stream index: 0]
+    [TCP Segment Len: 39]
+    Sequence number: 2292    (relative sequence number)
+    Sequence number (raw): 295114273
+    [Next sequence number: 2331    (relative sequence number)]
+    Acknowledgment number: 4577    (relative ack number)
+    Acknowledgment number (raw): 888499637
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 62780
+    [Calculated window size: 62780]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0xc95d [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 118]
+        [The RTT to ACK the segment was: 0.001033136 seconds]
+        [iRTT: 0.032211853 seconds]
+        [Bytes in flight: 39]
+        [Bytes sent since last PSH flag: 39]
+    [Timestamps]
+    TCP payload (39 bytes)
+Transport Layer Security
+
+No.     Time           Source                Destination           Protocol Length Info
+    120 2.582763910    34.120.208.123        192.168.21.128        TCP      60     443 → 32872 [ACK] Seq=4577 Ack=2331 Win=64240 Len=0
+
+Frame 120: 60 bytes on wire (480 bits), 60 bytes captured (480 bits) on interface eth0, id 0
+Ethernet II, Src: VMware_fb:0a:68 (00:50:56:fb:0a:68), Dst: VMware_8e:ef:60 (00:0c:29:8e:ef:60)
+Internet Protocol Version 4, Src: 34.120.208.123, Dst: 192.168.21.128
+Transmission Control Protocol, Src Port: 443, Dst Port: 32872, Seq: 4577, Ack: 2331, Len: 0
+    Source Port: 443
+    Destination Port: 32872
+    [Stream index: 0]
+    [TCP Segment Len: 0]
+    Sequence number: 4577    (relative sequence number)
+    Sequence number (raw): 888499637
+    [Next sequence number: 4577    (relative sequence number)]
+    Acknowledgment number: 2331    (relative ack number)
+    Acknowledgment number (raw): 295114312
+    0101 .... = Header Length: 20 bytes (5)
+    Flags: 0x010 (ACK)
+    Window size value: 64240
+    [Calculated window size: 64240]
+    [Window size scaling factor: -2 (no window scaling used)]
+    Checksum: 0x9f1a [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    [SEQ/ACK analysis]
+        [This is an ACK to the segment in frame: 119]
+        [The RTT to ACK the segment was: 0.000167686 seconds]
+        [iRTT: 0.032211853 seconds]
+    [Timestamps]
