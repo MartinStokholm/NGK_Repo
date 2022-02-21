@@ -1,5 +1,5 @@
 //============================================================================
-// Description : file_client in C++, Ansi-style
+// Description : file_client in C++, Ansi-style on H2
 //============================================================================
 
 #include <iostream>
@@ -16,11 +16,34 @@
 
 using namespace std;
 
+// Prottype for reciveFile Funtction
 void receiveFile(string fileName, int socketfd);
+// for printing error
+void error(const char *msg){
+	perror(msg);
+	exit(1);
+}
 
 int main(int argc, char *argv[])
 {
-	// TO DO Your own code
+	printf("starting client...\n");
+	int sockfd, portno, n;
+	portno = atoi(argv[2]);
+	sockfd = socket(AF_INET, SOCK_STREAM, 0);
+	if (sockfd < 0){
+		error("ERROR opening socket");
+	}
+	
+	server = gethostname(argv[1]);
+	if (server == NULL) {
+		error("ERROR no such host";
+	}
+	printf("Server at: %s, port: %s\n", argv[1], argv[2]);
+	printf("Connect..\n");
+	bzero((
+
+	
+	receiveFile(fileName, sockfd);
 }
 
 /**
@@ -33,8 +56,12 @@ int main(int argc, char *argv[])
  * @param fileName Det fulde filnavn incl. evt. stinavn
  * @param sockfd Stream for at skrive til/læse fra serveren
  */
+
 void receiveFile(string fileName, int sockfd)
 {
-	// TO DO Your own code
+	ifstream file_fr(fileName, std::ios::binary);  // Define input stream
+	file_fr.read((char*)Buffer, BUFSIZE);  // Automatic seek!
+	file_fr.close();
+
 }
 
