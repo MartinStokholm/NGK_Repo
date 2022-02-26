@@ -89,24 +89,24 @@ void sendFile(string fileName, long fileSize, int outToClient)
         return;
     }
     cout <<"Succesfully opened the file\n";
-    size_t BUF_SIZE = 1000;
+    size_t BUF_SIZE = 1024;
     // 1000 bytes buffer
     char sendBuffer[BUF_SIZE];
     ssize_t sent; 
     long actuallySent = 0;
     int num_loops = fileSize/BUF_SIZE;
-    cout << "Starting file transfer \n";
+    char conf[4];
+    cout << "Starting file transfer, no of loops: " << num_loops << "\n";
     for(int i = 0; i < num_loops; i++){
         sent = read(fd, &sendBuffer, BUF_SIZE);
-        usleep(500);
         actuallySent += send(outToClient, &sendBuffer, BUF_SIZE, 0);
-        cout << actuallySent << "\n";
+        read(outToClient, &conf, 4);
+        //cout << actuallySent << "\n";
     }
-    usleep(10000);
     cout << "Actually sent: " << actuallySent << "\n";
     sent = read(fd, &sendBuffer, fileSize % BUF_SIZE);
     cout << "Succesfully read " << sent << " bytes\n";
-    send(outToClient, &sendBuffer, fileSize % BUF_SIZE, 0);
+    send(outToClient, &sendBuffer, sent, 0);
     cout << "File sent\n";
 
 
