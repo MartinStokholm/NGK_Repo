@@ -12,6 +12,7 @@
 #include "iknlib.h"
 #include "TCPServer.h"
 #include <sys/poll.h>
+#include <fcntl.h>
 
 using namespace std;
 
@@ -31,7 +32,7 @@ void sendFile(string fileName, long fileSize, int outToClient);
  */
 int main(int argc, char *argv[])
 {
-    TCPServer serv(12000);
+    TCPServer serv(9000);
     // TO DO Your own code
     // Open a new request socket
     try{
@@ -48,10 +49,28 @@ int main(int argc, char *argv[])
     }
     catch(const char* msg){
         cerr << msg << endl;
+        return 1;
     }
 
-    serv.waitConnection();
-
+    char* filename = (char*)malloc(sizeof(char)*100);
+    strcpy(filename, serv.waitConnection());
+    //  If file exists and size > 0, send the file via TCP accSocket
+    long f_size = check_File_Exists(filename);
+    cout << f_size << "\n";
+    if (f_size > 0){
+        cout << "Found the file\n";
+        char* f_size_str = strcpy(f_size_str, to_string(f_size).c_str());
+        cout << f_size_str << " sent \n";
+        writeTextTCP(serv.getAccSock(), f_size_str);
+        usleep(1000);
+        sendFile(filename, f_size, serv.getAccSock());
+    }
+    else{
+        cout << "Couldn't find the file. \n";
+    }
+    cout << "Reached the end of smth...";
+    usleep(50);
+    serv.closeConnection();
 }
 
 /**
@@ -63,6 +82,34 @@ int main(int argc, char *argv[])
      */
 void sendFile(string fileName, long fileSize, int outToClient)
 {
-    // TO DO Your own code
+    // Check open close
+    int fd = open(fileName.c_str(), O_RDONLY);
+    if(fd < 1){
+        cout << "Failed to open the file...\n";
+        return;
+    }
+    cout <<"Succesfully opened the file\n";
+    size_t BUF_SIZE = 1000;
+    // 1000 bytes buffer
+    char sendBuffer[BUF_SIZE];
+    ssize_t sent; 
+    long actuallySent = 0;
+    int num_loops = fileSize/BUF_SIZE;
+    cout << "Starting file transfer \n";
+    for(int i = 0; i < num_loops; i++){
+        sent = read(fd, &sendBuffer, BUF_SIZE);
+        usleep(500);
+        actuallySent += send(outToClient, &sendBuffer, BUF_SIZE, 0);
+        cout << actuallySent << "\n";
+    }
+    usleep(10000);
+    cout << "Actually sent: " << actuallySent << "\n";
+    sent = read(fd, &sendBuffer, fileSize % BUF_SIZE);
+    cout << "Succesfully read " << sent << " bytes\n";
+    send(outToClient, &sendBuffer, fileSize % BUF_SIZE, 0);
+    cout << "File sent\n";
+
+
+    close(fd);
 }
 

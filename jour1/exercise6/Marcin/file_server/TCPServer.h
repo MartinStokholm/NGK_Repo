@@ -5,24 +5,27 @@
 #include <iostream>
 #include <string.h>
 #include <sys/stat.h>
+#include <array>
 
-using std::cout; using std::endl; using std::vector; using std::string;
+using std::cout; using std::endl; using std::vector; using std::string; using std::array;
 class TCPServer
 {
     public:
         TCPServer(int p);
 
+        int getAccSock();
         int openCSock();
         int startListen();
-        int waitConnection();
+        char* waitConnection();
+        void closeConnection();
 
 
 
     private:
         const char *extractFileName(const char *fileName);
         struct sockaddr_in address;
-        int requestSocket;
-        int accSocket;
+        int requestSocket = 0;
+        int accSocket = 0;
         int port;
         int addrLen;
         char buffer[256];
