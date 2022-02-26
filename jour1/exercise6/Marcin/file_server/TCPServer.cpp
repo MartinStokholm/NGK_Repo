@@ -6,7 +6,6 @@ TCPServer::TCPServer(int p){
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
     addrLen = sizeof(address);
-
 }
 
 int TCPServer::openCSock(){
@@ -40,13 +39,13 @@ int TCPServer::waitConnection(){
     char b;
     int valread = read(accSocket, &b, 1);
     int i = 0, len = 0;
-    printf("Msg received, %i\n", i);
+    printf("Msg received, %c\n", b);
     // Check for either null terminator or newline char
-    while(b != '\n' && b != '\0'){
+    while(b != '\0' && b != '\n' && b != 1){
         printf("Scanning...\n");
         
         buffer[i] = b;
-        printf("%c\n", b);
+        printf("%c\n", buffer[i]);
         printf("char ascii no %i\n", b);
         len++;
         i++;
@@ -54,9 +53,10 @@ int TCPServer::waitConnection(){
     }
     printf("Loop 1 : \n");
     printf("Msg length = %i \n", len);
-    buffer[len + 1] = '\0';
+    
     char msg[len + 1];
     strcpy(msg, buffer);
+    msg[len + 1] = '\0';
     
     cout << "Received message: " << msg << endl;
     cout << "Loop end\n" << endl;
@@ -68,9 +68,11 @@ int TCPServer::waitConnection(){
 
     cout << "Filename is : " << filename << endl;
 
+    close(accSocket);
 
+    close(requestSocket);
 
-    return 1;
+    return 0;
 }
 
 
