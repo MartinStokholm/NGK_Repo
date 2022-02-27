@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
     }
     cout << "Starting server... " << endl;
 
+    bool done = false;
     // Try listening (also binds)
     try{
         serv.startListen();
@@ -53,23 +54,30 @@ int main(int argc, char *argv[])
     }
 
     char* filename = (char*)malloc(sizeof(char)*100);
-    strcpy(filename, serv.waitConnection());
     //  If file exists and size > 0, send the file via TCP accSocket
-    long f_size = check_File_Exists(filename);
-    cout << f_size << "\n";
-    if (f_size > 0){
-        cout << "Found the file\n";
-        char* f_size_str = strcpy(f_size_str, to_string(f_size).c_str());
-        cout << f_size_str << " sent \n";
-        writeTextTCP(serv.getAccSock(), f_size_str);
-        usleep(1000);
-        sendFile(filename, f_size, serv.getAccSock());
+    char rejectBuf[50] = "No such file on the server!\0";
+
+    while(!false){
+        cout << "Ready to receive connection. \n";
+        strcpy(filename, serv.waitConnection());
+        cout << "Checking file name...\n";
+        long f_size = check_File_Exists(filename);
+        if (f_size > 0){
+            cout << "Found the file " << f_size << "\n";
+            char f_size_str[20];
+            strcpy(f_size_str, to_string(f_size).c_str());
+            cout << f_size_str << " sent \n";
+            writeTextTCP(serv.getAccSock(), f_size_str);
+            usleep(1000);
+            sendFile(filename, f_size, serv.getAccSock());
+        }
+        else{
+            writeTextTCP(serv.getAccSock(),rejectBuf);
+            cout << "Couldn't find the file. Closing connection\n";
+            close(serv.getAccSock());
+        }
+        usleep(500);
     }
-    else{
-        cout << "Couldn't find the file. \n";
-    }
-    cout << "Reached the end of smth...";
-    usleep(50);
     serv.closeConnection();
 }
 
@@ -101,14 +109,12 @@ void sendFile(string fileName, long fileSize, int outToClient)
         sent = read(fd, &sendBuffer, BUF_SIZE);
         actuallySent += send(outToClient, &sendBuffer, BUF_SIZE, 0);
         read(outToClient, &conf, 4);
-        //cout << actuallySent << "\n";
     }
     cout << "Actually sent: " << actuallySent << "\n";
     sent = read(fd, &sendBuffer, fileSize % BUF_SIZE);
     cout << "Succesfully read " << sent << " bytes\n";
     send(outToClient, &sendBuffer, sent, 0);
     cout << "File sent\n";
-
 
     close(fd);
 }

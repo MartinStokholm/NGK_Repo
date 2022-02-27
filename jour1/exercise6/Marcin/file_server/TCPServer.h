@@ -6,6 +6,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <array>
+#include "iknlib.h"
 
 using std::cout; using std::endl; using std::vector; using std::string; using std::array;
 class TCPServer

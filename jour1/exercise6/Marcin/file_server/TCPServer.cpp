@@ -57,18 +57,18 @@ char* TCPServer::waitConnection(){
     msg[len + 1] = '\0';
     
     cout << "Received message: " << msg << endl;
-    cout << "Loop end\n" << endl;
     
     const char* filename;
-    
     // Get filename from received msg
     filename = extractFileName(msg);
     char* this_file = (char*)malloc(strlen(filename) + 1);
     strcpy(this_file, filename);
-    cout << "Filename is : " << this_file << endl;
-    write(accSocket, this_file, strlen(filename) + 1);
-
-
+    long f_size = check_File_Exists(msg);
+    if (f_size > 0){
+        cout << "Filename is : " << this_file << endl;
+        write(accSocket, this_file, strlen(filename) + 1);
+        return buffer;
+    }
     return buffer;
 }
 
