@@ -19,7 +19,7 @@ class TCPServer
         int startListen();
         char* waitConnection();
         void closeConnection();
-
+        void clearBuffer();
 
 
     private:

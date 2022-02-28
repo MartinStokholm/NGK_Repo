@@ -35,32 +35,27 @@ int TCPServer::startListen(){
 // Waits for and reads data from acc socket until 0 termination or newline char
 // Extracts filename
 char* TCPServer::waitConnection(){
+    clearBuffer();
     accSocket = accept(requestSocket, (struct sockaddr *)&address, (socklen_t*)&addrLen);
-    char b;
-    int valread = read(accSocket, &b, 1);
-
-    int i = 0, len = 0;
-    printf("Msg received, %c\n", b);
-    // Check for either null terminator or newline char
-    while(b != '\0' && b != '\n' && b != 1){
-
-        buffer[i] = b;
-        len++;
-        i++;
-        valread = read(accSocket, &b, 1);
-    }
-    printf("Loop 1 : \n");
-    printf("Msg length = %i \n", len);
     
-    char msg[len + 1];
+    int valread;
+
+    read(accSocket, buffer, 100);
+    printf("Msg received, \n");
+    
+
+    printf("Loop 1 : \n");
+    printf("Msg length = %i \n", strlen(buffer));
+    
+    char msg[strlen(buffer)+1];
     strcpy(msg, buffer);
-    msg[len + 1] = '\0';
     
     cout << "Received message: " << msg << endl;
     
     const char* filename;
     // Get filename from received msg
     filename = extractFileName(msg);
+    cout << filename << "\n";
     char* this_file = (char*)malloc(strlen(filename) + 1);
     strcpy(this_file, filename);
     long f_size = check_File_Exists(msg);
@@ -79,6 +74,11 @@ int TCPServer::getAccSock(){
     else{
         return -1;
     }
+}
+
+void TCPServer::clearBuffer(){
+    //memset(buffer, 0, sizeof(buffer));
+    buffer[0] = 0;
 }
 
 const char* TCPServer::extractFileName(const char *fileName)

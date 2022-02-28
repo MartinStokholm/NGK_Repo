@@ -1,6 +1,6 @@
 SRC= main.cpp TCPServer.cpp iknlib.c
 OBJ= $(SRC:.cpp=.o)
-EXE= serv
+EXE= file_server
 
 $EXE: $(SRC)
 	g++ -o $(EXE) $(SRC)
