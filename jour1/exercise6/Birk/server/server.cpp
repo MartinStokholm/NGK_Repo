@@ -20,6 +20,7 @@ int set_up_server_socket(sockaddr_in &serv_addr, int portno)
 	if (sockfd < 0)
 		error("ERROR:opening socket\n");
 	
+	printf("Succesfully created server stocket\n");
 	// sets the server addrs to zeros before asignment
 	bzero((char*) &serv_addr, sizeof(serv_addr));
 	// 
@@ -32,7 +33,9 @@ int set_up_server_socket(sockaddr_in &serv_addr, int portno)
 	if (bind(sockfd,(struct sockaddr*) &serv_addr, sizeof(serv_addr)) < 0)
 		error("ERROR on binding\n");
 	//liseningo
+	printf("succesfully binded the socket to internet address\n");
 	listen(sockfd,5);
+	printf("succesfully marked the socket as passive/lisening\n");
 	return sockfd;
 }
 
@@ -40,7 +43,8 @@ int set_up_server_socket(sockaddr_in &serv_addr, int portno)
 int accept_socket(int sockfd, struct sockaddr* cli_addr, socklen_t *clilen)
 {
 	int client_sockfd; 
-
+	printf("blocked until connection to client is established\n");
+			
 	client_sockfd = accept(sockfd, cli_addr, clilen);
 	if (client_sockfd < 0)
 		error("ERROR: on accept\n");

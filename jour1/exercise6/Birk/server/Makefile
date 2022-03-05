@@ -2,7 +2,7 @@ SOURCES=server.cpp
 
 EXE=server
 CXXFLAGS=-I. -g
-LDFLAGS=-lncurses 
+LDFLAGS=
 GOOGLETEST_LDFLAGS=-lgtest_main -lgtest -lpthread
 
 ARCH?=x86-64

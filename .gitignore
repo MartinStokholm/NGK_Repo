@@ -9,3 +9,7 @@
 *.o 
 *.d 
 
+
+# vim files 
+*.swp
+*.swo
