@@ -64,6 +64,7 @@ int main(int argc, char *argv[])
 	printf("\n%s\n",buffer);
 
     printf("Closing client...\n\n");
+	
 	close(sockfd);
 	return 0;
 }
