@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
 
 	// check that params are passed on run
 	if (argc < 2){
-		fprintf(stderr, "Error, no port provided, please enter a port number");
+		fprintf(stderr, "Error, no port provided, please enter a port number\n");
 		exit(1);				
 	
 	}
@@ -70,7 +70,7 @@ int main(int argc, char *argv[]){
 	clilen = sizeof(cli_addr); 
 	newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
 	if (newsockfd < 0){
-		error("Error could not accpet");
+		error("Error could not accept\n");
 	}
 	// at this point client should be connected
 	bzero(buffer, MAXLINE);
