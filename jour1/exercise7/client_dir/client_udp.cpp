@@ -18,7 +18,6 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
-#include "iknlib.h"
 
 #define MAXLINE 256
 
@@ -47,7 +46,7 @@ int main(int argc, char *argv[])
 	}
 	server = gethostbyname(argv[1]);
 	
-	if (server == NULL {
+	if (server == NULL) {
 		fprintf(stderr, "Failed to find host\n");
 		exit(0);		
 	}
@@ -57,7 +56,7 @@ int main(int argc, char *argv[])
 	serv_addr.sin_family = AF_INET;
 
 	bcopy((char *)server->h_addr, 
-		 ((char *)&serv_addr.sin_addr.s_addr, 
+		 (char *)&serv_addr.sin_addr.s_addr, 
 		  server->h_length);
 	serv_addr.sin_port = htons(portno);
 	if (connect(sockfd,(struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0){
