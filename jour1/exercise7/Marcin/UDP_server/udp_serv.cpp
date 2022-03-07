@@ -7,7 +7,7 @@ udp_serv::udp_serv(){
         cout << "Error setting up the server\n";
         exit(EXIT_FAILURE);
     }
-    
+
     run_serv();
 };
 
@@ -23,6 +23,9 @@ int udp_serv::run_serv(){
         if(recvBytes < 0){
             perror("error reading recv\n");
             done = true;
+        }
+        else{
+            // Do something
         }
     }
     return 0;
