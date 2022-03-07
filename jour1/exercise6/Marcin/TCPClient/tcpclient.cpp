@@ -7,21 +7,36 @@
 #include <iostream>
 #include <fcntl.h>
 
+
 using std::cout;
 static int PORT = 9000;
 static int BUF_SIZE = 1024;
 
 int downloadFile(int fd, char* filename, int fileSize, char* buffer);
 
-// Available files: /home/lorn.mp3
-int main(void){
+// Attempts to download a file from a specified server
+// Available files: /home/ase/Storage/lorn.mp3 , /home/ase/Storage/furi_ost.zip 
+int main(int argc, char* argv[]){
     // Type in the file name to download with PATH
-    printf("Enter file name: \n");
-    char input[100];
-    fgets(input, 99, stdin);
+    if(argc < 3){
+        cout << "Incorrect number of arguments.\n";
+        cout << "Usage: file_client <serv_ip> <path_to_file>\n";
+        return 0;
+    }
+    // Try assign ip and input to user args
+    char *IP = (char*)malloc(sizeof(char)*80);
+    char *input = (char*)malloc(sizeof(char)*80);
+    try{
+        strcpy(IP, argv[1]);
+        strcpy(input, argv[2]);
+    }
+    catch(std::overflow_error err){
+        cout << "Buffer overflow: too many characters in argument \n";
+        return -1;
+    }
+
     char serverMsg[50];
     int sock = 0, valread;
-    struct sockaddr_in serv_addr;
     const char* msg;
     char buffer[BUF_SIZE] = {0};
 
@@ -30,13 +45,14 @@ int main(void){
         printf("Could not create socket\n");
         return -1;
     }
-    printf("Socket created\n");
 
     // Setup the socket data 
+    struct sockaddr_in serv_addr;
     serv_addr.sin_family = AF_INET;     // Ip4
     serv_addr.sin_port = htons(PORT);   // Port 9000
+
     // Convert address to ip4  
-    if(inet_pton(AF_INET, "10.0.0.1", &serv_addr.sin_addr) <= 0){
+    if(inet_pton(AF_INET, IP, &serv_addr.sin_addr) <= 0){
         printf("Invalid address/Not supported \n");
         return -1;
     }
@@ -48,9 +64,13 @@ int main(void){
         return -1;
     }
     // Send file name to the server. +1 for null termination 
-    send(sock, input, strlen(input) + 1, 0);
-    // Read back the filename without path. Used to name the downloaded file
+    printf("Requesting : %s, len %ld \n", input, strlen(input));
+    input[strlen(input) +1] = '\0'; 
+    int bytes = send(sock, input, strlen(input) + 1, 0);
+    printf("Amount of bytes sent = %i\n", bytes);
     
+    // Read back the filename without path. Used to name the downloaded file
+    // If file doesn't exist, print error msg and quit
     valread = read(sock, buffer, BUF_SIZE);
     char comp_str[29] = "No such file on the server!";
 
@@ -65,10 +85,10 @@ int main(void){
     strcpy(name, buffer);
     
     int fileSize;
-    char sizeC[20];
-    valread = read(sock, sizeC, (size_t) 20);
-    printf("File size = %s bytes\n", sizeC);
-    fileSize = atoi(sizeC);
+    char sizeC[20];     // Could have used buffer here instead??
+    valread = read(sock, buffer, (size_t) 20);
+    printf("File size = %s bytes\n", buffer);
+    fileSize = atoi(buffer);
     downloadFile(sock, name, fileSize, buffer);
     return 0;
 }

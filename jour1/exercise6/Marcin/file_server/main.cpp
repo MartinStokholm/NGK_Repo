@@ -72,6 +72,8 @@ int main(int argc, char *argv[])
             sendFile(filename, f_size, serv.getAccSock());
         }
         else{
+            // TODO: Check storage directory!
+            // f_size = check_File_Exists("/home/ase/Storage" + filename);
             writeTextTCP(serv.getAccSock(),rejectBuf);
             cout << "Couldn't find the file. Closing connection\n";
             close(serv.getAccSock());
