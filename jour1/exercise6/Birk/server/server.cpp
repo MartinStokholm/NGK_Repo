@@ -22,13 +22,16 @@ int set_up_server_socket(sockaddr_in &serv_addr, int portno)
 	
 	printf("Succesfully created server stocket\n");
 	// sets the server addrs to zeros before asignment
+
 	bzero((char*) &serv_addr, sizeof(serv_addr));
 	// 
 	serv_addr.sin_family  = AF_INET;
+
 	// check all perrifials 
 	serv_addr.sin_addr.s_addr = INADDR_ANY;
 	//
 	serv_addr.sin_port = htons(portno);
+
 	// binding 
 	if (bind(sockfd,(struct sockaddr*) &serv_addr, sizeof(serv_addr)) < 0)
 		error("ERROR on binding\n");
