@@ -22,9 +22,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
-#include "iknlib.h"
 
-#define PORT_NO 9000
 #define MAXLINE 256
 
 using namespace std;
@@ -36,9 +34,9 @@ void error(char *msg){
 
 int main(int argc, char *argv[]){
 
-	int sockfd, newsockfd, portno, clilen, n;
+	int sockfd, newsockfd, portno, n;
 	char buffer[MAXLINE];
-
+	socklen_t clilen;
 	struct sockaddr_in serv_addr, cli_addr;
 
 	// check that params are passed on run
@@ -54,13 +52,13 @@ int main(int argc, char *argv[]){
 	
 	}
 	// set all zeroes in server buffer
-	bzero((char *) &serv_addr, sizeof(serv_addr);
+	bzero((char *) &serv_addr, sizeof(serv_addr));
 	
 	// pass in the port number, from argument for server to listen on
 	portno = atoi(argv[1]); // atoi converts from string to int
-	server_addr.sin_family = AF_INET;
-	server_addr.sin_port = htons(portno);
-	server_addr.sin_addr.s_addr = INADDR_ANY;
+	serv_addr.sin_family = AF_INET;
+	serv_addr.sin_port = htons(portno);
+	serv_addr.sin_addr.s_addr = INADDR_ANY;
 	
 	// bind the socket 
 	if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0 ){
@@ -85,8 +83,7 @@ int main(int argc, char *argv[]){
 	printf("Message from client: %s", buffer);
 
 	// write response to client
-	string response = "Server got the message";
-	n = write(newsockfd, response, sizoof(response)); 
+	n = write(newsockfd, "Server ok", sizeof("Server ok")); 
 	if (n < 0) {
 		error("Failed to  write to socket");
 	}
