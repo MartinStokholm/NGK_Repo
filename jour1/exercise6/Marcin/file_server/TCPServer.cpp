@@ -42,9 +42,7 @@ char* TCPServer::waitConnection(){
 
     read(accSocket, buffer, 100);
     printf("Msg received, \n");
-    
 
-    printf("Loop 1 : \n");
     printf("Msg length = %i \n", strlen(buffer));
     
     char msg[strlen(buffer)+1];
@@ -53,7 +51,7 @@ char* TCPServer::waitConnection(){
     cout << "Received message: " << msg << endl;
     
     const char* filename;
-    // Get filename from received msg
+    // Extract filename from received msg. If it exists, send it back to Client
     filename = extractFileName(msg);
     cout << filename << "\n";
     char* this_file = (char*)malloc(strlen(filename) + 1);
@@ -62,7 +60,6 @@ char* TCPServer::waitConnection(){
     if (f_size > 0){
         cout << "Filename is : " << this_file << endl;
         write(accSocket, this_file, strlen(filename) + 1);
-        return buffer;
     }
     return buffer;
 }
@@ -78,7 +75,7 @@ int TCPServer::getAccSock(){
 
 void TCPServer::clearBuffer(){
     //memset(buffer, 0, sizeof(buffer));
-    buffer[0] = 0;
+    buffer[0] = 0;   // Apparently this works just as well
 }
 
 const char* TCPServer::extractFileName(const char *fileName)

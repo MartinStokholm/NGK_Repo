@@ -7,6 +7,8 @@
 #include <iostream>
 #include <netdb.h>
 #include <arpa/inet.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 using std::cout;
 
@@ -14,11 +16,14 @@ class udp_serv{
 public:
     udp_serv();
     int run_serv();
+    
 private:
     int setup_serv();
-
-    // I/O buffer struct
-    iovec iov[1];
+    int cpyUptime();
+    int cpyLoadAvg();
+    bool checkCmd();
+    void clearBufs();
+    
     char recvBuf[100];
     char sendBuf[100];
     sockaddr_in sthis;
@@ -26,5 +31,6 @@ private:
     socklen_t sother_len;
     int port = 9000;
     int udp_socket;
+    const char* accCmd[4] = {"U", "u", "L", "l"};
     
 };
