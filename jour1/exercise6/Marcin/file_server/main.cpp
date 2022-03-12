@@ -33,7 +33,6 @@ void sendFile(string fileName, long fileSize, int outToClient);
 int main(int argc, char *argv[])
 {
     TCPServer serv(9000);
-    // TO DO Your own code
     // Open a new request socket
     try{
         serv.openCSock();
@@ -66,6 +65,7 @@ int main(int argc, char *argv[])
             cout << "Found the file " << f_size << "\n";
             char f_size_str[20];
             strcpy(f_size_str, to_string(f_size).c_str());
+            
             cout << f_size_str << " sent \n";
             writeTextTCP(serv.getAccSock(), f_size_str);
             usleep(1000);

@@ -1,6 +1,7 @@
 #include <sys/socket.h>
 #include <vector>
 #include <netinet/in.h>
+#include <arpa/inet.h>
 #include <unistd.h>
 #include <iostream>
 #include <string.h>
@@ -25,6 +26,7 @@ class TCPServer
     private:
         const char *extractFileName(const char *fileName);
         struct sockaddr_in address;
+        struct sockaddr_in thisAddress;
         int requestSocket = 0;
         int accSocket = 0;
         int port;
