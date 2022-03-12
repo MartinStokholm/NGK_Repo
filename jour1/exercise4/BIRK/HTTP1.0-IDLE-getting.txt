@@ -1,0 +1,164 @@
+No.     Time           Source                Destination           Protocol Length Info
+     16 3.242932398    10.0.0.2              10.0.0.1              TCP      74     36744 → 80 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=1871154045 TSecr=0 WS=128
+
+Frame 16: 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_51:85:63 (00:1c:42:51:85:63), Dst: Parallel_a7:d8:83 (00:1c:42:a7:d8:83)
+Internet Protocol Version 4, Src: 10.0.0.2, Dst: 10.0.0.1
+Transmission Control Protocol, Src Port: 36744, Dst Port: 80, Seq: 0, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     17 3.242960021    10.0.0.1              10.0.0.2              TCP      74     80 → 36744 [SYN, ACK] Seq=0 Ack=1 Win=65160 Len=0 MSS=1460 SACK_PERM=1 TSval=313594699 TSecr=1871154045 WS=128
+
+Frame 17: 74 bytes on wire (592 bits), 74 bytes captured (592 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_a7:d8:83 (00:1c:42:a7:d8:83), Dst: Parallel_51:85:63 (00:1c:42:51:85:63)
+Internet Protocol Version 4, Src: 10.0.0.1, Dst: 10.0.0.2
+Transmission Control Protocol, Src Port: 80, Dst Port: 36744, Seq: 0, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     18 3.243205239    10.0.0.2              10.0.0.1              TCP      66     36744 → 80 [ACK] Seq=1 Ack=1 Win=64256 Len=0 TSval=1871154046 TSecr=313594699
+
+Frame 18: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_51:85:63 (00:1c:42:51:85:63), Dst: Parallel_a7:d8:83 (00:1c:42:a7:d8:83)
+Internet Protocol Version 4, Src: 10.0.0.2, Dst: 10.0.0.1
+Transmission Control Protocol, Src Port: 36744, Dst Port: 80, Seq: 1, Ack: 1, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     46 13.353596113   10.0.0.2              10.0.0.1              TCP      82     36744 → 80 [PSH, ACK] Seq=1 Ack=1 Win=64256 Len=16 TSval=1871164156 TSecr=313594699 [TCP segment of a reassembled PDU]
+
+Frame 46: 82 bytes on wire (656 bits), 82 bytes captured (656 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_51:85:63 (00:1c:42:51:85:63), Dst: Parallel_a7:d8:83 (00:1c:42:a7:d8:83)
+Internet Protocol Version 4, Src: 10.0.0.2, Dst: 10.0.0.1
+Transmission Control Protocol, Src Port: 36744, Dst Port: 80, Seq: 1, Ack: 1, Len: 16
+
+No.     Time           Source                Destination           Protocol Length Info
+     47 13.353632645   10.0.0.1              10.0.0.2              TCP      66     80 → 36744 [ACK] Seq=1 Ack=17 Win=65152 Len=0 TSval=313604809 TSecr=1871164156
+
+Frame 47: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_a7:d8:83 (00:1c:42:a7:d8:83), Dst: Parallel_51:85:63 (00:1c:42:51:85:63)
+Internet Protocol Version 4, Src: 10.0.0.1, Dst: 10.0.0.2
+Transmission Control Protocol, Src Port: 80, Dst Port: 36744, Seq: 1, Ack: 17, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     57 18.413083289   10.0.0.2              10.0.0.1              TCP      82     36744 → 80 [PSH, ACK] Seq=17 Ack=1 Win=64256 Len=16 TSval=1871169216 TSecr=313604809 [TCP segment of a reassembled PDU]
+
+Frame 57: 82 bytes on wire (656 bits), 82 bytes captured (656 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_51:85:63 (00:1c:42:51:85:63), Dst: Parallel_a7:d8:83 (00:1c:42:a7:d8:83)
+Internet Protocol Version 4, Src: 10.0.0.2, Dst: 10.0.0.1
+Transmission Control Protocol, Src Port: 36744, Dst Port: 80, Seq: 17, Ack: 1, Len: 16
+
+No.     Time           Source                Destination           Protocol Length Info
+     58 18.413105605   10.0.0.1              10.0.0.2              TCP      66     80 → 36744 [ACK] Seq=1 Ack=33 Win=65152 Len=0 TSval=313609869 TSecr=1871169216
+
+Frame 58: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_a7:d8:83 (00:1c:42:a7:d8:83), Dst: Parallel_51:85:63 (00:1c:42:51:85:63)
+Internet Protocol Version 4, Src: 10.0.0.1, Dst: 10.0.0.2
+Transmission Control Protocol, Src Port: 80, Dst Port: 36744, Seq: 1, Ack: 33, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     61 19.564063730   10.0.0.2              10.0.0.1              HTTP     68     GET / HTTP/1.0 
+
+Frame 61: 68 bytes on wire (544 bits), 68 bytes captured (544 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_51:85:63 (00:1c:42:51:85:63), Dst: Parallel_a7:d8:83 (00:1c:42:a7:d8:83)
+Internet Protocol Version 4, Src: 10.0.0.2, Dst: 10.0.0.1
+Transmission Control Protocol, Src Port: 36744, Dst Port: 80, Seq: 33, Ack: 1, Len: 2
+[3 Reassembled TCP Segments (34 bytes): #46(16), #57(16), #61(2)]
+Hypertext Transfer Protocol
+
+No.     Time           Source                Destination           Protocol Length Info
+     62 19.564080406   10.0.0.1              10.0.0.2              TCP      66     80 → 36744 [ACK] Seq=1 Ack=35 Win=65152 Len=0 TSval=313611020 TSecr=1871170367
+
+Frame 62: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_a7:d8:83 (00:1c:42:a7:d8:83), Dst: Parallel_51:85:63 (00:1c:42:51:85:63)
+Internet Protocol Version 4, Src: 10.0.0.1, Dst: 10.0.0.2
+Transmission Control Protocol, Src Port: 80, Dst Port: 36744, Seq: 1, Ack: 35, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     63 19.564276223   10.0.0.1              10.0.0.2              TCP      2962   80 → 36744 [PSH, ACK] Seq=1 Ack=35 Win=65152 Len=2896 TSval=313611020 TSecr=1871170367 [TCP segment of a reassembled PDU]
+
+Frame 63: 2962 bytes on wire (23696 bits), 2962 bytes captured (23696 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_a7:d8:83 (00:1c:42:a7:d8:83), Dst: Parallel_51:85:63 (00:1c:42:51:85:63)
+Internet Protocol Version 4, Src: 10.0.0.1, Dst: 10.0.0.2
+Transmission Control Protocol, Src Port: 80, Dst Port: 36744, Seq: 1, Ack: 35, Len: 2896
+
+No.     Time           Source                Destination           Protocol Length Info
+     64 19.564300455   10.0.0.1              10.0.0.2              TCP      2962   80 → 36744 [PSH, ACK] Seq=2897 Ack=35 Win=65152 Len=2896 TSval=313611020 TSecr=1871170367 [TCP segment of a reassembled PDU]
+
+Frame 64: 2962 bytes on wire (23696 bits), 2962 bytes captured (23696 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_a7:d8:83 (00:1c:42:a7:d8:83), Dst: Parallel_51:85:63 (00:1c:42:51:85:63)
+Internet Protocol Version 4, Src: 10.0.0.1, Dst: 10.0.0.2
+Transmission Control Protocol, Src Port: 80, Dst Port: 36744, Seq: 2897, Ack: 35, Len: 2896
+
+No.     Time           Source                Destination           Protocol Length Info
+     65 19.564369838   10.0.0.1              10.0.0.2              TCP      2962   80 → 36744 [PSH, ACK] Seq=5793 Ack=35 Win=65152 Len=2896 TSval=313611020 TSecr=1871170367 [TCP segment of a reassembled PDU]
+
+Frame 65: 2962 bytes on wire (23696 bits), 2962 bytes captured (23696 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_a7:d8:83 (00:1c:42:a7:d8:83), Dst: Parallel_51:85:63 (00:1c:42:51:85:63)
+Internet Protocol Version 4, Src: 10.0.0.1, Dst: 10.0.0.2
+Transmission Control Protocol, Src Port: 80, Dst Port: 36744, Seq: 5793, Ack: 35, Len: 2896
+
+No.     Time           Source                Destination           Protocol Length Info
+     66 19.564392873   10.0.0.1              10.0.0.2              HTTP     2570   HTTP/1.1 200 OK  (text/html)
+
+Frame 66: 2570 bytes on wire (20560 bits), 2570 bytes captured (20560 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_a7:d8:83 (00:1c:42:a7:d8:83), Dst: Parallel_51:85:63 (00:1c:42:51:85:63)
+Internet Protocol Version 4, Src: 10.0.0.1, Dst: 10.0.0.2
+Transmission Control Protocol, Src Port: 80, Dst Port: 36744, Seq: 8689, Ack: 35, Len: 2504
+[4 Reassembled TCP Segments (11192 bytes): #63(2896), #64(2896), #65(2896), #66(2504)]
+Hypertext Transfer Protocol
+Line-based text data: text/html (375 lines)
+
+No.     Time           Source                Destination           Protocol Length Info
+     67 19.564518744   10.0.0.1              10.0.0.2              TCP      66     80 → 36744 [FIN, ACK] Seq=11193 Ack=35 Win=65152 Len=0 TSval=313611020 TSecr=1871170367
+
+Frame 67: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_a7:d8:83 (00:1c:42:a7:d8:83), Dst: Parallel_51:85:63 (00:1c:42:51:85:63)
+Internet Protocol Version 4, Src: 10.0.0.1, Dst: 10.0.0.2
+Transmission Control Protocol, Src Port: 80, Dst Port: 36744, Seq: 11193, Ack: 35, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     68 19.564559132   10.0.0.2              10.0.0.1              TCP      66     36744 → 80 [ACK] Seq=35 Ack=2897 Win=63488 Len=0 TSval=1871170367 TSecr=313611020
+
+Frame 68: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_51:85:63 (00:1c:42:51:85:63), Dst: Parallel_a7:d8:83 (00:1c:42:a7:d8:83)
+Internet Protocol Version 4, Src: 10.0.0.2, Dst: 10.0.0.1
+Transmission Control Protocol, Src Port: 36744, Dst Port: 80, Seq: 35, Ack: 2897, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     69 19.564559167   10.0.0.2              10.0.0.1              TCP      66     36744 → 80 [ACK] Seq=35 Ack=5793 Win=61568 Len=0 TSval=1871170367 TSecr=313611020
+
+Frame 69: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_51:85:63 (00:1c:42:51:85:63), Dst: Parallel_a7:d8:83 (00:1c:42:a7:d8:83)
+Internet Protocol Version 4, Src: 10.0.0.2, Dst: 10.0.0.1
+Transmission Control Protocol, Src Port: 36744, Dst Port: 80, Seq: 35, Ack: 5793, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     70 19.564724576   10.0.0.2              10.0.0.1              TCP      66     36744 → 80 [ACK] Seq=35 Ack=8689 Win=63488 Len=0 TSval=1871170367 TSecr=313611020
+
+Frame 70: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_51:85:63 (00:1c:42:51:85:63), Dst: Parallel_a7:d8:83 (00:1c:42:a7:d8:83)
+Internet Protocol Version 4, Src: 10.0.0.2, Dst: 10.0.0.1
+Transmission Control Protocol, Src Port: 36744, Dst Port: 80, Seq: 35, Ack: 8689, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     71 19.564724641   10.0.0.2              10.0.0.1              TCP      66     36744 → 80 [ACK] Seq=35 Ack=11193 Win=61568 Len=0 TSval=1871170367 TSecr=313611020
+
+Frame 71: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_51:85:63 (00:1c:42:51:85:63), Dst: Parallel_a7:d8:83 (00:1c:42:a7:d8:83)
+Internet Protocol Version 4, Src: 10.0.0.2, Dst: 10.0.0.1
+Transmission Control Protocol, Src Port: 36744, Dst Port: 80, Seq: 35, Ack: 11193, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     72 19.565069600   10.0.0.2              10.0.0.1              TCP      66     36744 → 80 [FIN, ACK] Seq=35 Ack=11194 Win=64128 Len=0 TSval=1871170368 TSecr=313611020
+
+Frame 72: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_51:85:63 (00:1c:42:51:85:63), Dst: Parallel_a7:d8:83 (00:1c:42:a7:d8:83)
+Internet Protocol Version 4, Src: 10.0.0.2, Dst: 10.0.0.1
+Transmission Control Protocol, Src Port: 36744, Dst Port: 80, Seq: 35, Ack: 11194, Len: 0
+
+No.     Time           Source                Destination           Protocol Length Info
+     73 19.565093189   10.0.0.1              10.0.0.2              TCP      66     80 → 36744 [ACK] Seq=11194 Ack=36 Win=65152 Len=0 TSval=313611021 TSecr=1871170368
+
+Frame 73: 66 bytes on wire (528 bits), 66 bytes captured (528 bits) on interface eth1, id 0
+Ethernet II, Src: Parallel_a7:d8:83 (00:1c:42:a7:d8:83), Dst: Parallel_51:85:63 (00:1c:42:51:85:63)
+Internet Protocol Version 4, Src: 10.0.0.1, Dst: 10.0.0.2
+Transmission Control Protocol, Src Port: 80, Dst Port: 36744, Seq: 11194, Ack: 36, Len: 0

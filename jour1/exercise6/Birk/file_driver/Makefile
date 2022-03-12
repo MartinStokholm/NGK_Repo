@@ -1,6 +1,6 @@
-SOURCES=main.cpp
+SOURCES=server.cpp
 
-EXE=prog
+EXE=server
 CXXFLAGS=-I. -g
 LDFLAGS=
 GOOGLETEST_LDFLAGS=-lgtest_main -lgtest -lpthread
@@ -91,7 +91,7 @@ tidy: $(SOURCES:.cpp=.tidy)
 
 # ---- functions ---- 
 
-Print_Titel=@echo "$(CYAN)--$1--$(NO_COLOUR)"
+Print_Titel=@echo "$(BLUE)--$1--$(NO_COLOUR)"
 Print_Command=@echo "$(BLUE)$1$(RED)"
 Change_Colour=@printf "$1"
 
