@@ -15,6 +15,7 @@
 // connect to server
 // send msg to server 
 // read answer from server. 
+
 void error(const char *msg)
 {
     perror(msg);
@@ -72,6 +73,11 @@ void connect_client_to_server(	int sockfd,
 
 	printf("connected to server!\n");
 	return;
+}        
+void close_connection_to_server(int sockfd)
+{
+	close(sockfd);
+
 }
 void write_message_to_server(int sockfd, char * buffer, int buf_len)
 {
@@ -96,8 +102,6 @@ int main(int argc, char *argv[])
 {
     struct sockaddr_in serv_addr;
     
-    char buffer[BUFFER_LENGTH];
-    
     // handling user input:
     if (argc < 3)
         fprintf(stderr, "usage %s <hostname> <port>", argv[0]);
@@ -113,18 +117,16 @@ int main(int argc, char *argv[])
     int msg_max_len = 255;
     char msg_from_server[BUFFER_LENGTH];
 
-    do { //
-        char buffer[BUFFER_LENGTH];
-        printf("enter message to be send to server: %s", hostname);
-        fgets(buffer, BUFFER_LENGTH, stdin);
+	char buffer[BUFFER_LENGTH];
 
-        write_message_to_server(sockfd, buffer, strlen(buffer));
-        read_message_from_server(sockfd, msg_from_server, msg_max_len);
-		printf(msg_from_server);  
-        printf("Do you wish to send another message?(y/n): ");
-        fgets(answer,2,stdin);
-    } while (answer[0] != 'n');
-    
+	printf("enter message to be send to server: %s\n> ", hostname);
+	fgets(buffer, BUFFER_LENGTH, stdin);
+
+	write_message_to_server(sockfd, buffer, strlen(buffer));
+	read_message_from_server(sockfd, msg_from_server, msg_max_len);
+	printf(msg_from_server);  
+
+    close_connection_to_server(sockfd);        
 
 
 
