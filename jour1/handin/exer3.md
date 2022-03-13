@@ -1,3 +1,4 @@
+
 # exersice 3
 ## question 1
 the time from a ping between H1 and H2 is messure with the command
