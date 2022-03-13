@@ -3,7 +3,7 @@
 
 ## question 1
 
-the time from a ping between H1 and H2 is messure with the command
+The time from a ping between H1 and H2 is measured with the command
 > ping -c 1 10.0.0.2 on H1 to ping H2
 ```
 $ ping -c 1 10.0.0.2
@@ -20,7 +20,7 @@ the time is 0.324ms
 ## qustion 2 
 
 
-The same approces is used, as above, this time with the command
+The same aproach is used, as above, this time with the command
 > ping -c 10 10.0.0.2
 ```
 ase@ubuntu:~$ ping -c 10 10.0.02
@@ -50,7 +50,7 @@ rtt min/avg/max/mdev = 0.428/0.837/1.105/0.229 ms
 
 
 Lets now ping something on the world wide web. 
-And our target will be non other then one of the modi dicks of the internet. 
+And our target will be non other then one of the moby dicks of the internet. 
 
 google.com
 
@@ -64,11 +64,11 @@ PING www.google.com (142.250.179.164) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 29.685/29.685/29.685/0.000 ms
 ```
-The ping took 29.685 ms, which is alot slower then when we tester the nairbours H1 and H2. 
+The ping took 29.685 ms, which is alot slower then when we tested the neighbours H1 and H2. 
 
 ## qustion 4 
 
-Now lets check the consistensy of google with 10 consektive pings
+Now lets check the consistensy of google with 10 consecutive pings
 ping -c 10 www.google.com is called
 
 ```
@@ -114,7 +114,7 @@ It is then confirmed that tv2.dk does not liked to be pinged.
 
 ### 5.2 
 
-Lets now mesure a pingeble site, but with wireshark instand. 
+Lets now measure a pingable site, but with wireshark instead. 
 First, lets find our own IP with host -H
 ```
 ase@ubuntu:~$ hostname -I
@@ -133,7 +133,7 @@ the time between them is
 $$ [SYC, ACK] - [ACK] = 0.701 - 0.698 = 0.002705304 $$
 
 
- The 3 way handskae is allso cool, and illustatrede with the SYN from us, the SYN, ACK from AU, and our ACK to AU. 
+ The three way handshake is also cool, and illustrated with the SYN from us, the SYN, ACK from AU, and our ACK to AU. 
  
 
 Confirming that we are speaking with AU
@@ -153,7 +153,7 @@ We are
 
 ## qustion 6 
 
-now, lets travel the world. Lets wireshark the austilan goverment.
+now, lets travel the world. Lets wireshark the Australien goverment.
 
 From the terminal we find the IPs of www.australia.gov.au. 
 ```
@@ -179,5 +179,5 @@ $$ 0.217 - 0.182 = 0.035180031 $$
 
 The difrence between the time alculated in 5 og 6. 
 $$  0.035180031 - 0.002705304 = 0,032474727 $$ 
-Not very much slower to go to austilia, only like a mili second. 
+Not very much slower to go to Australia, only like a mili second. 
 

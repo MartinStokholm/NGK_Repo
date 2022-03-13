@@ -1,7 +1,7 @@
 # exersize 3 
 
 
-In this exersize we will examine the DNS-protokol with the cmd HOST. 
+In this exersize we will examine the DNS-protocol with the cmd HOST. 
 (The command nslookup can be used on non-unix systems, with at the time of writing where not avaible). 
 
 Just running host in the terminal will display the options that the host cmd can take. 
@@ -33,9 +33,9 @@ Usage: host [-aCdilrTvVw] [-c class] [-N ndots] [-t type] [-W time]
 
 ```
 
-The settings used to test diffent DNS protokol have been chosen by one part randomeness and one part "i belive i have heard about this before". 
+The settings used to test different DNS protocols have been chosen by one part randomeness and one part "i belive i have heard about this before". 
 
-The hos cmd will be runned with diffrent flags
+The host cmd will be ran with different flags
 - -4 : Use only the ipv4 for query transport
 - -6 : Use only the ipv6 for query transport
 - -a : "all" 
@@ -58,15 +58,15 @@ All three websits returned "host \<website\> not found: 4(notimp)".
 
 ### -4 
 
--4 returns the exact same result as host with no flags. THis makes sence since we are looking up the IP4 connected to the domain in the DNS. 
+-4 returns the exact same result as host with no flags. This makes sense since we are looking up the IP4 connected to the domain in the DNS. 
 
 ### -6 
 
-The connection to all websites timed out when IPV6 was used to transmite the requst. This probably indicates something we will lean later in the couse. 
+The connection to all websites timed out when IPV6 was used to transmit the request. This probably indicates something we will learn later in the couse. 
 
 ### -d 
 
-Gives a long detailed answer, that, agian, we might be able to intebrute later in the course. 
+Gives a long detailed answer, that, agian, we might be able to interprete later in the course. 
 
 ## The tests
 
