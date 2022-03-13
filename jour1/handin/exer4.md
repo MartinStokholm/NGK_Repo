@@ -1,12 +1,15 @@
 # Exercise 4: HTTP Client/server 
 
 ## 1. Hamlet on HTTP
+
 This task will examin loading the website: http://i4prj.ase.au.dk/I4IKN.
 This examination will be done with wireshark, 
 Where wireshark will be set to recored before loading the page in the browser.
 Then wiresharks filter will be suded to isolate the releavte packeds.
 First DNS and then the http.
+
 ### DNS queary and response 
+
 The dns queary 
 ```
 13	1.573834603	10.211.55.7	10.211.55.1	DNS	75	Standard query 0xfeb8 AAAA i4prj.ase.au.dk
@@ -18,12 +21,15 @@ And the DNS respose
 ```
 
 ### Time delay
+
 The time delay for the DNS quaery and respose was 
 $$ 1.601046855 - 1.573834603 = 0.027212251999999992 $$
 
 ### The HTTP request header
+
 below the header resived from the website can be seen. 
-Where the content is between the HTTP and the finishing \r\n
+Where the content is between the HTTP and the finishing "\\r\\n"
+
 ```
     HTTP/1.1 304 Not Modified\r\n
     Cache-Control: private\r\n
@@ -43,10 +49,12 @@ Where the content is between the HTTP and the finishing \r\n
 
 
 ### The HTTP request body
+
 Following the header, the body of the website is delivered. 
 From the HTTP, som information about the packed is first resived, followed by the line-based text data, where the content of the site actually resite
 
 Here is the information as listed in wireshark. 
+
 ```
     HTTP/1.1 200 OK\r\n
     Cache-Control: private\r\n
@@ -72,6 +80,7 @@ Where the last line, Line-based text data: text/html (10220 lines), is the 10220
 
 
 ## 2. Installing apache2
+
 the installtion of the apache2 server went smothly, and after it was done, it was checked if the apache server was running with the command
 
 > sudo systemctl status apache2.service 
@@ -131,6 +140,7 @@ The name / address of the client is used.
 
 
 ### HTTP 1.0 
+
 The commulication between the server and the client when getting with HTTP 1.0 is seen here: 
 ``` 
 No.	Time	Source	Destination	Protocol	Length	Info
@@ -164,9 +174,14 @@ Then a HTTP ok and [FIN, ACK] is recived and the transfer is finnsied.
 
 After this, the clients sends acknolages ments for the packets and then the connection is closed imidiatly. 
 Or alt least within a micro second.  
+
 #### Closed by who?
+
 The coonection is closed by the server. 
+
 #### Version of apache ?
+
+
 Yes, this can be seen in the HTTP OK message at 66. 
 If it is unfolded, it can be seen that the version is 2.4.41. 
 
@@ -210,6 +225,7 @@ In packed 74 HTTP/1.1 200 OK the version of appache was transferd aswell.
 
 
 ## 5. Sending our own html file. 
+
 ### The html page:
 
 This html page is naivly devoloped with three divs and 3 imgages. 
@@ -297,7 +313,8 @@ and FIN, ARKS.
 ``` 
 
 ### The content of the request header
-In the request header, can bee seen from the keyword GET to the escape sequence \r\n in the snippet below. 
+
+In the request header, can bee seen from the keyword GET to the escape sequence "\\r\\n" in the snippet below. 
 The GET key word is followed by the requested page. 
 After the esquence sequence the statistics of the packeds transfer.
 
@@ -323,7 +340,7 @@ Hypertext Transfer Protocol
 
 ### The content of the responce header
 
-The Response can be seen from HTTP keyword to the escape sequence \r\n.
+The Response can be seen from HTTP keyword to the escape sequence "\\r\\n".
 Here it can see that its the first of 3 responces. 
 
 ```

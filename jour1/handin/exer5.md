@@ -1,5 +1,6 @@
 # exersize 3 
 
+
 In this exersize we will examine the DNS-protokol with the cmd HOST. 
 (The command nslookup can be used on non-unix systems, with at the time of writing where not avaible). 
 
@@ -43,26 +44,34 @@ The hos cmd will be runned with diffrent flags
 three websites are tested www.google.com, www.tv2.dk and www.australia.gov.au. 
 
 ## conclutions from the test
+
 ### noflags
+
 Google returns a simple ip when the host is called vanilla on www.google.com. 
 Where the two others returns their DNS alias and a series of ips for that alias. 
 A best guess is that google has thier own DNS server and dont have a need for alias. 
 
 
 ### -a 
+
 All three websits returned "host \<website\> not found: 4(notimp)". 
 
 ### -4 
+
 -4 returns the exact same result as host with no flags. THis makes sence since we are looking up the IP4 connected to the domain in the DNS. 
 
 ### -6 
+
 The connection to all websites timed out when IPV6 was used to transmite the requst. This probably indicates something we will lean later in the couse. 
 
 ### -d 
+
 Gives a long detailed answer, that, agian, we might be able to intebrute later in the course. 
 
 ## The tests
+
 The test have been automated with the following shell script
+
 ```shell 
 #!/bin/bash
 function code {
@@ -88,31 +97,42 @@ echo '### -d flags' >> "$2"
 echo -d flag test
 code host -d "$1" >> "$2"
 ```
+
 ### Running host test on www.google.com
+
 #### No flags
+
 host www.google.com
 ```
 www.google.com has address 142.250.179.164
 ```
+
 #### -a flag
+
 host -a www.google.com
 ```
 Trying "www.google.com"
 Host www.google.com not found: 4(NOTIMP)
 Received 32 bytes from 127.0.0.53#53 in 24 ms
 ```
+
 #### -4 flags
+
 host -4 www.google.com
 ```
 www.google.com has address 142.250.179.164
 ```
+
 #### -6 flags
+
 host -6 www.google.com
 ```
 ;; connection timed out; no servers could be reached
 
 ```
+
 #### -d flags
+
 host -d www.google.com
 ```
 Trying "www.google.com"
@@ -143,8 +163,11 @@ Trying "www.google.com"
 
 Received 32 bytes from 127.0.0.53#53 in 48 ms
 ```
+
 ### Running host test on www.australia.gov.au
+
 #### No flags
+
 host www.australia.gov.au
 ```
 www.australia.gov.au is an alias for cdn.prod65.dta.adobecqms.net.
@@ -153,14 +176,18 @@ cdn.prod65.dta.adobecqms.net has address 18.64.103.43
 cdn.prod65.dta.adobecqms.net has address 18.64.103.14
 cdn.prod65.dta.adobecqms.net has address 18.64.103.78
 ```
+
 #### -a flag
+
 host -a www.australia.gov.au
 ```
 Trying "www.australia.gov.au"
 Host www.australia.gov.au not found: 4(NOTIMP)
 Received 38 bytes from 127.0.0.53#53 in 24 ms
 ```
+
 #### -4 flags
+
 host -4 www.australia.gov.au
 ```
 www.australia.gov.au is an alias for cdn.prod65.dta.adobecqms.net.
@@ -169,13 +196,17 @@ cdn.prod65.dta.adobecqms.net has address 18.64.103.43
 cdn.prod65.dta.adobecqms.net has address 18.64.103.14
 cdn.prod65.dta.adobecqms.net has address 18.64.103.78
 ```
+
 #### -6 flags
+
 host -6 www.australia.gov.au
 ```
 ;; connection timed out; no servers could be reached
 
 ```
+
 #### -d flags
+
 host -d www.australia.gov.au
 ```
 Trying "www.australia.gov.au"
@@ -211,8 +242,11 @@ Trying "cdn.prod65.dta.adobecqms.net"
 Received 46 bytes from 127.0.0.53#53 in 28 ms
 ```
 
+
 ### Running host test on www.tv2.dk
+
 #### No flags
+
 host www.tv2.dk
 ```
 www.tv2.dk is an alias for aws-https-redirect-prod.tv2net.dk.
@@ -221,13 +255,16 @@ aws-https-redirect-prod.tv2net.dk has address 3.123.214.120
 aws-https-redirect-prod.tv2net.dk has address 3.123.202.164
 ```
 #### -a flag
+
 host -a www.tv2.dk
 ```
 Trying "www.tv2.dk"
 Host www.tv2.dk not found: 4(NOTIMP)
 Received 28 bytes from 127.0.0.53#53 in 24 ms
+
 ```
 #### -4 flags
+
 host -4 www.tv2.dk
 ```
 www.tv2.dk is an alias for aws-https-redirect-prod.tv2net.dk.
@@ -236,12 +273,14 @@ aws-https-redirect-prod.tv2net.dk has address 3.123.214.120
 aws-https-redirect-prod.tv2net.dk has address 3.123.202.164
 ```
 #### -6 flags
+
 host -6 www.tv2.dk
 ```
 ;; connection timed out; no servers could be reached
 
 ```
 #### -d flags
+
 host -d www.tv2.dk
 ```
 Trying "www.tv2.dk"

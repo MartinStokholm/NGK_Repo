@@ -1,6 +1,8 @@
 
 # exersice 3
+
 ## question 1
+
 the time from a ping between H1 and H2 is messure with the command
 > ping -c 1 10.0.0.2 on H1 to ping H2
 ```
@@ -14,7 +16,10 @@ rtt min/avg/max/mdev = 0.324/0.324/0.324/0.000 ms
 
 ```
 the time is 0.324ms 
+
 ## qustion 2 
+
+
 The same approces is used, as above, this time with the command
 > ping -c 10 10.0.0.2
 ```
@@ -40,7 +45,10 @@ rtt min/avg/max/mdev = 0.428/0.837/1.105/0.229 ms
 > avg = 0.837 ms
 >
 > max = 1.105 ms
+
 ## question 3
+
+
 Lets now ping something on the world wide web. 
 And our target will be non other then one of the modi dicks of the internet. 
 
@@ -57,7 +65,9 @@ PING www.google.com (142.250.179.164) 56(84) bytes of data.
 rtt min/avg/max/mdev = 29.685/29.685/29.685/0.000 ms
 ```
 The ping took 29.685 ms, which is alot slower then when we tester the nairbours H1 and H2. 
+
 ## qustion 4 
+
 Now lets check the consistensy of google with 10 consektive pings
 ping -c 10 www.google.com is called
 
@@ -83,9 +93,13 @@ rtt min/avg/max/mdev = 29.660/33.754/38.808/3.559 ms
 > The avg time is 33.747 
 >
 > The max time is 38.808
+
 ## qustion 5
+
 Lets try pinging something that can't be pinged. 
+
 ### 5.1 Pinging
+
 
 ```
 ase@ubuntu:/etc/apache2$ ping -c 10 www.tv2.dk
@@ -97,7 +111,9 @@ PING aws-https-redirect-prod.tv2net.dk (3.123.202.164) 56(84) bytes of data.
 
 ```
 It is then confirmed that tv2.dk does not liked to be pinged. 
+
 ### 5.2 
+
 Lets now mesure a pingeble site, but with wireshark instand. 
 First, lets find our own IP with host -H
 ```
@@ -136,6 +152,7 @@ We are
 
 
 ## qustion 6 
+
 now, lets travel the world. Lets wireshark the austilan goverment.
 
 From the terminal we find the IPs of www.australia.gov.au. 

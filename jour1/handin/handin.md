@@ -1,0 +1,5 @@
+:[exer3](./exer3.md)
+:[exer4](./exer4.md)
+:[exer5](./exer5.md)
+:[exer6](./exer6.md)
+:[exer7](./exer7.md)
