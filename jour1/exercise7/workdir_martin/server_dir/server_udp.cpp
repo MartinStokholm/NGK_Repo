@@ -64,7 +64,7 @@ int main(int argc, char *argv[]){
 	if (bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0 ){
 		error("Error could not bind socket");
 	}
-	// listen for client that wanna connect
+	// listen makes server socket passive so able to listen for clients to connect
 	listen(sockfd,5); // second param is the max allowed clients
 	
 	clilen = sizeof(cli_addr); 
