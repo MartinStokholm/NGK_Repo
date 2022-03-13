@@ -1,8 +1,10 @@
-# TCP-Client/Server
+# Exercise 6
+
+## TCP-Client/Server
 
 In this exercise we develop a TCP Server that can be used to download a file via a TCP client, which we also develop. The programming language used in this exercise is C++. 
 
-## Server app
+# Server app
 
 To create a TCP server we use linux's socket.h API. In our solution we opted to create a TCP server class, which contains the necessary data and most functions for setting up the server.
 
@@ -28,7 +30,7 @@ The server then waits for requests to connect (the 3 way TCP handshake) and acce
 
 Then it reads a string from the socket and checks whether the string matches a directory and a filename on the machine, and if so, attempts to send the file.
 
-## Sending the file
+# Sending the file
 
 To send the file the server opens a file, reads 1024 bytes of data into the buffer, then sends it via socket via send() command. Reading and sending repeated up to filesize/bufferSize times, and the last time the server sends filesize % bufferSize bytes. This ensures that the correct amount of bytes is sent at all times. In our solution we opted to respond to each 1024 data chunk transfered on the client, so the server waits for the client to save the data.
 
@@ -39,7 +41,7 @@ To send the file the server opens a file, reads 1024 bytes of data into the buff
         read(outToClient, &conf, 4);
     }
 
-## Server client
+# Server client
 
 Unlike the server we opted not to create a whole class for a client which is not supposed to run several times. The client side of a TCP connection needs only to create a socket and request a connection via connect() function to be able send and receive messages.
 
@@ -52,7 +54,7 @@ Unlike the server we opted not to create a whole class for a client which is not
 
 The string to send to the server is input upon calling the program. Then the client waits to receive either filesize or an error message, and if succesful, prepares to download the file.
 
-## Downloading the file
+# Downloading the file
 
 To properly download a file the client must create a new file with write privileges enabled, read the correct number of bytes from the socket and write the data read into the new file. The number of loops is again filesize/bufferSize, and after the for loop the client must read filesize % bufferSize bytes. 
 

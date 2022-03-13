@@ -1,9 +1,10 @@
+# Exercise 7
 
-# UDP-Client/Server
+## UDP-Client/Server
 
 In this exercise we develop a UDP Server that can be used to send data read from diffent files to a UDP client that asks for this. The programming language used in this exercise is C++. 
 
-## Server app
+# Server app
 
 A UDP server needs to have a socket which listens to incoming connections. Client will be sending telegrams towards the server requesting something, and then the server will send back a response. 
 
@@ -70,9 +71,9 @@ int udp_serv::cpyLoadAvg(){
     return 0;
 }
 ``` 
-## Client App
+# Client App
 
 The client app is also very similar interms of the setup stuff, where again the socket is set to SOCK_DGRAM. Furthermore there is now no need to do the binding manualy, since the use of sendto() automatically binds the socket.
 
-## Results
+# Results
 the results of this exercise can be watched in the attached UDPtest.wav video.
