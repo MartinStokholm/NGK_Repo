@@ -1,7 +1,7 @@
 # NGK Journal 1
-## exersice 3 till 7
+## Contains journal for exercises 3, 4, 5, 6 and 7
 
-## group members 
+## Group members 
 | Name               | Student id |        email         |
 | :----------------- | :--------: | :------------------: |
 | Marcin             |            |                      |
