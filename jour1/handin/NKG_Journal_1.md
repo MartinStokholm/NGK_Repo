@@ -1,3 +1,4 @@
+:[front_page](./front_page.md)
 :[exer3](./exer3.md)
 :[exer4](./exer4.md)
 :[exer5](./exer5.md)
