@@ -1,5 +1,5 @@
 #pragma once
-
+/*UDP CLIENT WITH IP 10.0.0.2 */
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netinet/udp.h>
@@ -13,46 +13,78 @@
 
 using std::cout;
 using std::endl;
+using std::string;
+using std::copy;
 
-class UDP_SERVER{
+class UDP_CLIENT {
 
 public:
-	UDP_SERVER(short unsigned int portnumber) : portnumber_(portnumber) {
+	UDP_CLIENT(short unsigned int portnumber, string ip, string cmd) 
+			: portnumber_(portnumber), ip_(ip), cmd_(cmd) 
+	{
+		server_.sin_family = AF_INET;
+		server_.sin_port = htons(portnumber_);
+		inet_pton(AF_INET, "ip", &server_.sin_addr);
+
+		client_.sin_family = AF_INET;
+		inet_pton(AF_INET, clientIp_, &client_.sin_addr);
+		client_.sin_port = htons(portnumber_);
+
+		char *sendable = new char[send_.size() + 1];
+		copy(send_.begin(), send_.end(), sendable);
+		sendable[send_.size()] = '\0';
+
+		char *recieveable = new char[recieve_.size() + 1];
+		copy(recieve_.begin(), recieve_.end(), recieveable);
+		recieveable[recieve_.size()] = '\0';
+
 		socket_ = socket(AF_INET, SOCK_DGRAM, 0);	
 		if (socket_ < 0) error("Failed to create socket");
-		lenght_ = sizeof(server_);
-		server_.sin_family = AF_INET;
-		server_.sin_addr.s_addr = INADDR_ANY;
-		server_.sin_port = htons(portnumber_);
 
-		if (bind(socket_,(struct sockaddr *)&server_, lenght_) < 0){
-			error("Failed to bind");
-		}
-		fromlen_ = sizeof(struct sockaddr_in);
-		
 	}
-	int RunServer(){
-		cout << "Starting UDP server" << endl;
-		n_ = recvfrom(socket_, buf_, 1024, 0, (struct sockaddr *)&from_, &fromlen_);	
-		if (n_ < 0) error("Failed to recvfrom");
-		write(1, "Recieved a datagram: ", 21);
-		write(1, buf_, n_);
+	~UDP_CLIENT()
+	{
+		// FREE UP MALLOC
+		// delete[] send_
+		// delete[] recieve_
+	}
+	int RunClient(){
+		cout << "Starting UDP client" << endl;
+		int status = 0;
+			
+		send_ = cmd_;
 
-		n_ = sendto(socket_, "Got your message\n", 17, 0, (struct sockaddr *)&from_, fromlen_);
-		if (n_ < 0) error("Failed to sendto");
+		status = sendto(socket_, send_, send_.size, 0, (sockaddr*) &server_, &serverLenght_);		
+		cout << "Sending: "<< cmd_ << " to: " << ip_ << endl;
+
+		sleep(1);
+
+		recvfrom(socket_, recieve_, recieve_.size, 0, (sockaddr*) &server_, &serverLenght_);
+		cout << "Recieved: " << recieve_ << " from: " << ip_ << endl;
+		
 		return 1;
 	}
 
 private:
-	int socket_;
-	short unsigned int portnumber_;
+// Variabels and structs
 	int n_;
+	int socket_;
 	unsigned int lenght_;
-	struct sockaddr_in server_;
-	struct sockaddr_in from_;
-	socklen_t fromlen_;
-	char buf_[1024];
+	short unsigned int portnumber_;
+	string clientIp_ = "10.0.0.2";
+	string ip_;
+	string cmd_;
+	string recieve_ = "";
+	string send_ = "";
 
+	char* sender_;
+	char* reciever_;
+
+	struct sockaddr_in server_;
+	struct sockaddr_in client_;
+	socklen_t serverLenght_; 
+
+// Functions
 	void error(const char *errorMsg){
 		perror(errorMsg);
 		exit(0);

@@ -1,10 +1,11 @@
-#include "server_udp.hpp"
+#include "client_udp.hpp"
 
 int main() {
-	UDP_SERVER myServ(9000);
+	 
+	UDP_CLIENT  myClient(9000, "10.0.0.1", "U");
 
 	while(1) {
-		myServ.RunServer();
+		myClient.RunClient();
 	}
 
 }

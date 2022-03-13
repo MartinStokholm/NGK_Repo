@@ -17,9 +17,11 @@ using std::endl;
 class UDP_SERVER{
 
 public:
-	UDP_SERVER(short unsigned int portnumber) : portnumber_(portnumber) {
+	UDP_SERVER(short unsigned int portnumber) : portnumber_(portnumber) 
+	{
 		socket_ = socket(AF_INET, SOCK_DGRAM, 0);	
 		if (socket_ < 0) error("Failed to create socket");
+
 		lenght_ = sizeof(server_);
 		server_.sin_family = AF_INET;
 		server_.sin_addr.s_addr = INADDR_ANY;
