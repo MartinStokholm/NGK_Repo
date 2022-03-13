@@ -20,7 +20,7 @@ The time difference between GET request and OK response can be found by examinin
 
 ![](Screendumps/WS_HTTPtime.png)
 
-The response packet provides infromation about the server, date, the type of content provided as well as the content itself.
+The response packet provides information about the server, date, the type of content provided as well as the content itself.
 
 ![](Screendumps/WS_HTTPresponse.png)
 
