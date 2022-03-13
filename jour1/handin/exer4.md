@@ -8,7 +8,7 @@ Where wireshark will be set to recored before loading the page in the browser.
 Then wiresharks filter will be used to isolate the relavant packages.
 First DNS and then the http.
 
-### DNS queary and response 
+### DNS query and response 
 
 The dns query 
 ```
@@ -248,7 +248,7 @@ The images are supplyed by this website: [pixabay.com](https://pixabay.com/image
 </body> 
 ```
 
-### examination of the new site
+### Examination of the new site
 
 Wireshark is then used to examine how the new website is transferred. 
 Wireshark is stareted on server, and then the website is refreshed on the client. 

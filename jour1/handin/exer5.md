@@ -1,7 +1,7 @@
-# exersize 3 
+# Exercise 3 
 
 
-In this exersize we will examine the DNS-protocol with the cmd HOST. 
+In this Exercise we will examine the DNS-protocol with the cmd HOST. 
 (The command nslookup can be used on non-unix systems, with at the time of writing where not avaible). 
 
 Just running host in the terminal will display the options that the host cmd can take. 
@@ -43,7 +43,7 @@ The host cmd will be ran with different flags
 
 three websites are tested www.google.com, www.tv2.dk and www.australia.gov.au. 
 
-## conclutions from the test
+## Conclusion from the test
 
 ### noflags
 
