@@ -1,13 +1,16 @@
 # Exercise 4: HTTP Client/server 
 
 ## 1. Hamlet on HTTP
-This task will examin loading the website: http://i4prj.ase.au.dk/I4IKN.
+
+This task will examine loading the website: http://i4prj.ase.au.dk/I4IKN.
 This examination will be done with wireshark, 
 Where wireshark will be set to recored before loading the page in the browser.
-Then wiresharks filter will be suded to isolate the releavte packeds.
+Then wiresharks filter will be used to isolate the relavant packages.
 First DNS and then the http.
-### DNS queary and response 
-The dns queary 
+
+### DNS query and response 
+
+The dns query 
 ```
 13	1.573834603	10.211.55.7	10.211.55.1	DNS	75	Standard query 0xfeb8 AAAA i4prj.ase.au.dk
 ```
@@ -18,12 +21,15 @@ And the DNS respose
 ```
 
 ### Time delay
-The time delay for the DNS quaery and respose was 
+
+The time delay for the DNS query and respose was 
 $$ 1.601046855 - 1.573834603 = 0.027212251999999992 $$
 
 ### The HTTP request header
-below the header resived from the website can be seen. 
-Where the content is between the HTTP and the finishing \r\n
+
+below the header recieved from the website can be seen. 
+Where the content is between the HTTP and the finishing "\\r\\n"
+
 ```
     HTTP/1.1 304 Not Modified\r\n
     Cache-Control: private\r\n
@@ -43,10 +49,12 @@ Where the content is between the HTTP and the finishing \r\n
 
 
 ### The HTTP request body
+
 Following the header, the body of the website is delivered. 
-From the HTTP, som information about the packed is first resived, followed by the line-based text data, where the content of the site actually resite
+From the HTTP, some information about the package is first recieved, followed by the line-based text data, where the content of the site actually resite
 
 Here is the information as listed in wireshark. 
+
 ```
     HTTP/1.1 200 OK\r\n
     Cache-Control: private\r\n
@@ -68,11 +76,12 @@ Here is the information as listed in wireshark.
 Line-based text data: text/html (10220 lines)
 ```
 
-Where the last line, Line-based text data: text/html (10220 lines), is the 10220 lines of hamlet, formattet with html. 
+Where the last line, Line-based text data: text/html (10220 lines), is the 10220 lines of hamlet, formatted with html. 
 
 
 ## 2. Installing apache2
-the installtion of the apache2 server went smothly, and after it was done, it was checked if the apache server was running with the command
+
+The installation of the apache2 server went smoothly, and after it was done, it was checked if the apache server was running with the command
 
 > sudo systemctl status apache2.service 
 
@@ -84,7 +93,7 @@ This confirmed that it was loaded and active, with the output containing:
 ``` 
 ### 3. Establising a lan conection
 
-The connection to the server was then testet with the commad telnet. 
+The connection to the server was then tested with the command telnet. 
 
 ```
 ase@ubuntu:~$ telnet 10.0.0.1 80
@@ -113,7 +122,7 @@ The command telnet can be used to establish the connections via the local area n
 
 > telnet \<address\> \<port\>
 
-When the connection is established, a prombt to enter a command for the sevner will apear. 
+When the connection is established, a prombt to enter a command for the server will appear. 
 In our case, GET is our friend. 
 
 > GET \<path/to/file\> HTTP/1.X
@@ -131,6 +140,7 @@ The name / address of the client is used.
 
 
 ### HTTP 1.0 
+
 The commulication between the server and the client when getting with HTTP 1.0 is seen here: 
 ``` 
 No.	Time	Source	Destination	Protocol	Length	Info
@@ -158,15 +168,20 @@ No.	Time	Source	Destination	Protocol	Length	Info
 The HTTP1.1 
 Number 16 til 18 are the three-way handshake between the client and server. 
 
-At number 61, the HTTP get instrction arrive and it can be seen that the protocoll to be used is 1.0. 
+At number 61, the HTTP get instruction arrive and it can be seen that the protocol to be used is 1.0. 
 Then the follwing 4 packecs are the transfer of the html file. 
-Then a HTTP ok and [FIN, ACK] is recived and the transfer is finnsied.
+Then a HTTP ok and [FIN, ACK] is recieved and the transfer is finnished.
 
-After this, the clients sends acknolages ments for the packets and then the connection is closed imidiatly. 
+After this, the clients sends ackknowledgements for the packets and then the connection is closed immediatly. 
 Or alt least within a micro second.  
+
 #### Closed by who?
-The coonection is closed by the server. 
+
+The connection is closed by the server. 
+
 #### Version of apache ?
+
+
 Yes, this can be seen in the HTTP OK message at 66. 
 If it is unfolded, it can be seen that the version is 2.4.41. 
 
@@ -195,11 +210,11 @@ No.	Time	Source	Destination	Protocol	Length	Info
 82	30.405268076	10.0.0.1	10.0.0.2	TCP	66	80 → 36740 [ACK] Seq=11175 Ack=36 Win=65152 Len=0 TSval=313257118 TSecr=1870816464
 ```
 
-From what can be observed here, The HTTP1.1 protocol starts out, transmits and fisnsish the transmistion in the same way that the HTTP1.0 does. 
+From what can be observed here, The HTTP1.1 protocol starts out, transmits and finnishes the transmistion in the same way that the HTTP1.0 does. 
 THe only execption is that the closing of the connection happens 5 seconds later. 
 This is a sympton of the pipelining introduces with the 1.1 protocol, 
 Allowing for handeling multiple request at a time. 
-The delay of closing gives opens the window for reciving and handeling more request, where the 1.0 protocal only allows
+The delay of closing opens the window for recieveing and handeling more requests, where the 1.0 protocal only allows
 time for one connection. 
 
 The connection is closed by the server, 
@@ -210,9 +225,10 @@ In packed 74 HTTP/1.1 200 OK the version of appache was transferd aswell.
 
 
 ## 5. Sending our own html file. 
+
 ### The html page:
 
-This html page is naivly devoloped with three divs and 3 imgages. 
+This html page is naivly develeped with three divs and 3 imgages. 
 The images are supplyed by this website: [pixabay.com](https://pixabay.com/images/search/scenery/) 
 
 ```html
@@ -232,9 +248,9 @@ The images are supplyed by this website: [pixabay.com](https://pixabay.com/image
 </body> 
 ```
 
-### examination of the new site
+### Examination of the new site
 
-Wire shark is then used to exmin how the new website is transferd. 
+Wireshark is then used to examine how the new website is transferred. 
 Wireshark is stareted on server, and then the website is refreshed on the client. 
 
 ``` 
@@ -250,7 +266,7 @@ Above we see the three way handshake establishing the connection.
 5	0.000414948	10.0.0.1	10.0.0.2	TCP	66	80 → 35178 [ACK] Seq=1 Ack=465 Win=64768 Len=0 TSval=1297789268 TSecr=4020241694
 6	0.000811457	10.0.0.1	10.0.0.2	HTTP	685	HTTP/1.1 200 OK  (text/html)
 ```
-After the connection is esbaslid, H2 request the header and H2 ansers with it. 
+After the connection is established, H2 request the header and H2 ansers with it. 
 
 ``` 
 7	0.001151914	10.0.0.2	10.0.0.1	TCP	66	35178 → 80 [ACK] Seq=465 Ack=620 Win=64128 Len=0 TSval=4020241695 TSecr=1297789268
@@ -261,7 +277,7 @@ After the connection is esbaslid, H2 request the header and H2 ansers with it.
 Then the clients asks for the first images on a new tcp connection,
 witch the server gladly supllies. 
 This is then followed by what apears to be two simuntaniorsly 3-three way handshake.
-This is a prober exsample of pipelineing. 
+This is a proper exsample of pipelineing. 
 ```
 11	0.032364183	10.0.0.2	10.0.0.1	TCP	74	35180 → 80 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=4020241726 TSecr=0 WS=128
 12	0.032364274	10.0.0.2	10.0.0.1	TCP	74	35182 → 80 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM=1 TSval=4020241726 TSecr=0 WS=128
@@ -297,9 +313,10 @@ and FIN, ARKS.
 ``` 
 
 ### The content of the request header
-In the request header, can bee seen from the keyword GET to the escape sequence \r\n in the snippet below. 
+
+In the request header, can bee seen from the keyword GET to the escape sequence "\\r\\n" in the snippet below. 
 The GET key word is followed by the requested page. 
-After the esquence sequence the statistics of the packeds transfer.
+After the escape sequence the statistics of the packeds transfer.
 
 ```
 Hypertext Transfer Protocol
@@ -323,8 +340,8 @@ Hypertext Transfer Protocol
 
 ### The content of the responce header
 
-The Response can be seen from HTTP keyword to the escape sequence \r\n.
-Here it can see that its the first of 3 responces. 
+The Response can be seen from HTTP keyword to the escape sequence "\\r\\n".
+Here it can see that its the first of three responces. 
 
 ```
 Hypertext Transfer Protocol
