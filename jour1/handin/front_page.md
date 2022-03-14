@@ -4,7 +4,7 @@
 ## Group members 
 | Name               | Student id |        email         |
 | :----------------- | :--------: | :------------------: |
-| Marcin             |            |                      |
+| Marcin             | 202009418  | 201908195@post.au.dk |
 | Martin             | 201908195  | 201908195@post.au.dk |
 | Mathias Birk Olsen | 202008722  | 202008722@post.au.dk |
 
