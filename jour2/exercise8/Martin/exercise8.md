@@ -13,3 +13,7 @@ As you can see form the screen shots above we have already sent some messages ba
 ![](udp_header.jpg)
 
 Unlike the TCP connection we do not see a opening of the connection with a three-way handshake. The same is true for closing the connection, where again we dont see anything with the UDP connection. In terms of the payload, we notice that the message is not encrypted, but just plain text. 
+
+## TCP-Client/Server
+
+
