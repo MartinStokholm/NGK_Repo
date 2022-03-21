@@ -52,7 +52,7 @@ private:
 	unsigned int lenght_;
 	struct sockaddr_in server_;
 	struct sockaddr_in from_;
-	socklen_t fromlen_;
+	socklen_t clientlen_;
 	char buf_[1024];
 
 	void error(const char *errorMsg){
