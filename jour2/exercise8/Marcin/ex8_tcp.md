@@ -33,3 +33,11 @@ Segment 149:
 Segments 218 - 231 constitute an exchange of strings between the client and the server. The important points about them are:
 * Every time a host sends x amount of data, it gets an ACK flagged response, with ACK counter set to prev ACK + x. Fx. when client sends 15 bytes of data server responds with ACK flag set and ACK counter set to prevACK + 15.
 * After a host receives an ACK it's SEQ counter is set to ACK.
+* No matter the data length (sent strings have different lengths), the window size remained constant. It was 502 for client and 509 for the server
+* On sending a string both push (PSH) and ACK flags are set. On acknowledging, only ACK flag is set.
+
+Segments 232 - 234 are the finishing sequence of segments.
+
+* The client initiates the finishing sequence. There is no payload, flags FIN and ACK are set. Sequence/ACK counters are the same as the last ACK segment from the client.
+* Server responds with a similar segment: FIN and ACK flags set, SEQ counter is Clients last ACK counter and ACK counter is set to prevACK + 1
+* Client responds with only ACK. Ack counter is prevACK + 1. 
