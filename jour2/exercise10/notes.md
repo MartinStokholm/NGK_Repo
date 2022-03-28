@@ -2,7 +2,7 @@
 ## Analyse on link layer with WireShark. Focus on MAC adresses. 
 Before trying to figure anything out we first identify the specific MAC adresses across the three VMs.
 
-![](ARP_table_all_vms.jpg)
+![](ARP_table_all_vms_pretty.jpg)
 
 Read from arp -n on R1
 MAC-a: 
@@ -82,6 +82,4 @@ In the snippet above, the first two packages are the ping request. Notice that i
 
 This request is then followed up by the reply which is once again in the reverse order. The pathway of the reply when looking at the link layer is MAC-a -> MAC-b followed by MAC-c -> MAC-d
 
-In conclussion the MAC adress are not constant on the link layer
-
- 
+In conclussion the MAC adress are not constant on the link layer.
