@@ -1,5 +1,26 @@
 # Question 6
 ## Analyse on link layer with WireShark. Focus on MAC adresses. 
+Before trying to figure anything out we first identify the specific MAC adresses across the three VMs.
+
+![](ARP_table_all_vms.jpg)
+
+Read from arp -n on R1
+MAC-a: 
+00:0c:29:8e:ef:6a
+
+Read from arp -n on H1
+MAC-b: 
+00:0c:29:b7:ab:b0
+
+Read from arp -n on H2
+MAC-c:
+00:0c:29:b7:ab:ba
+
+Read from arp -n on R1
+MAC-d:
+00:0c:29:4f:6d:17
+
+Afterwards we sent out a single ping from H2 to H1 and a single ping from H1 to H2. This capture is shown below: 
 
 ```
 No.	Time	    Source	        Destination	    Protocol	Length	Info
@@ -20,39 +41,47 @@ No.	Time	    Source	        Destination	    Protocol	Length	Info
 23	9.387063117	10.9.8.1    	10.0.0.1    	ICMP    	98  	Echo (ping) reply    id=0x0006, seq=1/256, ttl=63 (request in 22)
 24	9.387116046	10.9.8.1    	10.0.0.1    	ICMP    	98  	Echo (ping) reply    id=0x0006, seq=1/256, ttl=64
 ```
-We notice that VMWare has this unique first part of the MAC adresses call VMWare_ which is 00:0c: when in Hex.
-In the above capture from wireshark we are first sending one ping from H2 to H1, followed by one ping from H1 to H2.
-As in the former exercise we see that on the transport layer the source and destination are the same through out the ping but now when we look at the link layer we can see that the source and destination is changing throughout the ping. First we have the MAC-d source to MAC-b destination (ping starting from H2), followed by MAC-b source   
+We notice that VMWare has this unique first part of the MAC adresses called VMWare_ which in hex is just 00:0c:29.
 
-Read from arp -n on R1
-MAC-a: 
-00:0c:29:8e:ef:6a
+In the above capture from wireShark we are first sending one ping from H2 to H1, followed by one ping from H1 to H2.
+As in the former exercise we see that on the transport layer the source and destination are the same through out the ping but now when we look at the link layer we can see that the source and destination is changing throughout the ping. 
 
-Read from arp -n on H1
-MAC-b: 
-00:0c:29:b7:ab:b0
+In terms of the ARP we see that with a clear ARP table on the router the ping is triggering a type of message with the info "Who has x tell x" This is in order to populate the ARP table on the router. It is wierd that thesse packages are shown as being sent after the ICMP packages, when the MAC adresses are needed in order to actually send the package from H2 to H1.
 
-Read from arp -n on H2
-MAC-c:
-00:0c:29:b7:ab:ba
+In the below screenshots we highlighted the four packages that is being sent when we ping from H2 to H1. Thesse packages will be examined further in Question 7.
 
-Read from arp -n on R1
-MAC-d:
-00:0c:29:4f:6d:17
+![](FirstPackage_MACAdress.jpg)
+![](SecondPackage_MACAdress.jpg)
+![](Reply_FirstPackage_MACAdress.jpg)
+![](Reply_SecondPackage_MACAdress.jpg)
 
 # Question 7
 ## Are the MAC adresses constant on the link layer, or are they changed during transfer of IP packages.
 
-When looking at the data packages from wireShark (see above) we notice that the
-source and destination for each package changes on the link layer so that a ping from H1 to H2, constists of two ?transfers?.
-Where the first packeds is delevered from mac-x to mac-x, and the seconds transfer goes between mac-x and mac-x. 
-Where mac-x and mac-x are both on the rounter, representing each of its adabters.
+Below is a snippet of relevant data from the aforementioned packages in Question 6.
 
-Transfers from H1 to H2 , goes frist from mac-a to mac-c, and then from mac-c to mac-d. 
+    Proto = ICMP (ping) request
+    No. 10: Src = 00:0c:29:4f:6d:17 Dst = 00:0c:29:b7:ab:ba
+    Source = MAC-d (H2) Destination = MAC-c (R1)
 
-Transfers from H2 to H1, goes first from mac-d to mac-b, and then two  
+    Proto = ICMP (ping) request
+    No. 09: Src = 00:0c:29:b7:ab:b0 Dst = 00:0c:29:8e:ef:6a
+    Source = MAC-b (R1) Destination = MAC-a (H1)
 
-So they are not constant. 
+    Proto = ICMP (ping) reply 
+    No. 12: Src = 00:0c:29:b7:ab:ba Dst = 00:0c:29:4f:6d:17
+    Source = MAC-c (R1) Destination = MAC-d (H2)
 
+    Proto = ICMP (ping) reply
+    No. 11: Src = 00:0c:29:8e:ef:6a Dst = 00:0c:29:b7:ab:b0  
+    Source = MAC-a (H1) Destination = MAC-b (R1)
+
+We notice that the MAC addreses in the source and destination fields are changing on the journey from one VM through the router VM to the last VM. This is because on the link layer we are only moving packages to the neighbour, and then the neighbour moves it onto his neighbour. 
+
+In the snippet above, the first two packages are the ping request. Notice that in wireshark they are displayed in reverse order in terms of arrival, ping request was started on H2 towards H1, and this is seen on the link layer as MAC-d -> MAC-c followed by MAC-b -> MAC-a
+
+This request is then followed up by the reply which is once again in the reverse order. The pathway of the reply when looking at the link layer is MAC-a -> MAC-b followed by MAC-c -> MAC-d
+
+In conclussion the MAC adress are not constant on the link layer
 
  
