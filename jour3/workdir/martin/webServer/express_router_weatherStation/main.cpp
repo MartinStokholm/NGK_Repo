@@ -269,14 +269,14 @@ auto server_handler(weather_data_collection_t & weather_data_collection)
 			restinio::router::none_of_methods(
 					restinio::http_method_get(), restinio::http_method_post()),
 			"/", method_not_allowed );
+	// Below is needed if you want to acces a specific part of the data, like maybe ID
+	/* // Handler for '/author/:author' path. */
+	/* router->http_get("/author/:author", by(&weather_data_handler_t::on_weather_data_get)); */
 
-	// Handler for '/author/:author' path.
-	router->http_get("/author/:author", by(&weather_data_handler_t::on_weather_data_get));
-
-	// Disable all other methods for '/author/:author'.
-	router->add_handler(
-			restinio::router::none_of_methods(restinio::http_method_get()),
-			"/author/:author", method_not_allowed);
+	/* // Disable all other methods for '/author/:author'. */
+	/* router->add_handler( */
+	/* 		restinio::router::none_of_methods(restinio::http_method_get()), */
+	/* 		"/author/:author", method_not_allowed); */
 
 	// Handlers for '/:weatheDataNum' path.
 	router->http_get(
