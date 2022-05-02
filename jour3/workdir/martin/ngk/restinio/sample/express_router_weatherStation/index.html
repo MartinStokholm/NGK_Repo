@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WeatherStation API interface</title>
+</head>
+<body>
+	<h1>Weather Station</h1>
+	<p>Id<input id="id" type="text"></p>
+	<p>Date<input id="date" type="text"><p/>
+	<p>Time<input id="time" type="text"><p/>
+	<p>Name<input id="placename" type="text"><p/>
+	<p>Lat<input id="lat" type="number"><p/>
+	<p>Lon<input id="lon" type="number"><p/>
+	<p>Temperature<input id="temperature" type="text"><p/>
+	<p>Humidity<input id="humidity" type="text"><p/>
+
+	<button id ="addDataBtn">Create</button>
+	<button id ="updateDataBtn">Update</button>
+	<button id ="deleteDataBtn">Delete</button>
+	<button id ="loadDataBtn">Load</button>
+
+	<h1>WeatherData Collection</h1>
+	<div id="table">
+
+	<script>
+	// For updating an existing entry in the weatherData list
+	document.getElementById("updateDataBtn").addEventListener("click", function(){
+		var id_ = document.getElementById("id").value;
+		var date_ = document.getElementById("date").value;
+		var time_ = document.getElementById("time").value;
+		var name_ = document.getElementById("placename").value;
+		var lat_ = parseFloat(document.getElementById("lat").value);
+		var lon_ = parseFloat(document.getElementById("lon").value);
+		var temp_ = document.getElementById("temperature").value;
+		var rh_ = document.getElementById("humidity").value;
+
+		var weatherDataNum_ = document.getElementById("weatherDataNum")
+		var url = 'http://localhost:8080/api/weatherData/' + weatherDataNum_;
+
+		const requestOptions = {
+    		method: 'PUT',
+    		headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify( { 
+									"ID": id_,
+									"Date": date_,
+									"Time": time_,
+									"Place": {
+												"PlaceName": name_, 
+												"Lat": lat_ , 
+												"Lon": lon_},
+									"Temperature": temp_,
+									"Humidity": rh_
+								})
+		};
+	
+		fetch(url, requestOptions)
+	});
+
+	// For adding a entry to weatherData list
+	document.getElementById("addDataBtn").addEventListener("click", function(){
+		var id_ = document.getElementById("id").value;
+		var date_ = document.getElementById("date").value;
+		var time_ = document.getElementById("time").value;
+		var name_ = document.getElementById("placename").value;
+		var lat_ = parseFloat(document.getElementById("lat").value);
+		var lon_ = parseFloat(document.getElementById("lon").value);
+		var temp_ = document.getElementById("temperature").value;
+		var rh_ = document.getElementById("humidity").value;
+		var url = ('http://localhost:8080/api/weatherData/');
+
+		const requestOptions = {
+    		method: 'POST',
+    		headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify( { 
+									"ID": id_,
+									"Date": date_,
+									"Time": time_,
+									"Place": {
+												"PlaceName": name_, 
+												"Lat": lat_ , 
+												"Lon": lon_},
+									"Temperature": temp_,
+									"Humidity": rh_
+								})
+		};
+		fetch(url, requestOptions)
+	});
+
+  	// For deleting a existing path                                                                                                                                               
+	document.getElementById("deleteDataBtn").addEventListener("click", function(){                                                                                                   
+		var weatherDataNum_ = document.getElementById("weatherDataNum")
+		var url = ('http://localhost:8080/api/weatherData/' + weatherDataNum_);
+		const requestOptions = { method: 'DELETE' };                                                                                                                              
+		fetch(url, requestOptions)                                                                                                                                                
+	});                          
+
+  	// For  a existing path                                                                                                                                               
+	document.getElementById("loadDataBtn").addEventListener("click", function(){                                                                                                   
+		var weatherDataNum_ = document.getElementById("weatherDataNum")
+		var url = ('http://localhost:8080/api/weatherData/' + weatherDataNum_);
+		const requestOptions = { method: 'DELETE' };                                                                                                                              
+		fetch(url, requestOptions)                                                                                                                                                
+	});                          
+	</script>
+
+</body>
+</html>
+
+
