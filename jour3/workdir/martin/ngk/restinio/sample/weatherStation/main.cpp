@@ -165,6 +165,30 @@ public :
 		return resp.done();
 	}
 
+	auto on_threeLatest_get(const restinio::request_handle_t& req, rr::route_params_t) const
+	{
+		auto resp = init_resp(req->create_response());
+
+		resp.set_body({R"JSON({"status":"success","data":)JSON"});
+
+		const auto & wd = m_weather_data;
+		if (wd.size() > 3)
+		{
+			for (std::size_t i = wd.size(); i > wd.size()-3;i--)
+			{
+				resp.append_body(json_dto::to_json<weather_data_t>(wd[i-1]));
+			}
+			resp.append_body({R"JSON(, "message": "all weather data has been fetched."})JSON"});
+		
+		}
+		else 
+		{
+			resp.append_body("There are less than three entries!");
+		}
+		return resp.done();
+	}
+
+
 	auto on_weatherDataNum_get(const restinio::request_handle_t& req, rr::route_params_t params)
 	{
 		const auto weatherDataNum = restinio::cast_to<std::uint32_t>(params["weatherDataNum"]);
@@ -296,6 +320,7 @@ auto server_handler(weather_data_collection_t & weather_data_collection)
 	router->http_get( "/", by (&weather_data_handler_t::on_index_get));
 	router->http_get( "/api/client", by (&weather_data_handler_t::on_client_get));
 	router->http_get( "/api/weatherData", by(&weather_data_handler_t::on_weatherData_list));
+	router->http_get( "/api/weatherData/threeLatest", by(&weather_data_handler_t::on_threeLatest_get));
 	router->http_get(R"(/api/weatherData/:weatherDataNum(\d+))", by(&weather_data_handler_t::on_weatherDataNum_get));
 
 	// Handlers for POST
@@ -347,6 +372,9 @@ int main()
 		weather_data_collection_t weather_data_collection{
 			{ "ID_TEST", "20/04/2022", "18:00", {"AU", 69.420, 69.420}, "42", "69" },
 			{ "ID_TEST2", "20/04/2022", "18:00", {"AU", 69.420, 69.420}, "42", "69" },
+			{ "ID_TEST3", "20/04/2022", "18:00", {"AU", 69.420, 69.420}, "42", "69" },
+			{ "ID_TEST4", "20/04/2022", "18:00", {"AU", 69.420, 69.420}, "42", "69" },
+			{ "ID_TEST5", "20/04/2022", "18:00", {"AU", 69.420, 69.420}, "42", "69" },
 		}; 	
 
 		/* weather_data_collection_t weather_data_collection{ */
