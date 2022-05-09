@@ -409,7 +409,7 @@ Now here is the testing of POST on a new entry with id 5 to weather data collect
 
 ![getAfterPost](img/get_after_post.png)
 
-then updating that entry with id 5 
+then updating that entry with id 5, the change is the in the field "time" where the value has been changed to "99.99" (oh no we did not implement checking of valid values) 
 
 ![putOnID](img/put_on_entry_test.png)
 
