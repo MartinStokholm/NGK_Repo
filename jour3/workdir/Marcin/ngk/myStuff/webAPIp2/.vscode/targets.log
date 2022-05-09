@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May  9 16:20:10 2022
+# Make data base, printed on Mon May  9 18:10:34 2022
 
 # Variables
 
@@ -25,7 +25,7 @@ SNAP_INSTANCE_KEY =
 # makefile (from 'Makefile', line 17)
 MODE = release
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-686a6663-c4c5-49ab-8a97-a52f90fce2db.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-6b1d0ba1-4931-4360-ac09-adad058e0b45.sock
 # makefile (from 'Makefile', line 60)
 VPATH = src
 # environment
@@ -33,7 +33,7 @@ MANDATORY_PATH = /usr/share/gconf/Lubuntu.mandatory.path
 # makefile (from 'Makefile', line 16)
 DEST_DIR = ${ARCH}/release
 # environment
-VSCODE_CWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPI
+VSCODE_CWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPIp2
 # makefile (from 'Makefile', line 55)
 LIBS = -lfmt -lhttp_parser -lpthread
 # makefile (from 'Makefile', line 47)
@@ -55,7 +55,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPI
+PWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPIp2
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -89,7 +89,7 @@ MAKEFLAGS = pqrR
 # environment
 SDKTARGETSYSROOT = /opt/poky/3.1.4/sysroots/arm1176jzfshf-vfp-poky-linux-gnueabi
 # makefile
-CURDIR := /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPI
+CURDIR := /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPIp2
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -120,8 +120,8 @@ XDG_CONFIG_DIRS = /etc/xdg/xdg-Lubuntu:/etc/xdg:/etc:/usr/share
 RESTINIO_PACKAGE = ../../restinio
 # environment
 XDG_SESSION_DESKTOP = Lubuntu
-# makefile (from 'build/x86-64/release/main.d', line 1)
-MAKEFILE_LIST := Makefile compiler_setup.x86-64 build/x86-64/release/main.d
+# makefile (from 'build/x86-64/release/wDataHandler.d', line 1)
+MAKEFILE_LIST := Makefile compiler_setup.x86-64 build/x86-64/release/main.d build/x86-64/release/wDataHandler.d
 # environment
 SNAP_REEXEC = 
 # automatic
@@ -129,7 +129,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 9821
+VSCODE_PID = 14878
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -338,7 +338,7 @@ GDMSESSION = Lubuntu
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=163/1024=16%, Rehash=0, Collisions=21/254=8%
+# Load=163/1024=16%, Rehash=0, Collisions=21/256=8%
 
 # Pattern-specific Variable Values
 
@@ -347,9 +347,9 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Directories
 
 # src: could not be stat'd.
-# . (device 64768, inode 416035): 10 files, no impossibilities.
+# . (device 64768, inode 416060): 12 files, no impossibilities.
 
-# 10 files, no impossibilities in 2 directories.
+# 12 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -425,7 +425,7 @@ build/x86-64/release:
 # Not a target:
 compiler_setup.x86-64:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-08 14:18:08.150044198
+#  Last modified 2022-05-09 16:58:44.581457517
 #  File has been updated.
 #  Successfully updated.
 
@@ -521,6 +521,12 @@ bin/x86-64/release:
 #  File has not been updated.
 
 # Not a target:
+wDataHandler.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 ../../restinio/restinio/ip_blocker.hpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -529,7 +535,7 @@ bin/x86-64/release:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-08 14:18:40.381958313
+#  Last modified 2022-05-09 16:58:44.565458833
 #  File has been updated.
 #  Successfully updated.
 
@@ -554,7 +560,6 @@ Makefile:
 # Not a target:
 ../../rapidjson/include/rapidjson/document.h:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -585,6 +590,7 @@ Makefile:
 # Not a target:
 ../../restinio/restinio/third_party/string-view-lite/string_view.hpp:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -761,6 +767,11 @@ info:
 #  Modification time never checked.
 #  File has not been updated.
 
+build/x86-64/release/build/x86-64/release/wDataHandler.o: wDataHandler.cpp wDataHandler.hpp StationDataT.hpp ../../json_dto/dev/json_dto/pub.hpp ../../rapidjson/include/rapidjson/document.h ../../rapidjson/include/rapidjson/reader.h ../../rapidjson/include/rapidjson/allocators.h ../../rapidjson/include/rapidjson/rapidjson.h ../../rapidjson/include/rapidjson/internal/meta.h ../../rapidjson/include/rapidjson/internal/../rapidjson.h ../../rapidjson/include/rapidjson/stream.h ../../rapidjson/include/rapidjson/encodings.h ../../rapidjson/include/rapidjson/encodedstream.h ../../rapidjson/include/rapidjson/memorystream.h ../../rapidjson/include/rapidjson/internal/clzll.h ../../rapidjson/include/rapidjson/internal/stack.h ../../rapidjson/include/rapidjson/internal/../allocators.h ../../rapidjson/include/rapidjson/internal/swap.h ../../rapidjson/include/rapidjson/internal/strtod.h ../../rapidjson/include/rapidjson/internal/ieee754.h ../../rapidjson/include/rapidjson/internal/biginteger.h ../../rapidjson/include/rapidjson/internal/diyfp.h ../../rapidjson/include/rapidjson/internal/clzll.h ../../rapidjson/include/rapidjson/internal/pow10.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/error/../rapidjson.h ../../rapidjson/include/rapidjson/internal/strfunc.h ../../rapidjson/include/rapidjson/internal/../stream.h ../../rapidjson/include/rapidjson/internal/../rapidjson.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/error/en.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/writer.h ../../rapidjson/include/rapidjson/internal/dtoa.h ../../rapidjson/include/rapidjson/internal/itoa.h ../../rapidjson/include/rapidjson/internal/itoa.h ../../rapidjson/include/rapidjson/stringbuffer.h ../../rapidjson/include/rapidjson/prettywriter.h ../../rapidjson/include/rapidjson/writer.h ../../rapidjson/include/rapidjson/stringbuffer.h ../../rapidjson/include/rapidjson/ostreamwrapper.h ../../rapidjson/include/rapidjson/istreamwrapper.h ../../restinio/restinio/all.hpp ../../restinio/restinio/version.hpp ../../restinio/restinio/asio_include.hpp ../../restinio/restinio/settings.hpp ../../restinio/restinio/exception.hpp ../../restinio/restinio/string_view.hpp ../../restinio/restinio/third_party/string-view-lite/string_view.hpp ../../restinio/restinio/request_handler.hpp ../../restinio/restinio/http_headers.hpp ../../restinio/restinio/impl/include_fmtlib.hpp ../../fmt/include/fmt/format.h ../../fmt/include/fmt/core.h ../../fmt/include/fmt/ostream.h ../../fmt/include/fmt/format.h ../../fmt/include/fmt/chrono.h ../../restinio/restinio/impl/string_caseless_compare.hpp ../../restinio/restinio/impl/to_lower_lut.hpp ../../restinio/restinio/compiler_features.hpp ../../restinio/restinio/optional.hpp ../../restinio/restinio/third_party/optional-lite/optional.hpp ../../restinio/restinio/common_types.hpp ../../http-parser/http_parser.h ../../restinio/restinio/message_builders.hpp ../../restinio/restinio/os.hpp ../../restinio/restinio/impl/os_posix.ipp ../../restinio/restinio/sendfile.hpp ../../restinio/restinio/sendfile_defs_posix.hpp ../../restinio/restinio/impl/connection_base.hpp ../../restinio/restinio/tcp_connection_ctx_base.hpp ../../restinio/restinio/connection_state_listener.hpp ../../restinio/restinio/variant.hpp ../../restinio/restinio/third_party/variant-lite/variant.hpp ../../restinio/restinio/tls_fwd.hpp ../../restinio/restinio/buffers.hpp ../../restinio/restinio/utils/suppress_exceptions.hpp ../../restinio/restinio/null_logger.hpp ../../restinio/restinio/utils/impl/safe_uint_truncate.hpp ../../restinio/restinio/impl/header_helpers.hpp ../../restinio/restinio/chunked_input_info.hpp ../../restinio/restinio/traits.hpp ../../restinio/restinio/asio_timer_manager.hpp ../../restinio/restinio/timer_common.hpp ../../restinio/restinio/ip_blocker.hpp ../../restinio/restinio/default_strands.hpp ../../restinio/restinio/connection_count_limiter.hpp ../../restinio/restinio/null_mutex.hpp ../../restinio/restinio/utils/tagged_scalar.hpp ../../restinio/restinio/utils/metaprogramming.hpp ../../restinio/restinio/incoming_http_msg_limits.hpp ../../restinio/restinio/http_server.hpp ../../restinio/restinio/impl/acceptor.hpp ../../restinio/restinio/impl/connection.hpp ../../restinio/restinio/impl/response_coordinator.hpp ../../restinio/restinio/impl/connection_settings.hpp ../../restinio/restinio/impl/fixed_buffer.hpp ../../restinio/restinio/impl/write_group_output_ctx.hpp ../../restinio/restinio/impl/sendfile_operation.hpp ../../restinio/restinio/impl/sendfile_operation_posix.ipp ../../restinio/restinio/impl/executor_wrapper.hpp ../../restinio/restinio/utils/at_scope_exit.hpp ../../restinio/restinio/impl/parser_callbacks.ipp ../../restinio/restinio/http_server_run.hpp ../../restinio/restinio/impl/ioctx_on_thread_pool.hpp ../../restinio/restinio/null_timer_manager.hpp ../../restinio/restinio/ostream_logger.hpp ../../restinio/restinio/uri_helpers.hpp ../../restinio/restinio/utils/percent_encoding.hpp ../../restinio/restinio/expected.hpp ../../restinio/restinio/third_party/expected-lite/expected.hpp ../../restinio/restinio/utils/utf8_checker.hpp ../../restinio/restinio/cast_to.hpp ../../restinio/restinio/utils/from_string.hpp ../../restinio/restinio/utils/from_string_details.ipp ../../restinio/restinio/value_or.hpp ../../restinio/restinio/router/express.hpp ../../restinio/restinio/router/impl/target_path_holder.hpp ../../restinio/restinio/router/non_matched_request_handler.hpp ../../restinio/restinio/path2regex/path2regex.hpp ../../restinio/restinio/router/std_regex_engine.hpp ../../restinio/restinio/router/method_matcher.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # Not a target:
 ../../restinio/restinio/router/method_matcher.hpp:
 #  Implicit rule search has not been done.
@@ -821,10 +832,9 @@ info:
 #  Modification time never checked.
 #  File has not been updated.
 
-build/x86-64/release/build/x86-64/release/main.o: main.cpp StationDataT.hpp ../../json_dto/dev/json_dto/pub.hpp ../../rapidjson/include/rapidjson/document.h ../../rapidjson/include/rapidjson/reader.h ../../rapidjson/include/rapidjson/allocators.h ../../rapidjson/include/rapidjson/rapidjson.h ../../rapidjson/include/rapidjson/internal/meta.h ../../rapidjson/include/rapidjson/internal/../rapidjson.h ../../rapidjson/include/rapidjson/stream.h ../../rapidjson/include/rapidjson/encodings.h ../../rapidjson/include/rapidjson/encodedstream.h ../../rapidjson/include/rapidjson/memorystream.h ../../rapidjson/include/rapidjson/internal/clzll.h ../../rapidjson/include/rapidjson/internal/stack.h ../../rapidjson/include/rapidjson/internal/../allocators.h ../../rapidjson/include/rapidjson/internal/swap.h ../../rapidjson/include/rapidjson/internal/strtod.h ../../rapidjson/include/rapidjson/internal/ieee754.h ../../rapidjson/include/rapidjson/internal/biginteger.h ../../rapidjson/include/rapidjson/internal/diyfp.h ../../rapidjson/include/rapidjson/internal/clzll.h ../../rapidjson/include/rapidjson/internal/pow10.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/error/../rapidjson.h ../../rapidjson/include/rapidjson/internal/strfunc.h ../../rapidjson/include/rapidjson/internal/../stream.h ../../rapidjson/include/rapidjson/internal/../rapidjson.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/error/en.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/writer.h ../../rapidjson/include/rapidjson/internal/dtoa.h ../../rapidjson/include/rapidjson/internal/itoa.h ../../rapidjson/include/rapidjson/internal/itoa.h ../../rapidjson/include/rapidjson/stringbuffer.h ../../rapidjson/include/rapidjson/prettywriter.h ../../rapidjson/include/rapidjson/writer.h ../../rapidjson/include/rapidjson/stringbuffer.h ../../rapidjson/include/rapidjson/ostreamwrapper.h ../../rapidjson/include/rapidjson/istreamwrapper.h ../../restinio/restinio/all.hpp ../../restinio/restinio/version.hpp ../../restinio/restinio/asio_include.hpp ../../restinio/restinio/settings.hpp ../../restinio/restinio/exception.hpp ../../restinio/restinio/string_view.hpp ../../restinio/restinio/third_party/string-view-lite/string_view.hpp ../../restinio/restinio/request_handler.hpp ../../restinio/restinio/http_headers.hpp ../../restinio/restinio/impl/include_fmtlib.hpp ../../fmt/include/fmt/format.h ../../fmt/include/fmt/core.h ../../fmt/include/fmt/ostream.h ../../fmt/include/fmt/format.h ../../fmt/include/fmt/chrono.h ../../restinio/restinio/impl/string_caseless_compare.hpp ../../restinio/restinio/impl/to_lower_lut.hpp ../../restinio/restinio/compiler_features.hpp ../../restinio/restinio/optional.hpp ../../restinio/restinio/third_party/optional-lite/optional.hpp ../../restinio/restinio/common_types.hpp ../../http-parser/http_parser.h ../../restinio/restinio/message_builders.hpp ../../restinio/restinio/os.hpp ../../restinio/restinio/impl/os_posix.ipp ../../restinio/restinio/sendfile.hpp ../../restinio/restinio/sendfile_defs_posix.hpp ../../restinio/restinio/impl/connection_base.hpp ../../restinio/restinio/tcp_connection_ctx_base.hpp ../../restinio/restinio/connection_state_listener.hpp ../../restinio/restinio/variant.hpp ../../restinio/restinio/third_party/variant-lite/variant.hpp ../../restinio/restinio/tls_fwd.hpp ../../restinio/restinio/buffers.hpp ../../restinio/restinio/utils/suppress_exceptions.hpp ../../restinio/restinio/null_logger.hpp ../../restinio/restinio/utils/impl/safe_uint_truncate.hpp ../../restinio/restinio/impl/header_helpers.hpp ../../restinio/restinio/chunked_input_info.hpp ../../restinio/restinio/traits.hpp ../../restinio/restinio/asio_timer_manager.hpp ../../restinio/restinio/timer_common.hpp ../../restinio/restinio/ip_blocker.hpp ../../restinio/restinio/default_strands.hpp ../../restinio/restinio/connection_count_limiter.hpp ../../restinio/restinio/null_mutex.hpp ../../restinio/restinio/utils/tagged_scalar.hpp ../../restinio/restinio/utils/metaprogramming.hpp ../../restinio/restinio/incoming_http_msg_limits.hpp ../../restinio/restinio/http_server.hpp ../../restinio/restinio/impl/acceptor.hpp ../../restinio/restinio/impl/connection.hpp ../../restinio/restinio/impl/response_coordinator.hpp ../../restinio/restinio/impl/connection_settings.hpp ../../restinio/restinio/impl/fixed_buffer.hpp ../../restinio/restinio/impl/write_group_output_ctx.hpp ../../restinio/restinio/impl/sendfile_operation.hpp ../../restinio/restinio/impl/sendfile_operation_posix.ipp ../../restinio/restinio/impl/executor_wrapper.hpp ../../restinio/restinio/utils/at_scope_exit.hpp ../../restinio/restinio/impl/parser_callbacks.ipp ../../restinio/restinio/http_server_run.hpp ../../restinio/restinio/impl/ioctx_on_thread_pool.hpp ../../restinio/restinio/null_timer_manager.hpp ../../restinio/restinio/ostream_logger.hpp ../../restinio/restinio/uri_helpers.hpp ../../restinio/restinio/utils/percent_encoding.hpp ../../restinio/restinio/expected.hpp ../../restinio/restinio/third_party/expected-lite/expected.hpp ../../restinio/restinio/utils/utf8_checker.hpp ../../restinio/restinio/cast_to.hpp ../../restinio/restinio/utils/from_string.hpp ../../restinio/restinio/utils/from_string_details.ipp ../../restinio/restinio/value_or.hpp ../../restinio/restinio/router/express.hpp ../../restinio/restinio/router/impl/target_path_holder.hpp ../../restinio/restinio/router/non_matched_request_handler.hpp ../../restinio/restinio/path2regex/path2regex.hpp ../../restinio/restinio/router/std_regex_engine.hpp ../../restinio/restinio/router/method_matcher.hpp
+build/x86-64/release/build/x86-64/release/main.o: main.cpp wDataHandler.hpp StationDataT.hpp ../../json_dto/dev/json_dto/pub.hpp ../../rapidjson/include/rapidjson/document.h ../../rapidjson/include/rapidjson/reader.h ../../rapidjson/include/rapidjson/allocators.h ../../rapidjson/include/rapidjson/rapidjson.h ../../rapidjson/include/rapidjson/internal/meta.h ../../rapidjson/include/rapidjson/internal/../rapidjson.h ../../rapidjson/include/rapidjson/stream.h ../../rapidjson/include/rapidjson/encodings.h ../../rapidjson/include/rapidjson/encodedstream.h ../../rapidjson/include/rapidjson/memorystream.h ../../rapidjson/include/rapidjson/internal/clzll.h ../../rapidjson/include/rapidjson/internal/stack.h ../../rapidjson/include/rapidjson/internal/../allocators.h ../../rapidjson/include/rapidjson/internal/swap.h ../../rapidjson/include/rapidjson/internal/strtod.h ../../rapidjson/include/rapidjson/internal/ieee754.h ../../rapidjson/include/rapidjson/internal/biginteger.h ../../rapidjson/include/rapidjson/internal/diyfp.h ../../rapidjson/include/rapidjson/internal/clzll.h ../../rapidjson/include/rapidjson/internal/pow10.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/error/../rapidjson.h ../../rapidjson/include/rapidjson/internal/strfunc.h ../../rapidjson/include/rapidjson/internal/../stream.h ../../rapidjson/include/rapidjson/internal/../rapidjson.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/error/en.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/writer.h ../../rapidjson/include/rapidjson/internal/dtoa.h ../../rapidjson/include/rapidjson/internal/itoa.h ../../rapidjson/include/rapidjson/internal/itoa.h ../../rapidjson/include/rapidjson/stringbuffer.h ../../rapidjson/include/rapidjson/prettywriter.h ../../rapidjson/include/rapidjson/writer.h ../../rapidjson/include/rapidjson/stringbuffer.h ../../rapidjson/include/rapidjson/ostreamwrapper.h ../../rapidjson/include/rapidjson/istreamwrapper.h ../../restinio/restinio/all.hpp ../../restinio/restinio/version.hpp ../../restinio/restinio/asio_include.hpp ../../restinio/restinio/settings.hpp ../../restinio/restinio/exception.hpp ../../restinio/restinio/string_view.hpp ../../restinio/restinio/third_party/string-view-lite/string_view.hpp ../../restinio/restinio/request_handler.hpp ../../restinio/restinio/http_headers.hpp ../../restinio/restinio/impl/include_fmtlib.hpp ../../fmt/include/fmt/format.h ../../fmt/include/fmt/core.h ../../fmt/include/fmt/ostream.h ../../fmt/include/fmt/format.h ../../fmt/include/fmt/chrono.h ../../restinio/restinio/impl/string_caseless_compare.hpp ../../restinio/restinio/impl/to_lower_lut.hpp ../../restinio/restinio/compiler_features.hpp ../../restinio/restinio/optional.hpp ../../restinio/restinio/third_party/optional-lite/optional.hpp ../../restinio/restinio/common_types.hpp ../../http-parser/http_parser.h ../../restinio/restinio/message_builders.hpp ../../restinio/restinio/os.hpp ../../restinio/restinio/impl/os_posix.ipp ../../restinio/restinio/sendfile.hpp ../../restinio/restinio/sendfile_defs_posix.hpp ../../restinio/restinio/impl/connection_base.hpp ../../restinio/restinio/tcp_connection_ctx_base.hpp ../../restinio/restinio/connection_state_listener.hpp ../../restinio/restinio/variant.hpp ../../restinio/restinio/third_party/variant-lite/variant.hpp ../../restinio/restinio/tls_fwd.hpp ../../restinio/restinio/buffers.hpp ../../restinio/restinio/utils/suppress_exceptions.hpp ../../restinio/restinio/null_logger.hpp ../../restinio/restinio/utils/impl/safe_uint_truncate.hpp ../../restinio/restinio/impl/header_helpers.hpp ../../restinio/restinio/chunked_input_info.hpp ../../restinio/restinio/traits.hpp ../../restinio/restinio/asio_timer_manager.hpp ../../restinio/restinio/timer_common.hpp ../../restinio/restinio/ip_blocker.hpp ../../restinio/restinio/default_strands.hpp ../../restinio/restinio/connection_count_limiter.hpp ../../restinio/restinio/null_mutex.hpp ../../restinio/restinio/utils/tagged_scalar.hpp ../../restinio/restinio/utils/metaprogramming.hpp ../../restinio/restinio/incoming_http_msg_limits.hpp ../../restinio/restinio/http_server.hpp ../../restinio/restinio/impl/acceptor.hpp ../../restinio/restinio/impl/connection.hpp ../../restinio/restinio/impl/response_coordinator.hpp ../../restinio/restinio/impl/connection_settings.hpp ../../restinio/restinio/impl/fixed_buffer.hpp ../../restinio/restinio/impl/write_group_output_ctx.hpp ../../restinio/restinio/impl/sendfile_operation.hpp ../../restinio/restinio/impl/sendfile_operation_posix.ipp ../../restinio/restinio/impl/executor_wrapper.hpp ../../restinio/restinio/utils/at_scope_exit.hpp ../../restinio/restinio/impl/parser_callbacks.ipp ../../restinio/restinio/http_server_run.hpp ../../restinio/restinio/impl/ioctx_on_thread_pool.hpp ../../restinio/restinio/null_timer_manager.hpp ../../restinio/restinio/ostream_logger.hpp ../../restinio/restinio/uri_helpers.hpp ../../restinio/restinio/utils/percent_encoding.hpp ../../restinio/restinio/expected.hpp ../../restinio/restinio/third_party/expected-lite/expected.hpp ../../restinio/restinio/utils/utf8_checker.hpp ../../restinio/restinio/cast_to.hpp ../../restinio/restinio/utils/from_string.hpp ../../restinio/restinio/utils/from_string_details.ipp ../../restinio/restinio/value_or.hpp ../../restinio/restinio/router/express.hpp ../../restinio/restinio/router/impl/target_path_holder.hpp ../../restinio/restinio/router/non_matched_request_handler.hpp ../../restinio/restinio/path2regex/path2regex.hpp ../../restinio/restinio/router/std_regex_engine.hpp ../../restinio/restinio/router/method_matcher.hpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -842,6 +852,7 @@ build/x86-64/release/build/x86-64/release/main.o: main.cpp StationDataT.hpp ../.
 # Not a target:
 ../../restinio/restinio/third_party/variant-lite/variant.hpp:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -887,7 +898,7 @@ all: info bin/x86-64/release/WeatherStation
 # Not a target:
 main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-09 14:47:42.165637556
+#  Last modified 2022-05-09 18:01:13.567647001
 #  File has been updated.
 #  Successfully updated.
 
@@ -921,13 +932,37 @@ main.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-bin/x86-64/release/WeatherStation: build/x86-64/release bin/x86-64/release build/x86-64/release/main.d build/x86-64/release/main.o
+bin/x86-64/release/WeatherStation: build/x86-64/release bin/x86-64/release build/x86-64/release/main.d build/x86-64/release/wDataHandler.d build/x86-64/release/main.o build/x86-64/release/wDataHandler.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 83):
 	@echo "Linking "${BINNAME}
 	@${CXX} -o $@ ${OBJS} ${LIBS} ${LIBPATHS}
+
+# Not a target:
+wDataHandler.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 17:56:39.742391155
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/x86-64/release/wDataHandler.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/x86-64/release/wDataHandler.d: wDataHandler.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'wDataHandler'
+#  Last modified 2022-05-09 18:10:32.682869733
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 72):
+	@echo "Generating dependency for $<"
+	@mkdir -p ${OBJ_DEST_DIR}
+	@$(CXX) -MT${OBJ_DEST_DIR}/$(@:.d=.o) -MM $(CXXFLAGS) $^ > $@
 
 # Not a target:
 ../../rapidjson/include/rapidjson/internal/stack.h:
@@ -1062,6 +1097,7 @@ bin/x86-64/release/WeatherStation: build/x86-64/release bin/x86-64/release build
 #  File has not been updated.
 
 # Not a target:
+ 
 ../../http-parser/http_parser.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1103,7 +1139,6 @@ build/x86-64/release/main.o:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 ../../restinio/restinio/third_party/expected-lite/expected.hpp:
 #  Implicit rule search has not been done.
@@ -1143,7 +1178,7 @@ build/x86-64/release/main.o:
 build/x86-64/release/main.d: main.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-05-09 16:20:10.357365916
+#  Last modified 2022-05-09 18:10:33.342870111
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 72):
@@ -1164,7 +1199,7 @@ build/x86-64/release/main.d: main.cpp
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=126/1024=12%, Rehash=0, Collisions=16/276=6%
+# Load=131/1024=13%, Rehash=0, Collisions=23/410=6%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -1172,12 +1207,12 @@ build/x86-64/release/main.d: main.cpp
 # General ('VPATH' variable) search path:
 # src
 
-# strcache buffers: 1 (0) / strings = 140 / storage = 5600 B / avg = 40 B
-# current buf: size = 8162 B / used = 5600 B / count = 140 / avg = 40 B
+# strcache buffers: 1 (0) / strings = 146 / storage = 5776 B / avg = 39 B
+# current buf: size = 8162 B / used = 5776 B / count = 146 / avg = 39 B
 
-# strcache performance: lookups = 175 / hit rate = 20%
+# strcache performance: lookups = 309 / hit rate = 52%
 # hash-table stats:
-# Load=140/8192=2%, Rehash=0, Collisions=1/175=1%
-# Finished Make data base on Mon May  9 16:20:10 2022
+# Load=146/8192=2%, Rehash=0, Collisions=2/309=1%
+# Finished Make data base on Mon May  9 18:10:34 2022
 
  
