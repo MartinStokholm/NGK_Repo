@@ -399,19 +399,23 @@ and this time send both GET, PUT and POST requests matching the end points we ad
 
 First lets check out the test result for GET, PUT, and DELETE based on ID paramater
 
+First we check out GET on /ID/1
+
 ![getOnID](img/get_by_id_param_test.png)
+
+Now here is the testing of POST on a new entry with id 5 to weather data collection 
+
+![postEntryToCollection](img/post_new_entry_test.png)
+
+![getAfterPost](img/get_after_post.png)
+
+then updating that entry with id 5 
 
 ![putOnID](img/put_on_entry_test.png)
 
 ![getAfterPut](img/get_after_put.png)
 
 ![deleteOnID](img/delete_entry_test.png)
-
-Now here is the testing of POST on a entry to weather data collection
-
-![postEntryToCollection](img/post_new_entry_test.png)
-
-![getAfterPost](img/get_after_post.png)
 
 And testing the GET on the three latest entries from weather data collection
 
