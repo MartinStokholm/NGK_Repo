@@ -1,5 +1,22 @@
 # Part 1 ( Web server )
 
+## Introduction
+For this and the following parts we are using a c++ header only library called restinio to implement the web server. The genereal structure of the server program is as follows.
+
+In the main function there is a call to restinio::run(). This is what starts the server. 
+
+```Cpp
+restinio::run(
+			restinio::on_this_thread< traits_t >()
+				.address( "localhost" )
+				.request_handler( server_handler(weather_data_collection))
+				.read_next_http_message_timelimit(10s)
+				.write_http_response_timelimit(1s)
+				.handle_request_timeout(1s));
+```
+
+Notice that one of the parameters for run(), is a request_handler function. This is the next requirement. Therefore we create such a function, and since we are interrestend in having data, the parameter for the function server_handler takes a struct of type weather_data_collection_t, which is just a vector list of type weather_data_t. Inside the server_handler() there is some boilerplate code at the top but the relevant part is the use of the so called "router". This is how we map specif requests to a functionality, that the server will beform. A code snippet and further explanation will be given later in this journal. 
+
 ## What the server must be able to do  
 
 Create a web server, that will act as a weather station which contains information about the weather
@@ -98,7 +115,7 @@ struct weather_data_t
 Notice how the structs are encapsulating the template function "json_io" which is where the mapping of key value pairs are done. This will not be needed right now, but in later parts, where we instead of static html responses, are creating responses with dto's (data transfer objects).
 
 ## Routing of http method and URL
-In the server_handler function we add a http_get to the router where we specify the URL and method for handling the request. The code snippet below shows how this is done:
+In the forementioned server_handler function we now add a http_get to the router where we specify the URL and method for handling the request. The code snippet below shows how this is done:
 ```Cpp
 auto server_handler(weather_data_collection_t & weather_data_collection) 
 {
@@ -188,8 +205,10 @@ auto on_weatherData_htmlTable(const restinio::request_handle_t& req, rr::route_p
 
 ## Testing the server
 
-In order to test the webserver we will be using the program Postman to simulate the client part,
-and send a GET request matching the end point we create in our weatherStation server.
+In order to test the webserver we will be using the browser mozilla firefow, since we are only needing to send a GET request to the URL "localhost:8080/api/weatherDataHtmlTable". The result of the test is shown below:
+![](img/part1_static_htmlTable_response_result.png)
+
+This is all for the first part.
 
 # Part 2 ( Creating a Web API )
 
