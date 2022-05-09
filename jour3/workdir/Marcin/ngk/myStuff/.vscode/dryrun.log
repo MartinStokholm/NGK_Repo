@@ -1,0 +1,9 @@
+echo "Compiling for 'x86-64' in 'release' mode..."
+mkdir -p build/x86-64/release
+mkdir -p bin/x86-64/release
+echo "Compiling "helloWorld.cpp
+g++ -c helloWorld.cpp -o build/x86-64/release/helloWorld.o -std=c++14 -DRESTINIO_USE_BOOST_ASIO=shared -O2 -Wall -Iinclude  -DOS_LINUX -I../restinio -I../fmt/include -I../http-parser -I../json_dto/dev -I../rapidjson/include
+echo "Linking "restinio_test
+g++ -o bin/x86-64/release/restinio_test build/x86-64/release/helloWorld.o -lfmt -lhttp_parser -lpthread -L../fmt/lib/x86-64/release -L../http-parser/lib/x86-64/release
+make: Leaving directory '/mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff'
+ 
