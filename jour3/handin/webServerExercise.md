@@ -413,15 +413,19 @@ then updating that entry with id 5, the change is the in the field "time" where 
 
 ![putOnID](img/put_on_entry_test.png)
 
+after GET on all entries the entry with id 5 is now changed
+
 ![getAfterPut](img/get_after_put.png)
+
+Here we delete the entry with id 1
 
 ![deleteOnID](img/delete_entry_test.png)
 
-And testing the GET on the three latest entries from weather data collection
+Now it is testing of the GET on the three latest entries from weather data collection
 
 ![getThreeLatest](img/get_threeLatest_test.png)
 
-Oh and lets not forget about GET of the whole collection.
+GET of the whole collection. (this was actually done before adding the entry with id 5, thats why it is not present here)
 
 ![getAll](img/get_all_test.png)
 
@@ -429,7 +433,7 @@ Lastly here is the test of GET by date parameter
 
 ![getByDateParam](img/get_by_date_param_test.png)
 
-yeah that is all for this part. The server has now been upgraded to be a actual REST server with a simple API that has basic implementations for the four CRUD operations, Create, read, update and delete. We have not develeped a frontend application, but for the next part, where we upgrade the connection type to webSocket, there will be a frontend application. 
+yeah that is all for this part. The server has now been upgraded to be an actual REST server with a simple API that has basic implementations for the four CRUD operations, Create, read, update and delete. We have not develeped a frontend application, but for the next part, where we upgrade the connection type to webSocket, there will be a frontend application. 
 
 # Part 3 ( Upgrading the connection to webSocket protocol )
 
