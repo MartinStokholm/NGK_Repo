@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Restinio",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/../../restinio",
+                "${workspaceFolder}/../../asio-1.12.2/include",
+                "${workspaceFolder}/../../fmt/include",
+                "${workspaceFolder}/../../http-parser",
+                "${workspaceFolder}/../../json_dto/dev",
+                "${workspaceFolder}/../../rapidjson/include"
+
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang-12",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}

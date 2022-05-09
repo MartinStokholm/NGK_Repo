@@ -1,0 +1,14 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPI'
+ 
+Generating dependency for main.cpp
+ 
+echo "Compiling for 'x86-64' in 'release' mode..."
+mkdir -p build/x86-64/release
+mkdir -p bin/x86-64/release
+echo "Compiling "main.cpp
+g++ -c main.cpp -o build/x86-64/release/main.o -std=c++14 -DRESTINIO_USE_BOOST_ASIO=shared -O2 -Wall -Iinclude  -DOS_LINUX -I../../restinio -I../../fmt/include -I../../http-parser -I../../json_dto/dev -I../../rapidjson/include
+echo "Linking "WeatherStation
+g++ -o bin/x86-64/release/WeatherStation build/x86-64/release/main.o -lfmt -lhttp_parser -lpthread -L../../fmt/lib/x86-64/release -L../../http-parser/lib/x86-64/release
+make: Leaving directory '/mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPI'
+ 

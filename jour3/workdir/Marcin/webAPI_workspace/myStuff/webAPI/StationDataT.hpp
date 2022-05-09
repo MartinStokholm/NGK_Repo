@@ -29,10 +29,22 @@ struct weatherRegistration{
     weatherRegistration() = default;
 
     weatherRegistration(int ID, string date, string time, 
-    string pname, double lat, double lon, double temp, int hum) : 
-    place_(pname, lat, lon),
-    ID_{move(ID)}, date_{move(date)}, temperature_{move(temp)}, humidity_{(move(hum))}
+    place pl, double temp, int hum) : 
+    
+    ID_{move(ID)}, date_{move(date)}, time_{move(time)},  place_{move(pl)}, temperature_{move(temp)}, humidity_{(move(hum))}
     {}
+
+    template <typename JSON_IO>
+    
+    void json_io(JSON_IO& io){
+        io
+            & json_dto::mandatory("ID", ID_)
+            & json_dto::mandatory("Time", date_)
+            & json_dto::mandatory("Place", place_)
+            & json_dto::mandatory("Date", date_)
+            & json_dto::mandatory("Temperature", temperature_)
+            & json_dto::mandatory("Humidity", humidity_);
+    }
 
     int ID_;
     string date_;
