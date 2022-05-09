@@ -15,11 +15,11 @@ restinio::run(
 				.handle_request_timeout(1s));
 ```
 
-Notice that one of the parameters for run(), is a request_handler function. This is the next requirement. Therefore we create such a function, and since we are interrestend in having data, the parameter for the function server_handler takes a struct of type weather_data_collection_t, which is just a vector list of type weather_data_t. Inside the server_handler() there is some boilerplate code at the top but the relevant part is the use of the so called "router". This is how we map specif requests to a functionality, that the server will beform. A code snippet and further explanation will be given later in this journal. 
+Notice that one of the parameters for run(), is a request_handler function. This is the next requirement. Therefore we create such a function, and since we are interrestend in having data, the parameter for the function server_handler takes a struct of type weather_data_collection_t, which is just a vector list of type weather_data_t. Inside the server_handler() there is some boilerplate code at the top but the relevant part is the use of the so called "router". This is how we map specif requests to a functionality, that the server will perform. A code snippet and further explanation will be given later in this journal. 
 
 ## What the server must be able to do  
 
-Create a web server, that will act as a weather station which contains information about the weather
+Create a web server, that will act as a weather station which contains information about the weather.
 For this first part the server must simple return a static html page with some hardcoded weatherdata.
 
 The hardcoded data found in the first version of the webserver should be like this:
@@ -227,9 +227,171 @@ The user should be able to update existing weatherData, which will then be store
 other clients will be able to see the new data. 
 
 ## Adding more routing
+In our server_handler function mentioned before, we will be adding a few more routings to handle the expansion and evolution of our server, in order to make a proper API. 
+The addditions can be seen below:
+```cpp
+// get all entries from weater_data_collection_t 
+	router->http_get("/api/weatherData", by(&weather_data_handler_t::on_weatherData_all_get));
+
+	// get latest three entries from weather_data_collection_t
+	router->http_get("/api/weatherData/threeLatest", by(&weather_data_handler_t::on_weatherData_threeLatest_get));
+
+	// get one entry based on id from weather_data_collection_t
+	router->http_get(R"(/api/weatherData/id/:weatherDataID(\d+))", by(&weather_data_handler_t::on_weatherData_Num_get));
+
+	// get entries based on date from weatherDataCollection 
+	router->http_get("/api/weatherData/date/:weatherDataDate", by(&weather_data_handler_t::on_weatherData_date_get));
+
+	// post a entry to weather_data_collection_t 
+	router->http_post("/api/weatherData", by(&weather_data_handler_t::on_weatherData_add));
+
+	// put one entry based on id from weather_data_collection_t
+	router->http_put(R"(/api/weatherData/id/:weatherDataID(\d+))", by(&weather_data_handler_t::on_weatherDataNum_update));
+
+	// delet one entry based on id from weather_data_collection_t
+	router->http_delete(R"(/api/weatherData/id/:weatherDataID(\d+))",	by(&weather_data_handler_t::on_weatherDataNum_delete));
+```
+
+We added a few more routing to also be able to acces data based on the field ID. This can be used to eiter update (put) or delete data. 
 
 ## Implementing methods for POST, GET and PUT.
+So as in the first part, the routing needs a method for executing the desired functionality. Thesse can be seen in the code snippet below:
 
+Method for fetchin data based on Date parameter
+
+```cpp
+auto on_weatherData_date_get(const restinio::request_handle_t& req, rr::route_params_t params)
+	{
+		const auto weatherDataDate = restinio::cast_to<std::string>(params["weatherDataDate"]);
+
+		auto resp = init_resp(req->create_response());
+		resp.set_body("");	
+		int cnt = 0;
+		for(auto i = m_weather_data.begin(); i != m_weather_data.end(); i++)
+		{
+			if(i->m_date == weatherDataDate)
+			{
+				resp.append_body(json_dto::to_json<weather_data_t>(m_weather_data[cnt]));
+			}
+			++cnt;
+		}
+		return resp.done();
+	}
+```
+
+Method for fetching all available weather data
+
+```cpp
+	auto on_weatherData_all_get(const restinio::request_handle_t& req, rr::route_params_t) const
+	{
+		auto resp = init_resp(req->create_response());
+		const auto & wd = m_weather_data;
+		resp.set_body(json_dto::to_json< std::vector<weather_data_t> >(wd));
+		return resp.done();
+	}
+```
+Method for fetching the three latest entries of weather data
+
+```cpp
+	auto on_weatherData_threeLatest_get(const restinio::request_handle_t& req, rr::route_params_t) const        
+    {                                                                                               
+    	auto resp = init_resp(req->create_response());                                              
+                                                                                                        
+        resp.set_body("");                                  
+                                                                                                        
+        const auto & wd = m_weather_data;                                                           
+
+        if (wd.size() > 3)                                                                          
+        {                                                                                           
+        	for (std::size_t i = wd.size(); i > wd.size()-3;i--)                                    
+            {                                                                                       
+            	resp.append_body(json_dto::to_json<weather_data_t>(wd[i-1]));                       
+            }                                                                                       
+        }                                                                                           
+        else                                                                                        
+        {                                                                                           
+        	resp.append_body("There are less than three entries!");                                 
+		}
+
+        return resp.done();                                                                         
+    }    
+```
+
+Lastly are the methods for getting, deleting and putting entries based on ID parameter
+
+```cpp
+
+	auto on_weatherData_Num_get(const restinio::request_handle_t& req, rr::route_params_t params)
+	{
+		const auto weatherDataID = restinio::cast_to<std::uint32_t>(params["weatherDataID"]);
+
+		auto resp = init_resp(req->create_response());
+
+		if(0 != weatherDataID && weatherDataID <= m_weather_data.size())
+		{
+			const auto & wd = m_weather_data[weatherDataID - 1];
+			resp.set_body(json_dto::to_json<weather_data_t>(wd));
+		}
+		else
+		{
+			resp.set_body("No weatherData with #" + std::to_string(weatherDataID) + "\n" );
+		}
+
+		return resp.done();
+	}
+
+	auto on_weatherDataNum_update(const restinio::request_handle_t& req, rr::route_params_t params)
+	{
+		const auto weatherDataID = restinio::cast_to<std::uint32_t>(params["weatherDataID"]);
+
+		auto resp = init_resp(req->create_response());
+
+		try
+		{
+			auto wd = json_dto::from_json<weather_data_t>(req->body());
+
+			if(0 != weatherDataID && weatherDataID <= m_weather_data.size())
+			{
+				m_weather_data[weatherDataID - 1] = wd;
+			}
+			else
+			{
+				mark_as_bad_request(resp);
+				resp.set_body("No weatherData with #" + std::to_string(weatherDataID) + "\n");
+			}
+		}
+		catch( const std::exception & /*ex*/ )
+		{
+			mark_as_bad_request(resp);
+		}
+
+		return resp.done();
+	}
+
+	auto on_weatherDataNum_delete(const restinio::request_handle_t& req, rr::route_params_t params)
+	{
+		const auto weatherDataID = restinio::cast_to<std::uint32_t>(params["weatherDataID"]);
+
+		auto resp = init_resp(req->create_response());
+
+		if(0 != weatherDataID && weatherDataID <= m_weather_data.size())
+		{
+			const auto & wd = m_weather_data[ weatherDataID - 1 ];
+			resp.set_body("Delete weatherData #" + std::to_string(weatherDataID) + "\n");
+			resp.append_body(json_dto::to_json(wd));
+
+			m_weather_data.erase(m_weather_data.begin() + (weatherDataID - 1 ));
+		}
+		else
+		{
+			resp.set_body(
+				"No weatherData with #" + std::to_string(weatherDataID) + "\n");
+		}
+
+		return resp.done();
+	}
+
+```
 ## Testing the API
 
 In order to test the webservers API we will again be using the program Postman to simulate the client part,
