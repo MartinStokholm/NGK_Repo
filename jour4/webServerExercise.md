@@ -5,25 +5,186 @@
 Create a web server, that will act as a weather station which contains information about the weather
 For this first part the server must simple return a static html page with some hardcoded weatherdata.
 
-The hardcoded data found in the first version of the webserver should be:
+The hardcoded data found in the first version of the webserver should be like this:
 
-| ID	 	  | 1		 |
-| Date		  | 20211105 |
-| Time	 	  | 12:15	 |
-| Place  	  | 		 |
-| Name   	  | Aarhus N |
-| Lat	 	  | 13.692   |
-| Lon	 	  | 19.438	 |
-| Temperature | 13.1	 |
-| Humidity	  | 70%		 |
-
+![serverResponse](img/htmlTable_format.png)
 
 The values above are instansiated in the main function before being passed to the serverhandler in
 the call to restinio::run(). This way the server will contain data in its weatherDataCollection struct.
+This can be shown in the below code snippet:
+```Cpp
+int main()
+{
+	using namespace std::chrono;
+	
+	try
+	{
+		using traits_t =
+			restinio::traits_t<
+				restinio::asio_timer_manager_t,
+				restinio::single_threaded_ostream_logger_t,
+				router_t >;
+
+		weather_data_collection_t weather_data_collection{
+			{ "1", "20211105", "12:15", {"Aarhus N", 13.692, 19.438}, "13.1", "70%" },
+		}; 	
+    ...
+```
+
+## The data structures in the server
+In order to both store and be able to parse data to and from json, we have to define some structs inside the server program. The reason for using structs is that thats how the restinino library works in conjunction with the json_dto library. The two structs weather_data_t and place_t are shown below:
+
+```Cpp
+struct place_t 
+{
+	place_t() = default;
+	
+	place_t(std::string placeName, float lat, float lon) 
+			: m_placeName{std::move( placeName ) }
+			, m_lat{std::move( lat )}
+		    , m_lon{std::move( lon )}
+	{}
+
+	template<typename JSON_IO>
+	void
+	json_io(JSON_IO &io)
+	{
+		io
+			& json_dto::mandatory( "PlaceName", m_placeName )
+			& json_dto::mandatory( "Lat"	  , m_lat 		)
+			& json_dto::mandatory( "Lon"	  , m_lon 		);
+	}	
+
+	std::string m_placeName;
+	float m_lat;
+	float m_lon;
+};
+
+struct weather_data_t 
+{
+	weather_data_t() = default;
+	
+	weather_data_t(std::string id, std::string date, std::string timeOfEntry, 
+					place_t place, std::string temp, std::string rh)
+		:	m_id{std::move( id ) } 	
+		,   m_date{std::move( date ) }
+		,   m_time{std::move( timeOfEntry ) }
+		,	m_place{std::move( place ) }
+		, 	m_temp{std::move( temp ) }
+		,	m_rh{std::move( rh ) }
+	{}
+
+	template<typename JSON_IO>
+	void
+	json_io(JSON_IO &io)
+	{
+		io
+			& json_dto::mandatory( "ID"   		, m_id   )
+			& json_dto::mandatory( "Date" 		, m_date )
+			& json_dto::mandatory( "Time" 		, m_time )
+			& json_dto::mandatory( "Place"		, m_place)
+			& json_dto::mandatory( "Temperature", m_temp )
+			& json_dto::mandatory( "Humidity"	, m_rh 	 );
+	}
+
+	std::string m_id;
+	std::string m_date;
+	std::string m_time;
+	place_t m_place;
+	std::string m_temp;
+	std::string m_rh;
+};
+```
+Notice how the structs are encapsulating the template function "json_io" which is where the mapping of key value pairs are done. This will not be needed right now, but in later parts, where we instead of static html responses, are creating responses with dto's (data transfer objects).
 
 ## Routing of http method and URL
+In the server_handler function we add a http_get to the router where we specify the URL and method for handling the request. The code snippet below shows how this is done:
+```Cpp
+auto server_handler(weather_data_collection_t & weather_data_collection) 
+{
+	auto router = std::make_unique<router_t>();
+	auto handler = std::make_shared<weather_data_handler_t>(std::ref(weather_data_collection));
+
+	auto by = [&](auto method) {
+		using namespace std::placeholders;
+		return std::bind(method, handler, _1, _2);
+	};
+
+	auto method_not_allowed = [](const auto & req, auto) {
+			return req->create_response(restinio::status_method_not_allowed())
+					.connection_close()
+					.done();
+		};
+
+ ...
+	// Handler for returning the hardcoded weatherdata as html table.
+	router->http_get( "/api/weatherDataHtmlTable", by(&weather_data_handler_t::on_weatherData_htmlTable));
+...
+```
 
 ## Implementing the method  
+
+
+
+```Cpp
+auto on_weatherData_htmlTable(const restinio::request_handle_t& req, rr::route_params_t) const
+	{
+		auto resp = init_resp(req->create_response());
+
+		resp.append_header("Server", "WeatherStation API Interface");
+		resp.append_header_date_field();
+		resp.append_header(
+					restinio::http_field::content_type,
+					"text/html; charset=utf-8");	
+		resp.set_body("<!DOCTYPE html><html><style>table, th, td {border:1px solid black;}</style><body>");
+		resp.append_body("<h2>WeatherStation</h2>");
+
+		// link for table code check https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table3
+		for (auto i = m_weather_data.begin(); i != m_weather_data.end(); i++)
+		{
+			resp.append_body("<table style='width:100%'>");
+			resp.append_body("<tr>");
+			resp.append_body("<th>Field</th>");
+			resp.append_body("<th>Field value</th>");
+			resp.append_body("</tr>");
+			resp.append_body("<tr>");
+			resp.append_body("<td>ID</td>");
+			resp.append_body("<td>" + i->m_id + "</td>");
+			resp.append_body("</tr>");
+			resp.append_body("<tr>");
+			resp.append_body("<td>Date</td>");
+			resp.append_body("<td>" + i->m_date + "</td>");
+			resp.append_body("</tr>");
+			resp.append_body("<tr>");
+			resp.append_body("<td>Time</td>");
+			resp.append_body("<td>" + i->m_time + "</td>");
+			resp.append_body("</tr>");
+			resp.append_body("<tr>");
+			resp.append_body("<td>PlaceName</td>");
+			resp.append_body("<td>" + i->m_place.m_placeName + "</td>");
+			resp.append_body("</tr>");
+			resp.append_body("<tr>");
+			resp.append_body("<td>Lat</td>");
+			resp.append_body("<td>" + std::to_string(i->m_place.m_lat) + "</td>");
+			resp.append_body("</tr>");
+			resp.append_body("<tr>");
+			resp.append_body("<td>Lon</td>");
+			resp.append_body("<td>" + std::to_string(i->m_place.m_lon) + "</td>");
+			resp.append_body("</tr>");
+			resp.append_body("<tr>");
+			resp.append_body("<td>Temperature</td>");
+			resp.append_body("<td> " + i->m_temp + "</td>");
+			resp.append_body("</tr>");
+			resp.append_body("<tr>");
+			resp.append_body("<td>Humidity</td>");
+			resp.append_body("<td>" + i->m_rh + "</td>");
+			resp.append_body("</tr></table>");
+			resp.append_body("<br>");
+		}
+		resp.append_body("</body></html>");
+		return resp.done();
+	}
+```
 
 ## Testing the server
 
