@@ -39,9 +39,9 @@ struct weatherRegistration{
     void json_io(JSON_IO& io){
         io
             & json_dto::mandatory("ID", ID_)
-            & json_dto::mandatory("Time", date_)
-            & json_dto::mandatory("Place", place_)
             & json_dto::mandatory("Date", date_)
+            & json_dto::mandatory("Time", time_)
+            & json_dto::mandatory("Place", place_)
             & json_dto::mandatory("Temperature", temperature_)
             & json_dto::mandatory("Humidity", humidity_);
     }
