@@ -392,10 +392,40 @@ Lastly are the methods for getting, deleting and putting entries based on ID par
 	}
 
 ```
-## Testing the API
+## Testing the API functionality
 
-In order to test the webservers API we will again be using the program Postman to simulate the client part,
-and this time send both GET, PUT and POST requests matching the end points we added.
+In order to test the webservers API we will be using the program Postman to simulate the client part,
+and this time send both GET, PUT and POST requests matching the end points we added. 
+
+First lets check out the test result for GET, PUT, and DELETE based on ID paramater
+
+![getOnID](img/get_by_id_param_test.png)
+
+![putOnID](img/put_on_entry_test.png)
+
+![getAfterPut](img/get_after_put.png)
+
+![deleteOnID](img/delete_entry_test.png)
+
+Now here is the testing of POST on a entry to weather data collection
+
+![postEntryToCollection](img/post_new_entry_test.png)
+
+![getAfterPost](img/get_after_post.png)
+
+And testing the GET on the three latest entries from weather data collection
+
+![getThreeLatest](img/get_threeLatest_test.png)
+
+Oh and lets not forget about GET of the whole collection.
+
+![getAll](img/get_all_test.png)
+
+Lastly here is the test of GET by date parameter
+
+![getByDateParam](img/get_by_date_param_test.png)
+
+yeah that is all for this part. The server has now been upgraded to be a actual REST server with a simple API that has basic implementations for the four CRUD operations, Create, read, update and delete. We have not develeped a frontend application, but for the next part, where we upgrade the connection type to webSocket, there will be a frontend application. 
 
 # Part 3 ( Upgrading the connection to webSocket protocol )
 
