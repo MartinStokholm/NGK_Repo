@@ -39,7 +39,7 @@ int wDataHandler::append_data(restinio::response_builder_t<restinio::restinio_co
 
     resp.append_body("ID: " + std::to_string(m_wData[i].ID_));
     resp.append_body("\nDate: " + m_wData[i].date_);
-    resp.append_body("\nTime:     " + m_wData[i].time_);
+    resp.append_body("\nTime: " + m_wData[i].time_);
     resp.append_body("\nPlace \n");
     resp.append_body("Name: " + m_wData[i].place_.placeName_);
     resp.append_body("\nLatitude: " + std::to_string(m_wData[i].place_.lat_));
