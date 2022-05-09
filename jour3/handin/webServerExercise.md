@@ -218,7 +218,7 @@ This is all for the first part.
 Through the use of the API a user must be able to add new data to the server.
 
 ### Fetching weatherData from the server
-The the use of the API a user must be able to fetch the three latest weatherData entries from the server.
+The user of the API must be able to fetch the three latest weatherData entries from the server.
 Furthermore be able to fetch weatherData based on the date. 
 Lastly the user should be able to fetch all weatherData entries from the server.
 
