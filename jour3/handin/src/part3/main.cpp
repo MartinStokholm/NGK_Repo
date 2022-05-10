@@ -429,7 +429,6 @@ auto server_handler(weather_data_collection_t & weather_data_collection)
 	// options routing for CORS
 	router->add_handler(restinio::http_method_options(), "/api/weatherData/date/:weatherDataDate", by(&weather_data_handler_t::options));
 	router->add_handler(restinio::http_method_options(), "/api/weatherData/id/:weatherDataID", by(&weather_data_handler_t::options));
-	router->add_handler(restinio::http_method_options(), R"(/api/weatherData/id/:weatherDataID(\d+))", by(&weather_data_handler_t::options));
 	router->add_handler(restinio::http_method_options(), "/api/weatherData", by(&weather_data_handler_t::options));
 	router->add_handler(restinio::http_method_options(), "/api/weatherData/threeLatest", by(&weather_data_handler_t::options));
 
