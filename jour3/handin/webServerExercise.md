@@ -1,3 +1,12 @@
+# Exercise 3 - SWNGK Modul2 
+---
+## Group members : 
+  - Martin Stokholm Lauridsen // Studienummer: 201908195
+  - Marcin Szymanek 		  // Studienummer: XXXXXXXXX
+  - Mathias Birk Olsen		  // Studienummer: XXXXXXXXX
+
+----
+
 # Part 1 ( Web server )
 
 ## Introduction
@@ -672,7 +681,7 @@ As already mentioned during the develepment of part 3 we used postman to verify 
 
 Well the client can simply be launced with a browser like Mozilla firefox, and the server program can be build by running the following command:
 
-Important to notice, in the NGK folder, there are other libraries that the restinino is dependend on. Thesse must be build before trying to build a project in the sample folder. In the handin zip file however, everything has been build already so this should work.
+Important to notice, in the NGK folder, there are other libraries that the restinino is dependend on. Thesse must be build before trying to build a project in the sample folder. In the ngk_handin zip file however, everything has been build already so this should work.
 
 ![buildServer](img/building_server.png)
 
