@@ -102,18 +102,6 @@
 				}).catch(error=>alert('Getting from server failed'));
 	}
 
-	// function for fetching entries based on field "date" from weather data from server API
-	function getDataByID() 
-	{
- 		var ID = (parseInt(document.getElementById("date").value));
-		var url ='http://localhost:8080/api/weatherData/id/' + ID 
-		axios.get(url)
-			.then(response=>
-				{
-					setTable(response.data);
-				}).catch(error=>alert('Getting from server failed'));
-	}
-
 	// function for adding an entry of weather data to the server
 	function sendData() 
 	{

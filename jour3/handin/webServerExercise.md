@@ -445,15 +445,240 @@ Furthermore, the webSocket connecetion should be able to handle the all CRUD ope
 (Create, Read, Update and Delete) so the client program can have a table for the data and some 
 indication to show what operation has been done. 
 
-### Creating the client with a listener
+## Creating the client 
 Client will be in a html file. The client creates an instance of socket and tries to connect to the
 servers websocket. There will be an event listener attached to the socket instance, that will on 
 succefull connection enable the client and server to start communicating. 
+This can be seen in the code snippet below:
+
+```js
+	// First the routing, it will go to URI /api/chat 
+	const socket = new WebSocket('ws://localhost:8080/api/chat');
+
+    // Connection opened                                                                                                           
+    socket.addEventListener('open', function (event) 
+	{                                                                             
+    	socket.send('Client is connected');                                                                                                  
+    });                                                                                                                            
+                                                                                                                                     
+    // Listen for messages                                                                                                         
+    socket.addEventListener('message', function (event) 
+	{                                                                          
+    	console.log('Message from server: ', event.data);                                                                               
+		document.getElementById("updatesHere_output").value = event.data;
+    });  	
+```
+
+The client also need somehting in the body part. Mostly it is input fields for when user wants to add, update or delete data on the server. This can be seen below:
+
+```html
+<body>
+	<h1>Weather Station</h1>
+    <output type="text" name="updatesHere" id="updatesHere_output" v-model="updatesHere"></output>
+    <br> 
+	<h2>Input</h2>
+	<p>ID : <input id="id" type="text"></p>
+	<p>Date : <input id="date" type="text"><p/>
+	<p>Time : <input id="time" type="text"><p/>
+	<p>Name : <input id="placename" type="text"><p/>
+	<p>Lat : <input id="lat" type="number"><p/>
+	<p>Lon : <input id="lon" type="number"><p/>
+	<p>Temperature : <input id="temperature" type="text"><p/>
+	<p>Humidity : <input id="humidity" type="text"><p/>
+	
+	<h2>Controls</h2>
+	<input type = "button" onclick = "getData()" value = "Get all entries"> 
+	<input type = "button" onclick = "getThreeLatestData()" value = "Get Three Latest entries"> 
+	<input type = "button" onclick = "getDataByDate()" value = "Get entries by date"> 
+	<input type = "button" onclick = "updateData()" value = "Update entry"> 
+	<input type = "button" onclick = "sendData()" value = "Add entry"> 
+	<input type = "button" onclick = "deleteData()" value = "Delete entry"> 
+	<br>
+	<br>
+	<div id="table">
+</body>
+
+```
+
+Lastly there are a whole bunch of javascript functions added, which all utilizes the axio library in order to send GET, POST, PUT or DELETE requests from client to server. Below are code snippets showcasing them:
+
+```js
+	// function for fetching all entries of weather data from server API
+	function getData() 
+	{
+		axios.get('http://localhost:8080/api/weatherData')
+			.then(response=>
+				{
+					setTable(response.data);
+				}).catch(error=>alert('Get from server failed'));
+	}
+
+	// function for fetching three newest entries of weather data from server API
+	function getThreeLatestData() 
+	{
+		axios.get('http://localhost:8080/api/weatherData/threeLatest')
+			.then(response=>
+				{
+					setTable(response.data);
+				}).catch(error=>alert('Getting from server failed'));
+	}
+
+	// function for fetching entries based on field "date" from weather data from server API
+	function getDataByDate() 
+	{
+ 		var date = (parseInt(document.getElementById("date").value));
+		var url ='http://localhost:8080/api/weatherData/date/' + date
+		axios.get(url)
+			.then(response=>
+				{
+					setTable(response.data);
+				}).catch(error=>alert('Getting from server failed'));
+	}
+
+	// function for adding an entry of weather data to the server
+	function sendData() 
+	{
+		axios.post('http://localhost:8080/api/weatherData',
+		{
+			"ID": parseInt(document.getElementById("id").value),
+			"Date": document.getElementById("date").value,
+			"Time": document.getElementById("time").value,
+			"Place": 
+			{
+				"PlaceName": document.getElementById("placename").value,
+				"Lat": parseFloat(document.getElementById("lat").value),
+				"Lon": parseFloat(document.getElementById("lon").value)
+			},
+			"Temperature": document.getElementById("temperature").value,
+			"Humidity": document.getElementById("humidity").value
+		})
+		.then(response=>{}).catch(error=>alert('Posting to server failed'));
+	}
+
+	// function for deleting an entry of weather data in the server
+	function deleteData()
+	{
+ 		var id = (parseInt(document.getElementById("id").value));
+ 		var url='http://localhost:8080/api/weatherData/id/' + id
+		axios.delete(url,
+		{
+ 			"ID": parseInt(document.getElementById("id").value),
+ 			"Date": document.getElementById("date").value,
+			"Time": document.getElementById("time").value,
+			"Place": 
+			{
+ 				"PlaceName": document.getElementById("placename").value,
+				"Lat": parseFloat(document.getElementById("lat").value),
+				"Lon": parseFloat(document.getElementById("lon").value)
+ 			},
+			"Temperature": document.getElementById("temperature").value,
+			"Humidity": document.getElementById("humidity").value
+		}
+		)
+		.then(response => {}).catch(error => alert('Deleting from server failed'));
+	}	
+
+```
+
+Furthermore we use the table generator library Tabulator in order to show the data. The function for this has been taken from the exercise slides, and the only thing changed are the field names. 
 
 ## Adding the webSocket functionality to the server
+In order for the server to use webSocket there are a few thing that needs to be added. 
+There must be a router added and a accompaning function. The function will make sure to upgrade the connection to webSocket and furthermore store client info in a new added member to the class weather_data_handler_t, of type ws_registry_t. Apart from thesse and somemore more boilerplate additions, some tweaks were made to the existing functions, in order to make sure the DTO sent via the API was correctly formatted. In the earlier part, we were a little quick with some of the functions, resulting in data being formatted incorrect, and therefore not able to be loaded into the Tabulator Table. Thankfully with the use of Postman, thesse issues could be easily identified!
+
+```cpp
+...
+	// webSocket registry holds information about clients that are connected
+	ws_registry_t m_registry;
+...
+	// added http field to header in init response that allows cross origin to all domains. 
+	template<typename RESP>	static RESP	init_resp(RESP resp)
+	{
+		resp
+			.append_header("Server", "Weather Station Bitch")
+			.append_header_date_field()
+			.append_header("Content-Type", "text/plain; charset=utf-8")
+			.append_header(restinio::http_field::access_control_allow_origin, "*");
+		return resp;
+	}
+...
+	// webSocket routing
+	router->http_get("/api/chat", by(&weather_data_handler_t::on_live_update));
+...
+	// creates webSocket handler, stores client info in registry
+	auto on_live_update(const restinio::request_handle_t& req, rr::route_params_t params)
+	{
+		// check if the request is an upgrade connection type aka webSocket
+		if (restinio::http_connection_header_t::upgrade == req->header().connection())
+		{
+			// create webSocket handler
+			auto wsh = rws::upgrade<traits_t>(*req, rws::activation_t::immediate, [this](auto wsh, auto m)
+			{
+				if( rws::opcode_t::text_frame == m->opcode() ||
+					rws::opcode_t::binary_frame == m->opcode() ||
+					rws::opcode_t::continuation_frame == m->opcode() )
+				{
+					wsh->send_message( *m );
+				}
+				else if( rws::opcode_t::ping_frame == m->opcode() )
+				{
+					auto resp = *m;
+					resp.set_opcode( rws::opcode_t::pong_frame );
+					wsh->send_message( resp ); 
+				}
+				else if( rws::opcode_t::connection_close_frame == m->opcode() )
+				{
+					m_registry.erase( wsh->connection_id() );
+				}	
+			});
+			m_registry.emplace(wsh->connection_id(), wsh);
+			init_resp(req->create_response()).done();
+			return restinio::request_accepted();
+		}
+		return restinio::request_rejected();
+	}  
+...
+```
+
+Another important thing to handle is the CORS issues. This is resolved by adding access_control_allow_origin to the response headers. This is implemented with a function and then some more routing in the server_handler(). 
+ 
+```cpp
+...
+	// function for options needed for webSocket, and to enable CORS
+	auto options(restinio::request_handle_t req, restinio::router::route_params_t)
+	{
+		const auto methods = "OPTIONS, GET, POST, PATCH, DELETE, PUT";
+		auto resp = init_resp(req->create_response());
+		resp.append_header(restinio::http_field::access_control_allow_methods, methods);
+		resp.append_header(restinio::http_field::access_control_allow_headers, "content-type");
+		resp.append_header(restinio::http_field::access_control_max_age, "86400");
+		return resp.done();
+	}
+...
+	// options routing for CORS
+	router->add_handler(restinio::http_method_options(), "/api/weatherData/date/:weatherDataDate", by(&weather_data_handler_t::options));
+	router->add_handler(restinio::http_method_options(), "/api/weatherData/id/:weatherDataID", by(&weather_data_handler_t::options));
+	router->add_handler(restinio::http_method_options(), "/api/weatherData", by(&weather_data_handler_t::options));
+	router->add_handler(restinio::http_method_options(), "/api/weatherData/threeLatest", by(&weather_data_handler_t::options));
+...
+```
 
 ## Testing the webSocket connectivity and functiionality. 
+As already mentioned during the develepment of part 3 we used postman to verify that stuff worked, and also to troubleshoot, when stuff did not work. Below is a screenshot showing how the client application looks after fetching the four data entries that are hardcoded into the server. A more comprehensive demonstration will be given in the attached video, where all the required functionality can be seen tested. 
 
+![clientShowCase](img/client_get_all.png)
+
+## Building the server and client
+
+Well the client can simply be launced with a browser like Mozilla firefox, and the server program can be build by running the following command:
+
+Important to notice, in the NGK folder, there are other libraries that the restinino is dependend on. Thesse must be build before trying to build a project in the sample folder. In the handin zip file however, everything has been build already so this should work.
+
+![buildServer](img/building_server.png)
+
+And then to run the server do the following:
+
+![runServer](img/running_server_and_client_connected.png)
 
 
 
