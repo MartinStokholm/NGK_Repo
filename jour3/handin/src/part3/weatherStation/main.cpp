@@ -147,7 +147,7 @@ public :
 	}
 	
 	// sends back respons containing the three newest entries from weather_data_collection_t
-	auto on_weatherData_threeLatest_get(const restinio::request_handle_t& req, rr::route_params_t) const        
+	auto on_weatherData_threeLatest_get(const restinio::request_handle_t& req, rr::route_params_t)         
     {                                                                                               
     	auto resp = init_resp(req->create_response());                                              
                                                                                                         
@@ -164,18 +164,20 @@ public :
         }                                                                                           
         else                                                                                        
         {                                                                                           
-        	resp.set_body("There are less than three entries!");                                 
+			sendMessage("There are less than three weatherdata");
 		}
 		resp.set_body(json_dto::to_json<weather_data_collection_t>(temp));	
+		sendMessage("GET three latest weatherdata");
         return resp.done();                                                                         
     }                                
 	
 	// sends back respons containing all entries from weather_data_collection_t
-	auto on_weatherData_all_get(const restinio::request_handle_t& req, rr::route_params_t) const
+	auto on_weatherData_all_get(const restinio::request_handle_t& req, rr::route_params_t) 
 	{
 		auto resp = init_resp(req->create_response());
 		const auto & wd = m_weather_data;
 		resp.set_body(json_dto::to_json< std::vector<weather_data_t> >(wd));
+		sendMessage("GET all weatherdata");
 		return resp.done();
 	}
 
@@ -197,6 +199,7 @@ public :
 			++cnt;
 		}
 		resp.set_body(json_dto::to_json<weather_data_collection_t>(temp));	
+		sendMessage("GET weatherdata by date ");
 		return resp.done();
 	}
 
@@ -214,6 +217,7 @@ public :
 		catch( const std::exception & /*ex*/ )
 		{
 			mark_as_bad_request(resp);
+			sendMessage("POST to weatherdata failed");
 		}
 
 		return resp.done();
