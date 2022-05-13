@@ -2,7 +2,7 @@
 ---
 ## Group members : 
   - Martin Stokholm Lauridsen // Studienummer: 201908195
-  - Marcin Szymanek 		  // Studienummer: XXXXXXXXX
+  - Marcin Szymanek 		  // Studienummer: 202009418 
   - Mathias Birk Olsen		  // Studienummer: XXXXXXXXX
 
 ----
