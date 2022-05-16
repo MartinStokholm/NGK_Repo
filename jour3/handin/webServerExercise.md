@@ -1,5 +1,7 @@
 # Exercise 3 - SWNGK Modul2 
 ---
+
+## Group number : 20
 ## Group members : 
   - Martin Stokholm Lauridsen // Studienummer: 201908195
   - Marcin Szymanek 		  // Studienummer: 202009418 
