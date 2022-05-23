@@ -18,10 +18,33 @@ auto wDataHandler::on_post_data(const restinio::request_handle_t& req, rr::route
     return resp.done();
 }
 
+// Returns data from 3 latest weather registrations
+auto wDataHandler::on_get_three(const restinio::request_handle_t& req, rr::route_params_t params) const{
+    auto resp = init_resp(req->create_response());
+
+    if(m_wData.empty()){
+        resp.set_body("No weather data on the server!\n");
+        return resp.done();
+    }
+
+    resp.set_body("Weather data from last 3 measurements: \n\n");
+    int i = m_wData.size() - 1;
+    for(i; i > m_wData.size() - 4; i--){
+        append_data(resp, i);
+    }
+    return resp.done();
+}
+
+// Returns data from all weather registrations in the system
 auto wDataHandler::on_get_all(const restinio::request_handle_t& req, rr::route_params_t params) const
 {
     auto resp = init_resp(req->create_response());
-    resp.set_body("Weather data collected: \n");
+    if(m_wData.empty()){
+        resp.set_body("No weather data on the server!\n");
+        return resp.done();
+    }
+
+    resp.set_body("All weather data collected: \n\n");
     int i = 0;
     for(weatherRegistration data : m_wData){
         append_data(resp, i);
@@ -31,6 +54,7 @@ auto wDataHandler::on_get_all(const restinio::request_handle_t& req, rr::route_p
 
 }
 
+// Appends a weather registration data from registered data vector chosen by index
 int wDataHandler::append_data(restinio::response_builder_t<restinio::restinio_controlled_output_t> &resp, int i) const
 {
     if(i < 0){
@@ -51,6 +75,7 @@ int wDataHandler::append_data(restinio::response_builder_t<restinio::restinio_co
     return 0;
 }
 
+// Returns all weather data from a specific date
 auto wDataHandler::on_get_data(const restinio::request_handle_t& req, rr::route_params_t params) const
 {
     auto resp = init_resp(req->create_response());
@@ -97,6 +122,7 @@ auto server_handler(weatherData &data)
 
     // Handler for '/' path
     router->http_get("/Date/:Date", by(&wDataHandler::on_get_data));
+    router->http_get("/lastThree", by(&wDataHandler::on_get_three));
     router->http_get("/all", by(&wDataHandler::on_get_all));
     router->http_post("/", by(&wDataHandler::on_post_data));
 

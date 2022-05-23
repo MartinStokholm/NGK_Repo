@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May  9 18:10:34 2022
+# Make data base, printed on Tue May 10 07:46:00 2022
 
 # Variables
 
@@ -25,7 +25,7 @@ SNAP_INSTANCE_KEY =
 # makefile (from 'Makefile', line 17)
 MODE = release
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-6b1d0ba1-4931-4360-ac09-adad058e0b45.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-cf9512a8-5a1e-4474-924e-04ae249c1cd6.sock
 # makefile (from 'Makefile', line 60)
 VPATH = src
 # environment
@@ -33,7 +33,7 @@ MANDATORY_PATH = /usr/share/gconf/Lubuntu.mandatory.path
 # makefile (from 'Makefile', line 16)
 DEST_DIR = ${ARCH}/release
 # environment
-VSCODE_CWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPIp2
+VSCODE_CWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/webAPI_workspace/sourceWebAPI/webAPIp2
 # makefile (from 'Makefile', line 55)
 LIBS = -lfmt -lhttp_parser -lpthread
 # makefile (from 'Makefile', line 47)
@@ -55,13 +55,13 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPIp2
+PWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/webAPI_workspace/sourceWebAPI/webAPIp2
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 XDG_DATA_DIRS = /usr/share/Lubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
 # environment
-OLDPWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff
+OLDPWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/webAPI_workspace/sourceWebAPI
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -82,6 +82,7 @@ BIN_DEST_DIR = bin/${DEST_DIR}
 .LOADED := 
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+ 
 # makefile (from 'Makefile', line 21)
 LIB_DEST_DIR = lib/${DEST_DIR}
 # makefile
@@ -89,7 +90,7 @@ MAKEFLAGS = pqrR
 # environment
 SDKTARGETSYSROOT = /opt/poky/3.1.4/sysroots/arm1176jzfshf-vfp-poky-linux-gnueabi
 # makefile
-CURDIR := /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPIp2
+CURDIR := /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/webAPI_workspace/sourceWebAPI/webAPIp2
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -129,7 +130,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 14878
+VSCODE_PID = 9745
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -275,7 +276,6 @@ GTK_OVERLAY_SCROLLING = 0
 # makefile (from 'Makefile', line 5)
 BINNAME = WeatherStation
 # environment
- 
 QT_PLATFORM_PLUGIN = lxqt
 # environment
 XDG_SESSION_CLASS = user
@@ -347,7 +347,7 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 # Directories
 
 # src: could not be stat'd.
-# . (device 64768, inode 416060): 12 files, no impossibilities.
+# . (device 64768, inode 412736): 12 files, no impossibilities.
 
 # 12 files, no impossibilities in 2 directories.
 
@@ -358,6 +358,7 @@ build/x86-64/release/%.o: %.cpp
 	@echo "Compiling "$<
 	@${CXX} -c $< -o $@ ${CXXFLAGS}
 
+ 
 build/x86-64/release/%.d: %.cpp
 #  recipe to execute (from 'Makefile', line 72):
 	@echo "Generating dependency for $<"
@@ -425,7 +426,7 @@ build/x86-64/release:
 # Not a target:
 compiler_setup.x86-64:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-09 16:58:44.581457517
+#  Last modified 2022-05-10 07:45:01.818064266
 #  File has been updated.
 #  Successfully updated.
 
@@ -535,7 +536,7 @@ wDataHandler.hpp:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-09 16:58:44.565458833
+#  Last modified 2022-05-10 07:45:01.806047466
 #  File has been updated.
 #  Successfully updated.
 
@@ -590,7 +591,6 @@ Makefile:
 # Not a target:
 ../../restinio/restinio/third_party/string-view-lite/string_view.hpp:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -637,6 +637,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # Not a target:
 ../../restinio/restinio/all.hpp:
@@ -852,7 +853,6 @@ build/x86-64/release/build/x86-64/release/main.o: main.cpp wDataHandler.hpp Stat
 # Not a target:
 ../../restinio/restinio/third_party/variant-lite/variant.hpp:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -898,7 +898,7 @@ all: info bin/x86-64/release/WeatherStation
 # Not a target:
 main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-09 18:01:13.567647001
+#  Last modified 2022-05-10 07:45:55.39220007
 #  File has been updated.
 #  Successfully updated.
 
@@ -943,20 +943,21 @@ bin/x86-64/release/WeatherStation: build/x86-64/release bin/x86-64/release build
 # Not a target:
 wDataHandler.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-09 17:56:39.742391155
+#  Last modified 2022-05-10 07:45:01.826075467
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 build/x86-64/release/wDataHandler.o:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
 build/x86-64/release/wDataHandler.d: wDataHandler.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'wDataHandler'
-#  Last modified 2022-05-09 18:10:32.682869733
+#  Last modified 2022-05-10 07:45:59.04275384
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 72):
@@ -1097,7 +1098,6 @@ build/x86-64/release/wDataHandler.d: wDataHandler.cpp
 #  File has not been updated.
 
 # Not a target:
- 
 ../../http-parser/http_parser.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1178,7 +1178,7 @@ build/x86-64/release/main.o:
 build/x86-64/release/main.d: main.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-05-09 18:10:33.342870111
+#  Last modified 2022-05-10 07:45:59.931375481
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 72):
@@ -1213,6 +1213,6 @@ build/x86-64/release/main.d: main.cpp
 # strcache performance: lookups = 309 / hit rate = 52%
 # hash-table stats:
 # Load=146/8192=2%, Rehash=0, Collisions=2/309=1%
-# Finished Make data base on Mon May  9 18:10:34 2022
+# Finished Make data base on Tue May 10 07:46:00 2022
 
  
