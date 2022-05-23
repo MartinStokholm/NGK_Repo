@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPIp2'
+make: Entering directory '/mnt/workspace/NGK_Repo/jour3/workdir/Marcin/webAPI_workspace/sourceWebAPI/webAPIp2'
 Generating dependency for wDataHandler.cpp
  
 Generating dependency for main.cpp
@@ -13,5 +13,5 @@ echo "Compiling "wDataHandler.cpp
 g++ -c wDataHandler.cpp -o build/x86-64/release/wDataHandler.o -std=c++14 -DRESTINIO_USE_BOOST_ASIO=shared -O2 -Wall -Iinclude  -DOS_LINUX -I../../restinio -I../../fmt/include -I../../http-parser -I../../json_dto/dev -I../../rapidjson/include
 echo "Linking "WeatherStation
 g++ -o bin/x86-64/release/WeatherStation build/x86-64/release/main.o build/x86-64/release/wDataHandler.o -lfmt -lhttp_parser -lpthread -L../../fmt/lib/x86-64/release -L../../http-parser/lib/x86-64/release
-make: Leaving directory '/mnt/workspace/NGK_Repo/jour3/workdir/Marcin/ngk/myStuff/webAPIp2'
+make: Leaving directory '/mnt/workspace/NGK_Repo/jour3/workdir/Marcin/webAPI_workspace/sourceWebAPI/webAPIp2'
  

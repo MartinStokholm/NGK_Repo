@@ -20,6 +20,7 @@ public:
     auto on_post_data(const restinio::request_handle_t& req, rr::route_params_t);
     auto on_get_data(const restinio::request_handle_t& req, rr::route_params_t params) const;
     auto on_get_all(const restinio::request_handle_t& req, rr::route_params_t params) const;
+    auto on_get_three(const restinio::request_handle_t& req, rr::route_params_t params) const;
 
 private:
     weatherData m_wData;
