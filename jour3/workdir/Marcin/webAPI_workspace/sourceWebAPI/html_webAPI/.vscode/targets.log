@@ -1,0 +1,1312 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Fri May 20 20:53:35 2022
+
+# Variables
+
+# environment
+JAVA_HOME = /usr/lib/jvm/java-9-oracle
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 24)
+SRC = ${COMMON} 
+# makefile (from 'compiler_setup.x86-64', line 3)
+AR = ar
+# environment
+SNAP_INSTANCE_KEY = 
+# makefile (from 'Makefile', line 17)
+MODE = release
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0eac1227-a5e1-49ce-b162-cfab241b339e.sock
+# makefile (from 'Makefile', line 60)
+VPATH = src
+# environment
+MANDATORY_PATH = /usr/share/gconf/Lubuntu.mandatory.path
+# makefile (from 'Makefile', line 16)
+DEST_DIR = ${ARCH}/release
+# environment
+VSCODE_CWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/webAPI_workspace/sourceWebAPI/html_webAPI
+# makefile (from 'Makefile', line 55)
+LIBS = -lfmt -lhttp_parser -lpthread
+# makefile (from 'Makefile', line 47)
+JSON_DTO_PACKAGE_INC = ${JSON_DTO_PACKAGE}/dev
+# environment
+GDM_LANG = en_US
+# default
+MAKE_COMMAND := make
+# environment
+QT_ACCESSIBILITY = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/webAPI_workspace/sourceWebAPI/html_webAPI
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+XDG_DATA_DIRS = /usr/share/Lubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/var/lib/snapd/desktop
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/stud/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
+# environment
+LANG = C
+# environment
+XAUTHORITY = /home/stud/.Xauthority
+# makefile (from 'Makefile', line 20)
+BIN_DEST_DIR = bin/${DEST_DIR}
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# makefile (from 'Makefile', line 21)
+LIB_DEST_DIR = lib/${DEST_DIR}
+# makefile
+MAKEFLAGS = pqrR
+# environment
+SDKTARGETSYSROOT = /opt/poky/3.1.4/sysroots/arm1176jzfshf-vfp-poky-linux-gnueabi
+# makefile
+CURDIR := /mnt/workspace/NGK_Repo/jour3/workdir/Marcin/webAPI_workspace/sourceWebAPI/html_webAPI
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+J2REDIR = /usr/lib/jvm/java-9-oracle
+# makefile (from 'Makefile', line 23)
+COMMON = $(wildcard *.cpp)
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from 'Makefile', line 53)
+RESTINIO_PACKAGE_INC = ${RESTINIO_PACKAGE}
+# environment
+PAM_KWALLET5_LOGIN = /run/user/1000/kwallet5.socket
+# makefile (from 'Makefile', line 7)
+LDDFLAGS = 
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-Lubuntu:/etc/xdg:/etc:/usr/share
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'Makefile', line 52)
+RESTINIO_PACKAGE = ../../restinio
+# environment
+XDG_SESSION_DESKTOP = Lubuntu
+# makefile (from 'build/x86-64/release/wDataHandler.d', line 1)
+MAKEFILE_LIST := Makefile compiler_setup.x86-64 build/x86-64/release/WebSocketClient.d build/x86-64/release/main.d build/x86-64/release/wDataHandler.d
+# environment
+SNAP_REEXEC = 
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 10305
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+SAL_USE_VCLPLUGIN = qt5
+# environment
+XDG_DATA_HOME = /home/stud/.local/share
+# automatic
+*F = $(notdir $*)
+# makefile (from 'Makefile', line 38)
+FMT_PACKAGE = ../../fmt
+# environment
+QT_QPA_PLATFORMTHEME = lxqt
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'Makefile', line 25)
+OBJS = $(addprefix ${OBJ_DEST_DIR}/,$(notdir ${SRC:%.cpp=%.o}))
+# environment
+LXQT_SESSION_CONFIG = session
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# makefile (from 'Makefile', line 40)
+FMT_PACKAGE_LIBPATH = ${FMT_PACKAGE}/${LIB_DEST_DIR}
+# environment
+MAKELEVEL := 0
+# makefile (from 'Makefile', line 56)
+LIBPATHS = -L${FMT_PACKAGE_LIBPATH} -L${HTTP_PARSER_PACKAGE_LIB}
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+ 
+SNAP_COOKIE = ue37T7kGrfh4jxUU94QZPDRv-OLcPwc5W2Lb1goDpyEzyWYqpNN2
+# environment
+PATH = /opt/poky/3.1.4/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi:/home/stud/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-9-oracle/bin:/usr/lib/jvm/java-9-oracle/db/bin:/home/stud/bin
+# default
+MAKEFILES := 
+# environment
+LANGUAGE = en_US:en
+# automatic
+^F = $(notdir $^)
+# makefile (from 'Makefile', line 50)
+RAPIDJSON_PACKAGE_INC = ${RAPIDJSON_PACKAGE}/include
+# environment
+SNAP_USER_COMMON = /home/stud/snap/code/common
+# environment
+SNAP = /snap/code/97
+# environment
+XDG_CONFIG_HOME = /home/stud/.config
+# environment
+SNAP_REVISION = 97
+# environment
+SNAP_REAL_HOME = /home/stud
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# automatic
+?F = $(notdir $?)
+# environment
+GTK_CSD = 0
+# environment
+XDG_SEAT = seat0
+# environment
+XDG_CURRENT_DESKTOP = LXQt
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# automatic
++F = $(notdir $+)
+# makefile (from 'Makefile', line 46)
+JSON_DTO_PACKAGE = ../../json_dto
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+DESKTOP_SESSION = Lubuntu
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = LXQt
+# makefile (from 'Makefile', line 19)
+OBJ_DEST_DIR = build/${DEST_DIR}
+# makefile (from 'Makefile', line 43)
+HTTP_PARSER_PACKAGE_INC = ${HTTP_PARSER_PACKAGE}
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+BROWSER = firefox
+# makefile (from 'compiler_setup.x86-64', line 4)
+OS = OS_LINUX
+# environment
+LOGNAME = stud
+# environment
+SAL_VCL_QT5_USE_CAIRO = true
+# makefile (from 'Makefile', line 42)
+HTTP_PARSER_PACKAGE = ../../http-parser
+# environment
+SMARTGIT_JAVA_HOME = /usr/bin/java
+# makefile (from 'Makefile', line 44)
+HTTP_PARSER_PACKAGE_LIB = ${HTTP_PARSER_PACKAGE}/${LIB_DEST_DIR}
+# environment
+SNAP_ARCH = amd64
+# environment
+XDG_VTNR = 7
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from 'Makefile', line 3)
+ARCH = x86-64
+# environment
+DISPLAY = :0
+# environment
+USER = stud
+# environment
+DEFAULTS_PATH = /usr/share/gconf/Lubuntu.default.path
+# default
+MAKE_VERSION := 4.3
+# environment
+DISABLE_WAYLAND = 1
+# environment
+SNAP_DATA = /var/snap/code/97
+# environment
+SNAP_CONTEXT = ue37T7kGrfh4jxUU94QZPDRv-OLcPwc5W2Lb1goDpyEzyWYqpNN2
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+COLORTERM = truecolor
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/stud/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# makefile (from 'Makefile', line 49)
+RAPIDJSON_PACKAGE = ../../rapidjson
+# environment
+GTK_OVERLAY_SCROLLING = 0
+# makefile (from 'Makefile', line 5)
+BINNAME = WeatherStation
+# environment
+QT_PLATFORM_PLUGIN = lxqt
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/stud
+# environment
+J2SDKDIR = /usr/lib/jvm/java-9-oracle
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-07dcb331-1.67.2-main.sock
+# environment
+TERM = xterm-256color
+# environment
+SNAP_NAME = code
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/97/usr/share/glib-2.0/schemas
+# environment
+XDG_SESSION_ID = c2
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 26)
+DEPS = $(addprefix ${OBJ_DEST_DIR}/,$(notdir ${SRC:%.cpp=%.d}))
+# environment
+SNAP_VERSION = c3511e6c
+# default
+SUFFIXES := 
+# environment
+XDG_CACHE_HOME = /home/stud/.cache
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VTE_VERSION = 6402
+# environment
+SNAP_COMMON = /var/snap/code/common
+# makefile (from 'Makefile', line 59)
+CXXFLAGS = -std=c++17 -DRESTINIO_USE_BOOST_ASIO=shared -O2 -Wall -Iinclude  -D${OS} -I${RESTINIO_PACKAGE_INC} -I${FMT_PACKAGE_INC} -I${HTTP_PARSER_PACKAGE_INC} -I${JSON_DTO_PACKAGE_INC} -I${RAPIDJSON_PACKAGE_INC}
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/stud
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from 'compiler_setup.x86-64', line 2)
+CXX = g++
+# environment
+SNAP_USER_DATA = /home/stud/snap/code/97
+# environment
+XDG_MENU_PREFIX = lxqt-
+# environment
+DERBY_HOME = /usr/lib/jvm/java-9-oracle/db
+# makefile (from 'Makefile', line 39)
+FMT_PACKAGE_INC = ${FMT_PACKAGE}/include
+# environment
+GDMSESSION = Lubuntu
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# variable set hash-table stats:
+# Load=162/1024=16%, Rehash=0, Collisions=21/257=8%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# src: could not be stat'd.
+# . (device 64768, inode 413758): 15 files, no impossibilities.
+
+# 15 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+build/x86-64/release/%.o: %.cpp
+#  recipe to execute (from 'Makefile', line 68):
+	@echo "Compiling "$<
+	@${CXX} -c $< -o $@ ${CXXFLAGS}
+
+build/x86-64/release/%.d: %.cpp
+#  recipe to execute (from 'Makefile', line 72):
+	@echo "Generating dependency for $<"
+	@mkdir -p ${OBJ_DEST_DIR}
+	@$(CXX) -MT${OBJ_DEST_DIR}/$(@:.d=.o) -MM $(CXXFLAGS) $^ > $@
+
+# 2 implicit rules, 0 (0.0%) terminal.
+# Files
+
+# Not a target:
+../../restinio/restinio/default_strands.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/impl/bitops.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/timer_common.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/router/express.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/x86-64/release:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 80):
+	@mkdir -p ${OBJ_DEST_DIR}
+
+# Not a target:
+../../restinio/restinio/websocket/impl/ws_parser.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/buffers.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/percent_encoding.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/websocket/impl/utf8.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/common_types.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/sendfile.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/connection_count_limiter.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+compiler_setup.x86-64:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-20 16:01:36.770182442
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/clzll.h:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../fmt/include/fmt/chrono.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/parser_callbacks.ipp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/websocket/message.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/string_view.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../json_dto/dev/json_dto/pub.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/suppress_exceptions.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/stringbuffer.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/traits.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/router/impl/target_path_holder.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/x86-64/release:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 77):
+	@mkdir -p ${BIN_DEST_DIR}
+
+# Not a target:
+../../restinio/restinio/asio_timer_manager.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/executor_wrapper.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/writer.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/sendfile_operation.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/sendfile_operation_posix.ipp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+wDataHandler.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/ip_blocker.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-20 18:16:47.476283044
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+../../restinio/restinio/incoming_http_msg_limits.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/optional.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/path2regex/path2regex.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/document.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/request_handler.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/from_string_details.ipp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/ieee754.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/sha1.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/write_group_output_ctx.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/third_party/string-view-lite/string_view.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+StationDataT.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/stream.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/error/en.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/memorystream.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/connection_base.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 88):
+	@echo "Cleaning up..."
+	@rm -f ${BIN_DEST_DIR}/${BINNAME} $(OBJS) $(DEPS)
+
+# Not a target:
+../../restinio/restinio/message_builders.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/all.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+WebSocketClient.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-20 17:04:37.155023837
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+../../restinio/restinio/utils/utf8_checker.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../fmt/include/fmt/ostream.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/sendfile_defs_posix.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/itoa.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/tcp_connection_ctx_base.hpp:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/router/std_regex_engine.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/impl/safe_uint_truncate.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/from_string.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+info:
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := info
+# automatic
+# * := 
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
+#  recipe to execute (from 'Makefile', line 65):
+	@echo "Compiling for '${ARCH}' in '${MODE}' mode..."
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/biginteger.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/settings.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/third_party/optional-lite/optional.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/null_logger.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/compiler_features.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/ostreamwrapper.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/metaprogramming.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/allocators.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/x86-64/release/build/x86-64/release/wDataHandler.o: wDataHandler.cpp wDataHandler.hpp StationDataT.hpp ../../json_dto/dev/json_dto/pub.hpp ../../rapidjson/include/rapidjson/document.h ../../rapidjson/include/rapidjson/reader.h ../../rapidjson/include/rapidjson/allocators.h ../../rapidjson/include/rapidjson/rapidjson.h ../../rapidjson/include/rapidjson/internal/meta.h ../../rapidjson/include/rapidjson/internal/../rapidjson.h ../../rapidjson/include/rapidjson/stream.h ../../rapidjson/include/rapidjson/encodings.h ../../rapidjson/include/rapidjson/encodedstream.h ../../rapidjson/include/rapidjson/memorystream.h ../../rapidjson/include/rapidjson/internal/clzll.h ../../rapidjson/include/rapidjson/internal/stack.h ../../rapidjson/include/rapidjson/internal/../allocators.h ../../rapidjson/include/rapidjson/internal/swap.h ../../rapidjson/include/rapidjson/internal/strtod.h ../../rapidjson/include/rapidjson/internal/ieee754.h ../../rapidjson/include/rapidjson/internal/biginteger.h ../../rapidjson/include/rapidjson/internal/diyfp.h ../../rapidjson/include/rapidjson/internal/clzll.h ../../rapidjson/include/rapidjson/internal/pow10.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/error/../rapidjson.h ../../rapidjson/include/rapidjson/internal/strfunc.h ../../rapidjson/include/rapidjson/internal/../stream.h ../../rapidjson/include/rapidjson/internal/../rapidjson.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/error/en.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/writer.h ../../rapidjson/include/rapidjson/internal/dtoa.h ../../rapidjson/include/rapidjson/internal/itoa.h ../../rapidjson/include/rapidjson/internal/itoa.h ../../rapidjson/include/rapidjson/stringbuffer.h ../../rapidjson/include/rapidjson/prettywriter.h ../../rapidjson/include/rapidjson/writer.h ../../rapidjson/include/rapidjson/stringbuffer.h ../../rapidjson/include/rapidjson/ostreamwrapper.h ../../rapidjson/include/rapidjson/istreamwrapper.h ../../restinio/restinio/all.hpp ../../restinio/restinio/version.hpp ../../restinio/restinio/asio_include.hpp ../../restinio/restinio/settings.hpp ../../restinio/restinio/exception.hpp ../../restinio/restinio/string_view.hpp ../../restinio/restinio/third_party/string-view-lite/string_view.hpp ../../restinio/restinio/request_handler.hpp ../../restinio/restinio/http_headers.hpp ../../restinio/restinio/impl/include_fmtlib.hpp ../../fmt/include/fmt/format.h ../../fmt/include/fmt/core.h ../../fmt/include/fmt/ostream.h ../../fmt/include/fmt/format.h ../../fmt/include/fmt/chrono.h ../../restinio/restinio/impl/string_caseless_compare.hpp ../../restinio/restinio/impl/to_lower_lut.hpp ../../restinio/restinio/compiler_features.hpp ../../restinio/restinio/optional.hpp ../../restinio/restinio/third_party/optional-lite/optional.hpp ../../restinio/restinio/common_types.hpp ../../http-parser/http_parser.h ../../restinio/restinio/message_builders.hpp ../../restinio/restinio/os.hpp ../../restinio/restinio/impl/os_posix.ipp ../../restinio/restinio/sendfile.hpp ../../restinio/restinio/sendfile_defs_posix.hpp ../../restinio/restinio/impl/connection_base.hpp ../../restinio/restinio/tcp_connection_ctx_base.hpp ../../restinio/restinio/connection_state_listener.hpp ../../restinio/restinio/variant.hpp ../../restinio/restinio/third_party/variant-lite/variant.hpp ../../restinio/restinio/tls_fwd.hpp ../../restinio/restinio/buffers.hpp ../../restinio/restinio/utils/suppress_exceptions.hpp ../../restinio/restinio/null_logger.hpp ../../restinio/restinio/utils/impl/safe_uint_truncate.hpp ../../restinio/restinio/impl/header_helpers.hpp ../../restinio/restinio/chunked_input_info.hpp ../../restinio/restinio/traits.hpp ../../restinio/restinio/asio_timer_manager.hpp ../../restinio/restinio/timer_common.hpp ../../restinio/restinio/ip_blocker.hpp ../../restinio/restinio/default_strands.hpp ../../restinio/restinio/connection_count_limiter.hpp ../../restinio/restinio/null_mutex.hpp ../../restinio/restinio/utils/tagged_scalar.hpp ../../restinio/restinio/utils/metaprogramming.hpp ../../restinio/restinio/incoming_http_msg_limits.hpp ../../restinio/restinio/http_server.hpp ../../restinio/restinio/impl/acceptor.hpp ../../restinio/restinio/impl/connection.hpp ../../restinio/restinio/impl/response_coordinator.hpp ../../restinio/restinio/impl/connection_settings.hpp ../../restinio/restinio/impl/fixed_buffer.hpp ../../restinio/restinio/impl/write_group_output_ctx.hpp ../../restinio/restinio/impl/sendfile_operation.hpp ../../restinio/restinio/impl/sendfile_operation_posix.ipp ../../restinio/restinio/impl/executor_wrapper.hpp ../../restinio/restinio/utils/at_scope_exit.hpp ../../restinio/restinio/impl/parser_callbacks.ipp ../../restinio/restinio/http_server_run.hpp ../../restinio/restinio/impl/ioctx_on_thread_pool.hpp ../../restinio/restinio/null_timer_manager.hpp ../../restinio/restinio/ostream_logger.hpp ../../restinio/restinio/uri_helpers.hpp ../../restinio/restinio/utils/percent_encoding.hpp ../../restinio/restinio/expected.hpp ../../restinio/restinio/third_party/expected-lite/expected.hpp ../../restinio/restinio/utils/utf8_checker.hpp ../../restinio/restinio/cast_to.hpp ../../restinio/restinio/utils/from_string.hpp ../../restinio/restinio/utils/from_string_details.ipp ../../restinio/restinio/value_or.hpp ../../restinio/restinio/router/express.hpp ../../restinio/restinio/router/impl/target_path_holder.hpp ../../restinio/restinio/router/non_matched_request_handler.hpp ../../restinio/restinio/path2regex/path2regex.hpp ../../restinio/restinio/router/std_regex_engine.hpp ../../restinio/restinio/router/method_matcher.hpp ../../restinio/restinio/websocket/websocket.hpp ../../restinio/restinio/websocket/message.hpp ../../restinio/restinio/utils/impl/bitops.hpp ../../restinio/restinio/websocket/impl/ws_connection_base.hpp ../../restinio/restinio/websocket/impl/ws_connection.hpp ../../restinio/restinio/websocket/impl/ws_parser.hpp ../../restinio/restinio/websocket/impl/ws_protocol_validator.hpp ../../restinio/restinio/websocket/impl/utf8.hpp ../../restinio/restinio/utils/base64.hpp ../../restinio/restinio/utils/base64_lut.ipp ../../restinio/restinio/utils/sha1.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/router/method_matcher.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/ostream_logger.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/chunked_input_info.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/version.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/x86-64/release/WebSocketClient.d: WebSocketClient.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'WebSocketClient'
+#  Last modified 2022-05-20 20:53:35.185130073
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 72):
+	@echo "Generating dependency for $<"
+	@mkdir -p ${OBJ_DEST_DIR}
+	@$(CXX) -MT${OBJ_DEST_DIR}/$(@:.d=.o) -MM $(CXXFLAGS) $^ > $@
+
+# Not a target:
+../../restinio/restinio/null_timer_manager.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/base64_lut.ipp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/http_server.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/asio_include.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/strfunc.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/../allocators.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/include_fmtlib.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/websocket/impl/ws_connection_base.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ 
+build/x86-64/release/build/x86-64/release/main.o: main.cpp wDataHandler.hpp StationDataT.hpp ../../json_dto/dev/json_dto/pub.hpp ../../rapidjson/include/rapidjson/document.h ../../rapidjson/include/rapidjson/reader.h ../../rapidjson/include/rapidjson/allocators.h ../../rapidjson/include/rapidjson/rapidjson.h ../../rapidjson/include/rapidjson/internal/meta.h ../../rapidjson/include/rapidjson/internal/../rapidjson.h ../../rapidjson/include/rapidjson/stream.h ../../rapidjson/include/rapidjson/encodings.h ../../rapidjson/include/rapidjson/encodedstream.h ../../rapidjson/include/rapidjson/memorystream.h ../../rapidjson/include/rapidjson/internal/clzll.h ../../rapidjson/include/rapidjson/internal/stack.h ../../rapidjson/include/rapidjson/internal/../allocators.h ../../rapidjson/include/rapidjson/internal/swap.h ../../rapidjson/include/rapidjson/internal/strtod.h ../../rapidjson/include/rapidjson/internal/ieee754.h ../../rapidjson/include/rapidjson/internal/biginteger.h ../../rapidjson/include/rapidjson/internal/diyfp.h ../../rapidjson/include/rapidjson/internal/clzll.h ../../rapidjson/include/rapidjson/internal/pow10.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/error/../rapidjson.h ../../rapidjson/include/rapidjson/internal/strfunc.h ../../rapidjson/include/rapidjson/internal/../stream.h ../../rapidjson/include/rapidjson/internal/../rapidjson.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/error/en.h ../../rapidjson/include/rapidjson/error/error.h ../../rapidjson/include/rapidjson/writer.h ../../rapidjson/include/rapidjson/internal/dtoa.h ../../rapidjson/include/rapidjson/internal/itoa.h ../../rapidjson/include/rapidjson/internal/itoa.h ../../rapidjson/include/rapidjson/stringbuffer.h ../../rapidjson/include/rapidjson/prettywriter.h ../../rapidjson/include/rapidjson/writer.h ../../rapidjson/include/rapidjson/stringbuffer.h ../../rapidjson/include/rapidjson/ostreamwrapper.h ../../rapidjson/include/rapidjson/istreamwrapper.h ../../restinio/restinio/all.hpp ../../restinio/restinio/version.hpp ../../restinio/restinio/asio_include.hpp ../../restinio/restinio/settings.hpp ../../restinio/restinio/exception.hpp ../../restinio/restinio/string_view.hpp ../../restinio/restinio/third_party/string-view-lite/string_view.hpp ../../restinio/restinio/request_handler.hpp ../../restinio/restinio/http_headers.hpp ../../restinio/restinio/impl/include_fmtlib.hpp ../../fmt/include/fmt/format.h ../../fmt/include/fmt/core.h ../../fmt/include/fmt/ostream.h ../../fmt/include/fmt/format.h ../../fmt/include/fmt/chrono.h ../../restinio/restinio/impl/string_caseless_compare.hpp ../../restinio/restinio/impl/to_lower_lut.hpp ../../restinio/restinio/compiler_features.hpp ../../restinio/restinio/optional.hpp ../../restinio/restinio/third_party/optional-lite/optional.hpp ../../restinio/restinio/common_types.hpp ../../http-parser/http_parser.h ../../restinio/restinio/message_builders.hpp ../../restinio/restinio/os.hpp ../../restinio/restinio/impl/os_posix.ipp ../../restinio/restinio/sendfile.hpp ../../restinio/restinio/sendfile_defs_posix.hpp ../../restinio/restinio/impl/connection_base.hpp ../../restinio/restinio/tcp_connection_ctx_base.hpp ../../restinio/restinio/connection_state_listener.hpp ../../restinio/restinio/variant.hpp ../../restinio/restinio/third_party/variant-lite/variant.hpp ../../restinio/restinio/tls_fwd.hpp ../../restinio/restinio/buffers.hpp ../../restinio/restinio/utils/suppress_exceptions.hpp ../../restinio/restinio/null_logger.hpp ../../restinio/restinio/utils/impl/safe_uint_truncate.hpp ../../restinio/restinio/impl/header_helpers.hpp ../../restinio/restinio/chunked_input_info.hpp ../../restinio/restinio/traits.hpp ../../restinio/restinio/asio_timer_manager.hpp ../../restinio/restinio/timer_common.hpp ../../restinio/restinio/ip_blocker.hpp ../../restinio/restinio/default_strands.hpp ../../restinio/restinio/connection_count_limiter.hpp ../../restinio/restinio/null_mutex.hpp ../../restinio/restinio/utils/tagged_scalar.hpp ../../restinio/restinio/utils/metaprogramming.hpp ../../restinio/restinio/incoming_http_msg_limits.hpp ../../restinio/restinio/http_server.hpp ../../restinio/restinio/impl/acceptor.hpp ../../restinio/restinio/impl/connection.hpp ../../restinio/restinio/impl/response_coordinator.hpp ../../restinio/restinio/impl/connection_settings.hpp ../../restinio/restinio/impl/fixed_buffer.hpp ../../restinio/restinio/impl/write_group_output_ctx.hpp ../../restinio/restinio/impl/sendfile_operation.hpp ../../restinio/restinio/impl/sendfile_operation_posix.ipp ../../restinio/restinio/impl/executor_wrapper.hpp ../../restinio/restinio/utils/at_scope_exit.hpp ../../restinio/restinio/impl/parser_callbacks.ipp ../../restinio/restinio/http_server_run.hpp ../../restinio/restinio/impl/ioctx_on_thread_pool.hpp ../../restinio/restinio/null_timer_manager.hpp ../../restinio/restinio/ostream_logger.hpp ../../restinio/restinio/uri_helpers.hpp ../../restinio/restinio/utils/percent_encoding.hpp ../../restinio/restinio/expected.hpp ../../restinio/restinio/third_party/expected-lite/expected.hpp ../../restinio/restinio/utils/utf8_checker.hpp ../../restinio/restinio/cast_to.hpp ../../restinio/restinio/utils/from_string.hpp ../../restinio/restinio/utils/from_string_details.ipp ../../restinio/restinio/value_or.hpp ../../restinio/restinio/router/express.hpp ../../restinio/restinio/router/impl/target_path_holder.hpp ../../restinio/restinio/router/non_matched_request_handler.hpp ../../restinio/restinio/path2regex/path2regex.hpp ../../restinio/restinio/router/std_regex_engine.hpp ../../restinio/restinio/router/method_matcher.hpp ../../restinio/restinio/websocket/websocket.hpp ../../restinio/restinio/websocket/message.hpp ../../restinio/restinio/utils/impl/bitops.hpp ../../restinio/restinio/websocket/impl/ws_connection_base.hpp ../../restinio/restinio/websocket/impl/ws_connection.hpp ../../restinio/restinio/websocket/impl/ws_parser.hpp ../../restinio/restinio/websocket/impl/ws_protocol_validator.hpp ../../restinio/restinio/websocket/impl/utf8.hpp ../../restinio/restinio/utils/base64.hpp ../../restinio/restinio/utils/base64_lut.ipp ../../restinio/restinio/utils/sha1.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/connection_state_listener.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/websocket/impl/ws_connection.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/third_party/variant-lite/variant.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/exception.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: info bin/x86-64/release/WeatherStation
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+
+# Not a target:
+../../rapidjson/include/rapidjson/encodedstream.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/x86-64/release/WebSocketClient.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/istreamwrapper.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/../stream.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/uri_helpers.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-20 16:01:36.774146976
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+../../restinio/restinio/impl/connection.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/dtoa.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/string_caseless_compare.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/pow10.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/value_or.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/x86-64/release/WeatherStation: build/x86-64/release bin/x86-64/release build/x86-64/release/WebSocketClient.d build/x86-64/release/main.d build/x86-64/release/wDataHandler.d build/x86-64/release/WebSocketClient.o build/x86-64/release/main.o build/x86-64/release/wDataHandler.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 83):
+	@echo "Linking "${BINNAME}
+	@${CXX} -o $@ ${OBJS} ${LIBS} ${LIBPATHS}
+
+# Not a target:
+wDataHandler.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-20 20:30:44.950321895
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build/x86-64/release/wDataHandler.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/x86-64/release/wDataHandler.d: wDataHandler.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'wDataHandler'
+#  Last modified 2022-05-20 20:53:34.604482296
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 72):
+	@echo "Generating dependency for $<"
+	@mkdir -p ${OBJ_DEST_DIR}
+	@$(CXX) -MT${OBJ_DEST_DIR}/$(@:.d=.o) -MM $(CXXFLAGS) $^ > $@
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/stack.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/strtod.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/prettywriter.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/base64.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/websocket/impl/ws_protocol_validator.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/diyfp.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/at_scope_exit.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/router/non_matched_request_handler.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/x86-64/release/build/x86-64/release/WebSocketClient.o: WebSocketClient.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/fixed_buffer.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/acceptor.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/http_server_run.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/http_headers.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/response_coordinator.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ 
+../../restinio/restinio/impl/ioctx_on_thread_pool.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../fmt/include/fmt/format.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/error/../rapidjson.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/rapidjson.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/reader.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/error/error.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../fmt/include/fmt/core.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/meta.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/header_helpers.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/../rapidjson.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/os_posix.ipp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../http-parser/http_parser.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/expected.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/cast_to.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/encodings.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../rapidjson/include/rapidjson/internal/swap.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/x86-64/release/main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/third_party/expected-lite/expected.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/websocket/websocket.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/os.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/utils/tagged_scalar.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/tls_fwd.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/impl/to_lower_lut.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/variant.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/x86-64/release/main.d: main.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2022-05-20 20:53:35.173116468
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 72):
+	@echo "Generating dependency for $<"
+	@mkdir -p ${OBJ_DEST_DIR}
+	@$(CXX) -MT${OBJ_DEST_DIR}/$(@:.d=.o) -MM $(CXXFLAGS) $^ > $@
+
+# Not a target:
+../../restinio/restinio/impl/connection_settings.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../../restinio/restinio/null_mutex.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=146/1024=14%, Rehash=0, Collisions=36/454=8%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# General ('VPATH' variable) search path:
+# src
+
+# strcache buffers: 1 (0) / strings = 164 / storage = 6536 B / avg = 39 B
+# current buf: size = 8162 B / used = 6536 B / count = 164 / avg = 39 B
+
+# strcache performance: lookups = 344 / hit rate = 52%
+# hash-table stats:
+# Load=164/8192=2%, Rehash=0, Collisions=2/344=1%
+# Finished Make data base on Fri May 20 20:53:35 2022
+
+ 
