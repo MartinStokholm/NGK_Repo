@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Weather Station WebClient </title>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/js/tabulator.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/css/tabulator.min.css"></link>
+
+	<script type = "text/javascript">
+
+	// First the routing, it will go to URI /api/chat 
+	const socket = new WebSocket('ws://localhost:8080/api/chat');
+
+    // Connection opened                                                                                                           
+    socket.addEventListener('open', function (event) 
+	{                                                                             
+    	socket.send('Client is connected');                                                                                                  
+    });                                                                                                                            
+                                                                                                                                     
+    // Listen for messages                                                                                                         
+    socket.addEventListener('message', function (event) 
+	{                                                                          
+    	console.log('Message from server: ', event.data);                                                                               
+		document.getElementById("updatesHere_output").value = event.data;
+    });  	
+	
+	// function for populating teh table
+	function setTable(data)
+	{
+		$("#table").tabulator({
+			layout: "fitData",
+			height: "311px",
+			columns: [
+			{
+				title: "ID",
+				field: "ID"
+			},
+			{
+				title: "Date",
+				field: "Date"
+			},
+			{
+				title: "Time",
+				field: "Time"
+			},
+			{
+				title: "Place",
+				field: "Place.PlaceName"
+			},
+			{
+				title: "Place",
+				field: "Place.Lat"
+			},
+			{
+				title: "Place",
+				field: "Place.Lon"
+			},
+			{
+				title: "Temperature",
+				field: "Temperature"
+			},
+			{
+				title: "Humidity",
+				field: "Humidity"
+			}
+			],
+			});
+		$("#table").tabulator("setData", data);
+	}
+
+	// function for fetching all entries of weather data from server API
+	function getData() 
+	{
+		axios.get('http://localhost:8080/api/weatherData')
+			.then(response=>
+				{
+					setTable(response.data);
+				}).catch(error=>alert('Get from server failed'));
+	}
+
+	// function for fetching three newest entries of weather data from server API
+	function getThreeLatestData() 
+	{
+		axios.get('http://localhost:8080/api/weatherData/threeLatest')
+			.then(response=>
+				{
+					setTable(response.data);
+				}).catch(error=>alert('Getting from server failed'));
+	}
+
+	// function for fetching entries based on field "date" from weather data from server API
+	function getDataByDate() 
+	{
+ 		var date = (parseInt(document.getElementById("date").value));
+		var url ='http://localhost:8080/api/weatherData/date/' + date
+		axios.get(url)
+			.then(response=>
+				{
+					setTable(response.data);
+				}).catch(error=>alert('Getting from server failed'));
+	}
+
+	// function for adding an entry of weather data to the server
+	function sendData() 
+	{
+		axios.post('http://localhost:8080/api/weatherData',
+		{
+			"ID": parseInt(document.getElementById("id").value),
+			"Date": document.getElementById("date").value,
+			"Time": document.getElementById("time").value,
+			"Place": 
+			{
+				"PlaceName": document.getElementById("placename").value,
+				"Lat": parseFloat(document.getElementById("lat").value),
+				"Lon": parseFloat(document.getElementById("lon").value)
+			},
+			"Temperature": document.getElementById("temperature").value,
+			"Humidity": document.getElementById("humidity").value
+		})
+		.then(response=>{}).catch(error=>alert('Posting to server failed'));
+	}
+
+	// function for updating an entry of weather data in the server
+	function updateData()
+	{
+ 		var id = (parseInt(document.getElementById("id").value));
+ 		var url='http://localhost:8080/api/weatherData/id/' + id
+		axios.put(url,
+		{
+ 			"ID": parseInt(document.getElementById("id").value),
+ 			"Date": document.getElementById("date").value,
+			"Time": document.getElementById("time").value,
+			"Place": 
+			{
+ 				"PlaceName": document.getElementById("placename").value,
+				"Lat": parseFloat(document.getElementById("lat").value),
+				"Lon": parseFloat(document.getElementById("lon").value)
+ 			},
+			"Temperature": document.getElementById("temperature").value,
+			"Humidity": document.getElementById("humidity").value
+		}
+		)
+		.then(response => {}).catch(error => alert('Putting to server failed'));
+	}	
+
+	// function for deleting an entry of weather data in the server
+	function deleteData()
+	{
+ 		var id = (parseInt(document.getElementById("id").value));
+ 		var url='http://localhost:8080/api/weatherData/id/' + id
+		axios.delete(url,
+		{
+ 			"ID": parseInt(document.getElementById("id").value),
+ 			"Date": document.getElementById("date").value,
+			"Time": document.getElementById("time").value,
+			"Place": 
+			{
+ 				"PlaceName": document.getElementById("placename").value,
+				"Lat": parseFloat(document.getElementById("lat").value),
+				"Lon": parseFloat(document.getElementById("lon").value)
+ 			},
+			"Temperature": document.getElementById("temperature").value,
+			"Humidity": document.getElementById("humidity").value
+		}
+		)
+		.then(response => {}).catch(error => alert('Deleting from server failed'));
+	}	
+
+	</script>
+</head>
+
+<body>
+	<h1>Weather Station</h1>
+    <output type="text" name="updatesHere" id="updatesHere_output" v-model="updatesHere"></output>
+    <br> 
+	<h2>Input</h2>
+	<p>ID : <input id="id" type="text"></p>
+	<p>Date : <input id="date" type="text"><p/>
+	<p>Time : <input id="time" type="text"><p/>
+	<p>Name : <input id="placename" type="text"><p/>
+	<p>Lat : <input id="lat" type="number"><p/>
+	<p>Lon : <input id="lon" type="number"><p/>
+	<p>Temperature : <input id="temperature" type="text"><p/>
+	<p>Humidity : <input id="humidity" type="text"><p/>
+	
+	<h2>Controls</h2>
+	<input type = "button" onclick = "getData()" value = "Get all entries"> 
+	<input type = "button" onclick = "getThreeLatestData()" value = "Get Three Latest entries"> 
+	<input type = "button" onclick = "getDataByDate()" value = "Get entries by date"> 
+	<input type = "button" onclick = "updateData()" value = "Update entry"> 
+	<input type = "button" onclick = "sendData()" value = "Add entry"> 
+	<input type = "button" onclick = "deleteData()" value = "Delete entry"> 
+	<br>
+	<br>
+	<div id="table">
+</body>
+</html>
+

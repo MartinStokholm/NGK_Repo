@@ -1,4 +1,0 @@
-#echo "Host"
-CXX=g++
-AR=ar
-OS=OS_LINUX

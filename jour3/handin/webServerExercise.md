@@ -1,3 +1,14 @@
+# Exercise 3 - SWNGK Modul2 
+---
+
+## Group number : 20
+## Group members : 
+  - Martin Stokholm Lauridsen // Studienummer: 201908195
+  - Marcin Szymanek 		  // Studienummer: 202009418 
+  - Mathias Birk Olsen		  // Studienummer: 202008722
+
+----
+
 # Part 1 ( Web server )
 
 ## Introduction
@@ -15,11 +26,11 @@ restinio::run(
 				.handle_request_timeout(1s));
 ```
 
-Notice that one of the parameters for run(), is a request_handler function. This is the next requirement. Therefore we create such a function, and since we are interrestend in having data, the parameter for the function server_handler takes a struct of type weather_data_collection_t, which is just a vector list of type weather_data_t. Inside the server_handler() there is some boilerplate code at the top but the relevant part is the use of the so called "router". This is how we map specif requests to a functionality, that the server will beform. A code snippet and further explanation will be given later in this journal. 
+Notice that one of the parameters for run(), is a request_handler function. This is the next requirement. Therefore we create such a function, and since we are interrestend in having data, the parameter for the function server_handler takes a struct of type weather_data_collection_t, which is just a vector list of type weather_data_t. Inside the server_handler() there is some boilerplate code at the top but the relevant part is the use of the so called "router". This is how we map specif requests to a functionality, that the server will perform. A code snippet and further explanation will be given later in this journal. 
 
 ## What the server must be able to do  
 
-Create a web server, that will act as a weather station which contains information about the weather
+Create a web server, that will act as a weather station which contains information about the weather.
 For this first part the server must simple return a static html page with some hardcoded weatherdata.
 
 The hardcoded data found in the first version of the webserver should be like this:
@@ -227,13 +238,213 @@ The user should be able to update existing weatherData, which will then be store
 other clients will be able to see the new data. 
 
 ## Adding more routing
+In our server_handler function mentioned before, we will be adding a few more routings to handle the expansion and evolution of our server, in order to make a proper API. 
+The addditions can be seen below:
+```cpp
+// get all entries from weater_data_collection_t 
+	router->http_get("/api/weatherData", by(&weather_data_handler_t::on_weatherData_all_get));
+
+	// get latest three entries from weather_data_collection_t
+	router->http_get("/api/weatherData/threeLatest", by(&weather_data_handler_t::on_weatherData_threeLatest_get));
+
+	// get one entry based on id from weather_data_collection_t
+	router->http_get(R"(/api/weatherData/id/:weatherDataID(\d+))", by(&weather_data_handler_t::on_weatherData_Num_get));
+
+	// get entries based on date from weatherDataCollection 
+	router->http_get("/api/weatherData/date/:weatherDataDate", by(&weather_data_handler_t::on_weatherData_date_get));
+
+	// post a entry to weather_data_collection_t 
+	router->http_post("/api/weatherData", by(&weather_data_handler_t::on_weatherData_add));
+
+	// put one entry based on id from weather_data_collection_t
+	router->http_put(R"(/api/weatherData/id/:weatherDataID(\d+))", by(&weather_data_handler_t::on_weatherDataNum_update));
+
+	// delet one entry based on id from weather_data_collection_t
+	router->http_delete(R"(/api/weatherData/id/:weatherDataID(\d+))",	by(&weather_data_handler_t::on_weatherDataNum_delete));
+```
+
+We added a few more routing to also be able to acces data based on the field ID. This can be used to eiter update (put) or delete data. 
 
 ## Implementing methods for POST, GET and PUT.
+So as in the first part, the routing needs a method for executing the desired functionality. Thesse can be seen in the code snippet below:
 
-## Testing the API
+Method for fetchin data based on Date parameter
 
-In order to test the webservers API we will again be using the program Postman to simulate the client part,
-and this time send both GET, PUT and POST requests matching the end points we added.
+```cpp
+auto on_weatherData_date_get(const restinio::request_handle_t& req, rr::route_params_t params)
+	{
+		const auto weatherDataDate = restinio::cast_to<std::string>(params["weatherDataDate"]);
+
+		auto resp = init_resp(req->create_response());
+		resp.set_body("");	
+		int cnt = 0;
+		for(auto i = m_weather_data.begin(); i != m_weather_data.end(); i++)
+		{
+			if(i->m_date == weatherDataDate)
+			{
+				resp.append_body(json_dto::to_json<weather_data_t>(m_weather_data[cnt]));
+			}
+			++cnt;
+		}
+		return resp.done();
+	}
+```
+
+Method for fetching all available weather data
+
+```cpp
+	auto on_weatherData_all_get(const restinio::request_handle_t& req, rr::route_params_t) const
+	{
+		auto resp = init_resp(req->create_response());
+		const auto & wd = m_weather_data;
+		resp.set_body(json_dto::to_json< std::vector<weather_data_t> >(wd));
+		return resp.done();
+	}
+```
+Method for fetching the three latest entries of weather data
+
+```cpp
+	auto on_weatherData_threeLatest_get(const restinio::request_handle_t& req, rr::route_params_t) const        
+    {                                                                                               
+    	auto resp = init_resp(req->create_response());                                              
+                                                                                                        
+        resp.set_body("");                                  
+                                                                                                        
+        const auto & wd = m_weather_data;                                                           
+
+        if (wd.size() > 3)                                                                          
+        {                                                                                           
+        	for (std::size_t i = wd.size(); i > wd.size()-3;i--)                                    
+            {                                                                                       
+            	resp.append_body(json_dto::to_json<weather_data_t>(wd[i-1]));                       
+            }                                                                                       
+        }                                                                                           
+        else                                                                                        
+        {                                                                                           
+        	resp.append_body("There are less than three entries!");                                 
+		}
+
+        return resp.done();                                                                         
+    }    
+```
+
+Lastly are the methods for getting, deleting and putting entries based on ID parameter
+
+```cpp
+
+	auto on_weatherData_Num_get(const restinio::request_handle_t& req, rr::route_params_t params)
+	{
+		const auto weatherDataID = restinio::cast_to<std::uint32_t>(params["weatherDataID"]);
+
+		auto resp = init_resp(req->create_response());
+
+		if(0 != weatherDataID && weatherDataID <= m_weather_data.size())
+		{
+			const auto & wd = m_weather_data[weatherDataID - 1];
+			resp.set_body(json_dto::to_json<weather_data_t>(wd));
+		}
+		else
+		{
+			resp.set_body("No weatherData with #" + std::to_string(weatherDataID) + "\n" );
+		}
+
+		return resp.done();
+	}
+
+	auto on_weatherDataNum_update(const restinio::request_handle_t& req, rr::route_params_t params)
+	{
+		const auto weatherDataID = restinio::cast_to<std::uint32_t>(params["weatherDataID"]);
+
+		auto resp = init_resp(req->create_response());
+
+		try
+		{
+			auto wd = json_dto::from_json<weather_data_t>(req->body());
+
+			if(0 != weatherDataID && weatherDataID <= m_weather_data.size())
+			{
+				m_weather_data[weatherDataID - 1] = wd;
+			}
+			else
+			{
+				mark_as_bad_request(resp);
+				resp.set_body("No weatherData with #" + std::to_string(weatherDataID) + "\n");
+			}
+		}
+		catch( const std::exception & /*ex*/ )
+		{
+			mark_as_bad_request(resp);
+		}
+
+		return resp.done();
+	}
+
+	auto on_weatherDataNum_delete(const restinio::request_handle_t& req, rr::route_params_t params)
+	{
+		const auto weatherDataID = restinio::cast_to<std::uint32_t>(params["weatherDataID"]);
+
+		auto resp = init_resp(req->create_response());
+
+		if(0 != weatherDataID && weatherDataID <= m_weather_data.size())
+		{
+			const auto & wd = m_weather_data[ weatherDataID - 1 ];
+			resp.set_body("Delete weatherData #" + std::to_string(weatherDataID) + "\n");
+			resp.append_body(json_dto::to_json(wd));
+
+			m_weather_data.erase(m_weather_data.begin() + (weatherDataID - 1 ));
+		}
+		else
+		{
+			resp.set_body(
+				"No weatherData with #" + std::to_string(weatherDataID) + "\n");
+		}
+
+		return resp.done();
+	}
+
+```
+## Testing the API functionality
+
+In order to test the webservers API we will be using the program Postman to simulate the client part,
+and this time send both GET, PUT and POST requests matching the end points we added. 
+
+First lets check out the test result for GET, PUT, and DELETE based on ID paramater
+
+First we check out GET on /ID/1
+
+![getOnID](img/get_by_id_param_test.png)
+
+Now here is the testing of POST on a new entry with id 5 to weather data collection 
+
+![postEntryToCollection](img/post_new_entry_test.png)
+
+![getAfterPost](img/get_after_post.png)
+
+then updating that entry with id 5, the change is the in the field "time" where the value has been changed to "99.99" (oh no we did not implement checking of valid values) 
+
+![putOnID](img/put_on_entry_test.png)
+
+after GET on all entries the entry with id 5 is now changed
+
+![getAfterPut](img/get_after_put.png)
+
+Here we delete the entry with id 1
+
+![deleteOnID](img/delete_entry_test.png)
+
+Now it is testing of the GET on the three latest entries from weather data collection
+
+![getThreeLatest](img/get_threeLatest_test.png)
+
+GET of the whole collection. (this was actually done before adding the entry with id 5, thats why it is not present here)
+
+![getAll](img/get_all_test.png)
+
+Lastly here is the test of GET by date parameter
+
+![getByDateParam](img/get_by_date_param_test.png)
+
+yeah that is all for this part. The server has now been upgraded to be an actual REST server with a simple API that has basic implementations for the four CRUD operations, Create, read, update and delete. We have not develeped a frontend application, but for the next part, where we upgrade the connection type to webSocket, there will be a frontend application. 
 
 # Part 3 ( Upgrading the connection to webSocket protocol )
 
@@ -245,15 +456,240 @@ Furthermore, the webSocket connecetion should be able to handle the all CRUD ope
 (Create, Read, Update and Delete) so the client program can have a table for the data and some 
 indication to show what operation has been done. 
 
-### Creating the client with a listener
+## Creating the client 
 Client will be in a html file. The client creates an instance of socket and tries to connect to the
 servers websocket. There will be an event listener attached to the socket instance, that will on 
 succefull connection enable the client and server to start communicating. 
+This can be seen in the code snippet below:
+
+```js
+	// First the routing, it will go to URI /api/chat 
+	const socket = new WebSocket('ws://localhost:8080/api/chat');
+
+    // Connection opened                                                                                                           
+    socket.addEventListener('open', function (event) 
+	{                                                                             
+    	socket.send('Client is connected');                                                                                                  
+    });                                                                                                                            
+                                                                                                                                     
+    // Listen for messages                                                                                                         
+    socket.addEventListener('message', function (event) 
+	{                                                                          
+    	console.log('Message from server: ', event.data);                                                                               
+		document.getElementById("updatesHere_output").value = event.data;
+    });  	
+```
+
+The client also need somehting in the body part. Mostly it is input fields for when user wants to add, update or delete data on the server. This can be seen below:
+
+```html
+<body>
+	<h1>Weather Station</h1>
+    <output type="text" name="updatesHere" id="updatesHere_output" v-model="updatesHere"></output>
+    <br> 
+	<h2>Input</h2>
+	<p>ID : <input id="id" type="text"></p>
+	<p>Date : <input id="date" type="text"><p/>
+	<p>Time : <input id="time" type="text"><p/>
+	<p>Name : <input id="placename" type="text"><p/>
+	<p>Lat : <input id="lat" type="number"><p/>
+	<p>Lon : <input id="lon" type="number"><p/>
+	<p>Temperature : <input id="temperature" type="text"><p/>
+	<p>Humidity : <input id="humidity" type="text"><p/>
+	
+	<h2>Controls</h2>
+	<input type = "button" onclick = "getData()" value = "Get all entries"> 
+	<input type = "button" onclick = "getThreeLatestData()" value = "Get Three Latest entries"> 
+	<input type = "button" onclick = "getDataByDate()" value = "Get entries by date"> 
+	<input type = "button" onclick = "updateData()" value = "Update entry"> 
+	<input type = "button" onclick = "sendData()" value = "Add entry"> 
+	<input type = "button" onclick = "deleteData()" value = "Delete entry"> 
+	<br>
+	<br>
+	<div id="table">
+</body>
+
+```
+
+Lastly there are a whole bunch of javascript functions added, which all utilizes the axio library in order to send GET, POST, PUT or DELETE requests from client to server. Below are code snippets showcasing them:
+
+```js
+	// function for fetching all entries of weather data from server API
+	function getData() 
+	{
+		axios.get('http://localhost:8080/api/weatherData')
+			.then(response=>
+				{
+					setTable(response.data);
+				}).catch(error=>alert('Get from server failed'));
+	}
+
+	// function for fetching three newest entries of weather data from server API
+	function getThreeLatestData() 
+	{
+		axios.get('http://localhost:8080/api/weatherData/threeLatest')
+			.then(response=>
+				{
+					setTable(response.data);
+				}).catch(error=>alert('Getting from server failed'));
+	}
+
+	// function for fetching entries based on field "date" from weather data from server API
+	function getDataByDate() 
+	{
+ 		var date = (parseInt(document.getElementById("date").value));
+		var url ='http://localhost:8080/api/weatherData/date/' + date
+		axios.get(url)
+			.then(response=>
+				{
+					setTable(response.data);
+				}).catch(error=>alert('Getting from server failed'));
+	}
+
+	// function for adding an entry of weather data to the server
+	function sendData() 
+	{
+		axios.post('http://localhost:8080/api/weatherData',
+		{
+			"ID": parseInt(document.getElementById("id").value),
+			"Date": document.getElementById("date").value,
+			"Time": document.getElementById("time").value,
+			"Place": 
+			{
+				"PlaceName": document.getElementById("placename").value,
+				"Lat": parseFloat(document.getElementById("lat").value),
+				"Lon": parseFloat(document.getElementById("lon").value)
+			},
+			"Temperature": document.getElementById("temperature").value,
+			"Humidity": document.getElementById("humidity").value
+		})
+		.then(response=>{}).catch(error=>alert('Posting to server failed'));
+	}
+
+	// function for deleting an entry of weather data in the server
+	function deleteData()
+	{
+ 		var id = (parseInt(document.getElementById("id").value));
+ 		var url='http://localhost:8080/api/weatherData/id/' + id
+		axios.delete(url,
+		{
+ 			"ID": parseInt(document.getElementById("id").value),
+ 			"Date": document.getElementById("date").value,
+			"Time": document.getElementById("time").value,
+			"Place": 
+			{
+ 				"PlaceName": document.getElementById("placename").value,
+				"Lat": parseFloat(document.getElementById("lat").value),
+				"Lon": parseFloat(document.getElementById("lon").value)
+ 			},
+			"Temperature": document.getElementById("temperature").value,
+			"Humidity": document.getElementById("humidity").value
+		}
+		)
+		.then(response => {}).catch(error => alert('Deleting from server failed'));
+	}	
+
+```
+
+Furthermore we use the table generator library Tabulator in order to show the data. The function for this has been taken from the exercise slides, and the only thing changed are the field names. 
 
 ## Adding the webSocket functionality to the server
+In order for the server to use webSocket there are a few thing that needs to be added. 
+There must be a router added and a accompaning function. The function will make sure to upgrade the connection to webSocket and furthermore store client info in a new added member to the class weather_data_handler_t, of type ws_registry_t. Apart from thesse and somemore more boilerplate additions, some tweaks were made to the existing functions, in order to make sure the DTO sent via the API was correctly formatted. In the earlier part, we were a little quick with some of the functions, resulting in data being formatted incorrect, and therefore not able to be loaded into the Tabulator Table. Thankfully with the use of Postman, thesse issues could be easily identified!
+
+```cpp
+...
+	// webSocket registry holds information about clients that are connected
+	ws_registry_t m_registry;
+...
+	// added http field to header in init response that allows cross origin to all domains. 
+	template<typename RESP>	static RESP	init_resp(RESP resp)
+	{
+		resp
+			.append_header("Server", "Weather Station Bitch")
+			.append_header_date_field()
+			.append_header("Content-Type", "text/plain; charset=utf-8")
+			.append_header(restinio::http_field::access_control_allow_origin, "*");
+		return resp;
+	}
+...
+	// webSocket routing
+	router->http_get("/api/chat", by(&weather_data_handler_t::on_live_update));
+...
+	// creates webSocket handler, stores client info in registry
+	auto on_live_update(const restinio::request_handle_t& req, rr::route_params_t params)
+	{
+		// check if the request is an upgrade connection type aka webSocket
+		if (restinio::http_connection_header_t::upgrade == req->header().connection())
+		{
+			// create webSocket handler
+			auto wsh = rws::upgrade<traits_t>(*req, rws::activation_t::immediate, [this](auto wsh, auto m)
+			{
+				if( rws::opcode_t::text_frame == m->opcode() ||
+					rws::opcode_t::binary_frame == m->opcode() ||
+					rws::opcode_t::continuation_frame == m->opcode() )
+				{
+					wsh->send_message( *m );
+				}
+				else if( rws::opcode_t::ping_frame == m->opcode() )
+				{
+					auto resp = *m;
+					resp.set_opcode( rws::opcode_t::pong_frame );
+					wsh->send_message( resp ); 
+				}
+				else if( rws::opcode_t::connection_close_frame == m->opcode() )
+				{
+					m_registry.erase( wsh->connection_id() );
+				}	
+			});
+			m_registry.emplace(wsh->connection_id(), wsh);
+			init_resp(req->create_response()).done();
+			return restinio::request_accepted();
+		}
+		return restinio::request_rejected();
+	}  
+...
+```
+
+Another important thing to handle is the CORS issues. This is resolved by adding access_control_allow_origin to the response headers. This is implemented with a function and then some more routing in the server_handler(). 
+ 
+```cpp
+...
+	// function for options needed for webSocket, and to enable CORS
+	auto options(restinio::request_handle_t req, restinio::router::route_params_t)
+	{
+		const auto methods = "OPTIONS, GET, POST, PATCH, DELETE, PUT";
+		auto resp = init_resp(req->create_response());
+		resp.append_header(restinio::http_field::access_control_allow_methods, methods);
+		resp.append_header(restinio::http_field::access_control_allow_headers, "content-type");
+		resp.append_header(restinio::http_field::access_control_max_age, "86400");
+		return resp.done();
+	}
+...
+	// options routing for CORS
+	router->add_handler(restinio::http_method_options(), "/api/weatherData/date/:weatherDataDate", by(&weather_data_handler_t::options));
+	router->add_handler(restinio::http_method_options(), "/api/weatherData/id/:weatherDataID", by(&weather_data_handler_t::options));
+	router->add_handler(restinio::http_method_options(), "/api/weatherData", by(&weather_data_handler_t::options));
+	router->add_handler(restinio::http_method_options(), "/api/weatherData/threeLatest", by(&weather_data_handler_t::options));
+...
+```
 
 ## Testing the webSocket connectivity and functiionality. 
+As already mentioned during the develepment of part 3 we used postman to verify that stuff worked, and also to troubleshoot, when stuff did not work. Below is a screenshot showing how the client application looks after fetching the four data entries that are hardcoded into the server. A more comprehensive demonstration will be given in the attached video, where all the required functionality can be seen tested. 
 
+![clientShowCase](img/client_get_all.png)
+
+## Building the server and client
+
+Well the client can simply be launced with a browser like Mozilla firefox, and the server program can be build by running the following command:
+
+Important to notice, in the NGK folder, there are other libraries that the restinino is dependend on. Thesse must be build before trying to build a project in the sample folder. In the ngk_handin zip file however, everything has been build already so this should work.
+
+![buildServer](img/building_server.png)
+
+And then to run the server do the following:
+
+![runServer](img/running_server_and_client_connected.png)
 
 
 
