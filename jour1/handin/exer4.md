@@ -128,10 +128,10 @@ In our case, GET is our friend.
 > GET \<path/to/file\> HTTP/1.X
 
 > GET / HTTP/1.0 
-> host: 10.0.0.2
+> host: 10.0.0.1
 
 > GET / HTTP/1.1
-> host: 10.0.0.2
+> host: 10.0.0.1
 
 
 Where, at least in 1.1 case, will add a host. 
