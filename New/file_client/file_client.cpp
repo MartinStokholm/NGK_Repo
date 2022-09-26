@@ -15,7 +15,7 @@ Extended to support file client!
 
 #include "iknlib.h"
 
-#define STRBUFSIZE 256
+#define STRBUFSIZE 1000
 
 void error(const char *msg)
 {

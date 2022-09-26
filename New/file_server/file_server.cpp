@@ -107,7 +107,7 @@ int main(int argc, char *argv[])
 		printf("Message: %s\n",bufferRx);
 		
 		snprintf(bufferTx, sizeof(bufferTx), "Got message: %s",bufferRx);
-
+		printf(getFilesize(bufferRx));
 		n = write(newsockfd,bufferTx,strlen(bufferTx));
 		if (n < 0) error("ERROR writing to socket");
 			
